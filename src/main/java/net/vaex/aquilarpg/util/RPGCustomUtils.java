@@ -21,6 +21,7 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
+import net.vaex.aquilarpg.item.custom.weapon.RPGLanceWeapon;
 import org.jline.utils.Log;
 
 import java.util.Comparator;
@@ -85,7 +86,7 @@ public class RPGCustomUtils {
         }
 
     }
-/*
+
     public static void killonSight(LevelAccessor level, double x, double y, double z, Entity entity) {
         final Vec3 _center = new Vec3(x, y, z);
         if (level != null && !level.isClientSide()) {
@@ -134,7 +135,7 @@ public class RPGCustomUtils {
 
         }
     }
-*/
+
 
     public static boolean isOnTeam(Player player, LivingEntity entity) {
         if (entity == player) {

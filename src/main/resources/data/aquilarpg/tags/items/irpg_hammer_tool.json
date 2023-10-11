@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "aquilarpg:forge_hammer_iron",
+    "aquilarpg:forge_hammer_steel",
+    "aquilarpg:forge_hammer_netherite",
+    "aquilarpg:forge_hammer_elementium",
+    "aquilarpg:forge_hammer_mithril"
+  ]
+}

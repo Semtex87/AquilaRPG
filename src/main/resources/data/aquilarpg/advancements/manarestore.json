@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "item": "aquilarpg:mana_flask"
+    },
+    "title": "Restore Mana",
+    "description": "There are some items to restore your Mana. U can use Mana shards, stones or crystals to restore. A better way is combine these items via alchemy to more powerful Mana Potions",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "aquilarpg:manasystem",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "aquilarpg:mana_flask"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

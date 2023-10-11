@@ -2,11 +2,16 @@ package net.vaex.aquilarpg.util;
 
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.CrossbowItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.vaex.aquilarpg.item.RPGItems;
-
+import net.vaex.aquilarpg.item.custom.weapon.RPGLanceWeapon;
+import net.vaex.aquilarpg.item.custom.weapon.RPGTFlailWeapon;
+import net.vaex.aquilarpg.item.custom.weapon.unique.UniqueSwordBipolarblade;
+import net.vaex.aquilarpg.item.custom.weapon.unique.UniqueSwordDuskfangDawnfang;
 
 
 public class RPGItemProperties {
@@ -32,56 +37,54 @@ public class RPGItemProperties {
         makeCrossbow(RPGItems.DAEDRIC_CROSSBOW.get());
 
         //Magic
-        //makeBow(RPGItems.FIRESTAFF.get()); //itsa bow lol
+        makeBow(RPGItems.FIRESTAFF.get()); //itsa bow lol
 
 
-/*
+
         //spear
         makeSpear(RPGItems.STAHLRIM_SPEAR.get());
         makeSpear(RPGItems.STEEL_SPEAR.get());
         makeSpear(RPGItems.IRON_SPEAR.get());
         //shield
-        /*
-        makeShield(IRPGArmorRPGItems.LARGE_KNIGHT_SHIELD.get());
-        makeShield(IRPGArmorRPGItems.TEMPLAR_SHIELD.get());
-        makeShield(IRPGArmorRPGItems.ASKIR_SCUTUM.get());
-        makeShield(IRPGArmorRPGItems.BIG_ROUND_WHIRL_GREEN_WHITE_SHIELD.get());
-        makeShield(IRPGArmorRPGItems.BLACK_GUARD_TOWER_SHIELD.get());
-        makeShield(IRPGArmorRPGItems.BLACK_SUN_GOTHIC_SHIELD.get());
-        makeShield(IRPGArmorRPGItems.BLACK_SUN_TOWER_SHIELD.get());
-        makeShield(IRPGArmorRPGItems.DWARVEN_SMALL_SHIELD.get());
-        makeShield(IRPGArmorRPGItems.DWARVEN_TOWER_SHIELD.get());
-        makeShield(IRPGArmorRPGItems.GOTHIC_BLACK_YELLOW_02_SHIELD.get());
-        makeShield(IRPGArmorRPGItems.GOTHIC_GREEN_WHITE_02_SHIELD.get());
-        makeShield(IRPGArmorRPGItems.GOTHIC_RED_02_SHIELD.get());
-        makeShield(IRPGArmorRPGItems.GOTHIC_RED_WHITE_SHIELD.get());
-        makeShield(IRPGArmorRPGItems.GOTHIC_RED_WHITE_02_SHIELD.get());
-        makeShield(IRPGArmorRPGItems.GOTHIC_RED_WHITE_03_SHIELD.get());
-        makeShield(IRPGArmorRPGItems.GOTHIC_RED_WHITE_04_SHIELD.get());
-        makeShield(IRPGArmorRPGItems.GOTHIC_WHITE_BLACK_01_SHIELD.get());
-        makeShield(IRPGArmorRPGItems.GOTHIC_WHITE_BLACK_02_SHIELD.get());
-        makeShield(IRPGArmorRPGItems.GOTHIC_WHITE_BLACK_03_SHIELD.get());
-        makeShield(IRPGArmorRPGItems.GOTHIC_WHITE_BLUE_SHIELD.get());
-        makeShield(IRPGArmorRPGItems.GOTHIC_WHITE_BLUE_02_SHIELD.get());
-        makeShield(IRPGArmorRPGItems.GOTHIC_YELLOW_DEER_SHIELD.get());
-        makeShield(IRPGArmorRPGItems.KITESHIELD_BLACK_01.get());
-        makeShield(IRPGArmorRPGItems.KITESHIELD_BLACK_WHITE.get());
-        makeShield(IRPGArmorRPGItems.KITESHIELD_CRUSADER_01.get());
-        makeShield(IRPGArmorRPGItems.KITESHIELD_CRUSADER_02.get());
-        makeShield(IRPGArmorRPGItems.KITESHIELD_GOLD_BLACK.get());
-        makeShield(IRPGArmorRPGItems.KITESHIELD_SILVER_BLUE.get());
-        makeShield(IRPGArmorRPGItems.KITESHIELD_GOLD_BLUE.get());
-        makeShield(IRPGArmorRPGItems.YELLOW_KITESHIELD.get());
-        makeShield(IRPGArmorRPGItems.TEMPLAR_SHIELD.get());
-        makeShield(IRPGArmorRPGItems.ROUND_SHIELD_BIRD.get());
-        makeShield(IRPGArmorRPGItems.ROUND_SHIELD_CARVED.get());
-        makeShield(IRPGArmorRPGItems.ROUND_SHIELD_ORNATE.get());
-        makeShield(IRPGArmorRPGItems.ROUND_SHIELD_RUNE.get());
-        makeShield(IRPGArmorRPGItems.ROUND_SHIELD_TRISKELE.get());
-        makeShield(IRPGArmorRPGItems.ROUND_SHIELD_TWISTED.get());
-        makeShield(IRPGArmorRPGItems.SMALL_KNIGHT_SHIELD.get());
-
-
+        
+        makeShield(RPGItems.LARGE_KNIGHT_SHIELD.get());
+        makeShield(RPGItems.TEMPLAR_SHIELD.get());
+        makeShield(RPGItems.ASKIR_SCUTUM.get());
+        makeShield(RPGItems.BIG_ROUND_WHIRL_GREEN_WHITE_SHIELD.get());
+        makeShield(RPGItems.BLACK_GUARD_TOWER_SHIELD.get());
+        makeShield(RPGItems.BLACK_SUN_GOTHIC_SHIELD.get());
+        makeShield(RPGItems.BLACK_SUN_TOWER_SHIELD.get());
+        makeShield(RPGItems.DWARVEN_SMALL_SHIELD.get());
+        makeShield(RPGItems.DWARVEN_TOWER_SHIELD.get());
+        makeShield(RPGItems.GOTHIC_BLACK_YELLOW_02_SHIELD.get());
+        makeShield(RPGItems.GOTHIC_GREEN_WHITE_02_SHIELD.get());
+        makeShield(RPGItems.GOTHIC_RED_02_SHIELD.get());
+        makeShield(RPGItems.GOTHIC_RED_WHITE_SHIELD.get());
+        makeShield(RPGItems.GOTHIC_RED_WHITE_02_SHIELD.get());
+        makeShield(RPGItems.GOTHIC_RED_WHITE_03_SHIELD.get());
+        makeShield(RPGItems.GOTHIC_RED_WHITE_04_SHIELD.get());
+        makeShield(RPGItems.GOTHIC_WHITE_BLACK_01_SHIELD.get());
+        makeShield(RPGItems.GOTHIC_WHITE_BLACK_02_SHIELD.get());
+        makeShield(RPGItems.GOTHIC_WHITE_BLACK_03_SHIELD.get());
+        makeShield(RPGItems.GOTHIC_WHITE_BLUE_SHIELD.get());
+        makeShield(RPGItems.GOTHIC_WHITE_BLUE_02_SHIELD.get());
+        makeShield(RPGItems.GOTHIC_YELLOW_DEER_SHIELD.get());
+        makeShield(RPGItems.KITESHIELD_BLACK_01.get());
+        makeShield(RPGItems.KITESHIELD_BLACK_WHITE.get());
+        makeShield(RPGItems.KITESHIELD_CRUSADER_01.get());
+        makeShield(RPGItems.KITESHIELD_CRUSADER_02.get());
+        makeShield(RPGItems.KITESHIELD_GOLD_BLACK.get());
+        makeShield(RPGItems.KITESHIELD_SILVER_BLUE.get());
+        makeShield(RPGItems.KITESHIELD_GOLD_BLUE.get());
+        makeShield(RPGItems.YELLOW_KITESHIELD.get());
+        makeShield(RPGItems.TEMPLAR_SHIELD.get());
+        makeShield(RPGItems.ROUND_SHIELD_BIRD.get());
+        makeShield(RPGItems.ROUND_SHIELD_CARVED.get());
+        makeShield(RPGItems.ROUND_SHIELD_ORNATE.get());
+        makeShield(RPGItems.ROUND_SHIELD_RUNE.get());
+        makeShield(RPGItems.ROUND_SHIELD_TRISKELE.get());
+        makeShield(RPGItems.ROUND_SHIELD_TWISTED.get());
+        makeShield(RPGItems.SMALL_KNIGHT_SHIELD.get());
 
         //blockweapon
         makeBlockWeapon(RPGItems.BRONZE_CLAYMORE.get());
@@ -127,12 +130,12 @@ public class RPGItemProperties {
         makeDuskfangDawnfang(RPGItems.DUSK_FANG.get());
         makeBipolarBlade(RPGItems.BIPOLARBLADE.get());
         makeFlail(RPGItems.STEEL_FLAIL.get());
-*/
-        //List<RegistryObject<Item>> shields = IRPGArmorRPGItems.RPGItems.getEntries().stream()
+
+        //List<RegistryObject<Item>> shields = RPGItems.RPGItems.getEntries().stream()
         // .filter(shield -> shield.get() instanceof IRPGBasicShield).toList();
         //  shields.forEach(shield -> makeShield(shield.get()));
     }
-    /*
+
     public static void makeSting(Item item) {
         ItemProperties.register(item, new ResourceLocation("changing"), (stack, level, living, id) ->
         {
@@ -193,7 +196,7 @@ public class RPGItemProperties {
         });
     }
 
-*/
+
     public static void makeBow(Item item) {
         ItemProperties.register(item, new ResourceLocation("pull"), (p_174635_, p_174636_, p_174637_, p_174638_) -> {
             if (p_174637_ == null) {

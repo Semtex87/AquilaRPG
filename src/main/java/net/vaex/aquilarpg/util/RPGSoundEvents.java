@@ -35,6 +35,8 @@ public class RPGSoundEvents {
             registerSoundEvent("blunderbuss_use");
     public static final RegistryObject<SoundEvent>FLINTLOCK_PISTOL_USE =
             registerSoundEvent("flintlock_pistol_use");
+    public static final RegistryObject<SoundEvent>GUN_RELOAD =
+            registerSoundEvent("gun_reload");
     public static final RegistryObject<SoundEvent>NINJA_STAR_THROWING =
             registerSoundEvent("ninja_star_throwing");
     public static final RegistryObject<SoundEvent>NINJA_STAR_IMPACT =

@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "aquilarpg:iron_longsword",
+    "aquilarpg:iron_greathammer",
+    "aquilarpg:iron_halberd",
+    "aquilarpg:iron_axe",
+    "aquilarpg:blunderbuss",
+    "aquilarpg:musket",
+    "aquilarpg:iron_greataxe",
+    "aquilarpg:iron_greatsword"
+  ]
+}

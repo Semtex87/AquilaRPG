@@ -1,0 +1,30 @@
+{
+  "replace": false,
+  "values": [
+    "aquilarpg:bronze_claymore",
+    "aquilarpg:blackguard_claymore",
+    "aquilarpg:glass_greatsword",
+    "aquilarpg:glass_claymore",
+    "aquilarpg:bipolarblade",
+	"aquilarpg:chrysamere",
+	"aquilarpg:dragonbone_greatsword",
+	"aquilarpg:ebony_greatsword",
+	"aquilarpg:fire_sword",
+	"aquilarpg:glamdring",
+	"aquilarpg:hamburger_richtschwert",
+	"aquilarpg:icebladeofthemonarch",
+	"aquilarpg:ich_richte_richtschwert",
+	"aquilarpg:iron_greatsword",
+	"aquilarpg:marauder_greatsword",
+	"aquilarpg:narsil_reforged",
+	"aquilarpg:nordic_twohander",
+	"aquilarpg:obsidian_sword",
+	"aquilarpg:onemansland_steel_sword",
+	"aquilarpg:stahlrim_claymore",
+	"aquilarpg:stahlrim_greatsword",
+	"aquilarpg:steel_claymore",
+	"aquilarpg:steel_great_tachi",
+	"aquilarpg:steel_greatsword",
+	"aquilarpg:streichers_sword"
+  ]
+}

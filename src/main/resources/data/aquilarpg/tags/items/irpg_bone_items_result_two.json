@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "aquilarpg:bone_pickaxe",
+    "aquilarpg:bone_longbow",
+    "aquilarpg:bone_axe",
+    "aquilarpg:dragonbone_greatsword",
+    "aquilarpg:dragonbone_greataxe",
+    "aquilarpg:spinalreaper"
+  ]
+}

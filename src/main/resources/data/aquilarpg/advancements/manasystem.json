@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "item": "aquilarpg:mana"
+    },
+    "title": "Mana",
+    "description": "You discovered the Mana now its up to u how u use and restore it",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "aquilarpg:aquilarpg",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "aquilarpg:mana_flask"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

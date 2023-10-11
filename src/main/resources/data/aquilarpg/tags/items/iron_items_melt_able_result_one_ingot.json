@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    "aquilarpg:forge_hammer_iron",
+    "aquilarpg:flintlock",
+    "aquilarpg:iron_shortsword",
+    "aquilarpg:pan",
+    "aquilarpg:iron_sword",
+    "aquilarpg:iron_spear",
+    "aquilarpg:peeling_iron",
+    "aquilarpg:wrench",
+    "aquilarpg:chainparts_iron",
+    "aquilarpg:hammer_head_iron",
+    "aquilarpg:iron_plate",
+    "aquilarpg:metalscrap",
+    "aquilarpg:lockpick",
+    "aquilarpg:chisel",
+    "aquilarpg:knife",
+    "aquilarpg:tongs",
+    "aquilarpg:spatula",
+    "aquilarpg:crucible_tongs",
+    "aquilarpg:iron_fittings",
+    "aquilarpg:iron_rivets"
+  ]
+}

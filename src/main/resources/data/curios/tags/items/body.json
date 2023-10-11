@@ -1,0 +1,20 @@
+{
+  "replace": false,
+  "values": [
+    "aquilarpg:big_round_whirl_green_white_shield",
+    "aquilarpg:round_shield_bird",
+    "aquilarpg:round_shield_carved",
+    "aquilarpg:round_shield_ornate",
+    "aquilarpg:round_shield_rune",
+    "aquilarpg:round_shield_triskele",
+    "aquilarpg:round_shield_twisted",
+    "aquilarpg:large_knight_shield",
+    "aquilarpg:templar_shield",
+    "aquilarpg:black_guard_tower_shield",
+    "aquilarpg:black_sun_gothic_shield",
+    "aquilarpg:yellow_kiteshield",
+    "aquilarpg:askir_scutum",
+    "aquilarpg:small_knight_shield",
+    "aquilarpg:black_sun_tower_shield"
+  ]
+}

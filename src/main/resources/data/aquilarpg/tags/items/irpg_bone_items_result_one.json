@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:bone",
+    "aquilarpg:skull",
+    "aquilarpg:dragon_spine",
+    "aquilarpg:bone_amulet",
+    "aquilarpg:fish_bone",
+    "aquilarpg:bone_dagger",
+    "aquilarpg:dragonbone_dagger"
+  ]
+}
