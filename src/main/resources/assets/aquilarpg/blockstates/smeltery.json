@@ -1,0 +1,26 @@
+{
+  "variants": {
+    "facing=east,open=false": {
+      "model": "aquilarpg:block/smeltery_on",
+      "y": 90},
+    "facing=east,open=true": {
+      "model": "aquilarpg:block/smeltery",
+      "y": 90},
+    "facing=north,open=false": {
+      "model": "aquilarpg:block/smeltery_on"},
+    "facing=north,open=true": {
+      "model": "aquilarpg:block/smeltery"},
+    "facing=west,open=false": {
+      "model": "aquilarpg:block/smeltery_on",
+      "y": 270},
+    "facing=west,open=true": {
+      "model": "aquilarpg:block/smeltery",
+      "y": 270},
+    "facing=south,open=false": {
+      "model": "aquilarpg:block/smeltery_on",
+      "y": 180},
+    "facing=south,open=true": {
+      "model": "aquilarpg:block/smeltery",
+      "y": 180}
+  }
+}

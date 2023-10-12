@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "aquilarpg:block/cobalt_ore"
+  }
+}

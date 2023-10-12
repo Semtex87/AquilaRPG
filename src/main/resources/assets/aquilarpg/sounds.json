@@ -1,0 +1,156 @@
+{
+  "bleeding_effect": {
+    "category": "effect",
+    "subtitle": "aquilarpg.bleeding_effect",
+    "sounds": [
+      "aquilarpg:bleeding_effect"
+    ]
+  },
+  "blowgun_use": {
+    "category": "effect",
+    "subtitle": "aquilarpg.blowgun_use",
+    "sounds": [
+      "aquilarpg:blowgun_use"
+    ]
+  },
+  "full_charge": {
+    "category": "effect",
+    "subtitle": "aquilarpg.full_charge",
+    "sounds": [
+      "aquilarpg:full_charge"
+    ]
+  },
+  "force_field": {
+    "category": "effect",
+    "subtitle": "aquilarpg.force_field",
+    "sounds": [
+      "aquilarpg:force_field"
+    ]
+  },
+  "force_field_hit": {
+    "category": "effect",
+    "subtitle": "aquilarpg.force_field_hit",
+    "sounds": [
+      "aquilarpg:force_field_hit"
+    ]
+  },
+  "blunderbuss_use": {
+    "category": "effect",
+    "subtitle": "aquilarpg.blunderbuss_use",
+    "sounds": [
+      "aquilarpg:blunderbuss_use"
+    ]
+  },
+  "chain_sound_01": {
+    "category": "effect",
+    "subtitle": "aquilarpg.chain_sound_01",
+    "sounds": [
+      "aquilarpg:chain_sound_01"
+    ]
+  },
+  "chain_sound_02": {
+    "category": "effect",
+    "subtitle": "aquilarpg.chain_sound_02",
+    "sounds": [
+      "aquilarpg:chain_sound_02"
+    ]
+  },
+  "chain_sound_03": {
+    "category": "effect",
+    "subtitle": "aquilarpg.chain_sound_03",
+    "sounds": [
+      "aquilarpg:chain_sound_03"
+    ]
+  },
+  "flintlock_pistol_use": {
+    "category": "effect",
+    "subtitle": "aquilarpg.flintlock_pistol_use",
+    "sounds": [
+      "aquilarpg:flintlock_pistol_use"
+    ]
+  },
+  "musket_use": {
+    "category": "effect",
+    "subtitle": "aquilarpg.musket_use",
+    "sounds": [
+      "aquilarpg:musket_use"
+    ]
+  },
+  "ninja_star_impact": {
+    "category": "effect",
+    "subtitle": "aquilarpg.ninja_star_impact",
+    "sounds": [
+      "aquilarpg:ninja_star_impact"
+    ]
+  },
+  "ninja_star_throwing": {
+    "category": "effect",
+    "subtitle": "aquilarpg.ninja_star_throwing",
+    "sounds": [
+      "aquilarpg:ninja_star_throwing"
+    ]
+  },
+  "blunt_hit": {
+    "category": "effect",
+    "subtitle": "aquilarpg.blunt_hit",
+    "sounds": [
+      "aquilarpg:blunt_hit"
+    ]
+  },
+  "heavy_weapon_swing": {
+    "category": "effect",
+    "subtitle": "aquilarpg.heavy_weapon_swing",
+    "sounds": [
+      "aquilarpg:heavy_weapon_swing"
+    ]
+  },
+  "freeze_effect": {
+    "category": "effect",
+    "subtitle": "aquilarpg.freeze_effect",
+    "sounds": [
+      "aquilarpg:freeze_effect"
+    ]
+  },
+  "gun_reload": {
+    "category": "effect",
+    "subtitle": "aquilarpg.gun_reload",
+    "sounds": [
+      "aquilarpg:gun_reload"
+    ]
+  },
+  "ench_weapon_hit": {
+    "category": "effect",
+    "subtitle": "aquilarpg.ench_weapon_hit",
+    "sounds": [
+      "aquilarpg:ench_weapon_hit"
+    ]
+  },
+  "sword_impact": {
+    "category": "effect",
+    "subtitle": "aquilarpg.sword_impact",
+    "sounds": [
+      "aquilarpg:sword_impact"
+    ]
+  },
+  "conq_damage_": {
+    "category": "effect",
+    "subtitle": "aquilarpg.conq_damage_",
+    "sounds": [
+      "aquilarpg:conq_damage_"
+    ]
+  },
+  "quad_shoot": {
+    "category": "effect",
+    "subtitle": "aquilarpg.quad_shoot",
+    "sounds": [
+      "aquilarpg:quad_shoot"
+    ]
+  },
+  "brotherhood_howl": {
+    "category": "ambient",
+    "subtitle": "aquilarpg.brotherhood_howl",
+    "sounds": [
+      "aquilarpg:brotherhood_howl"
+    ]
+  }
+}
