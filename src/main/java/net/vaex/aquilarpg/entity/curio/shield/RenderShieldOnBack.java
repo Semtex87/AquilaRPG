@@ -20,13 +20,11 @@ public class RenderShieldOnBack implements ICurioRenderer {
         float rotation = -95;
         ICurioRenderer.translateIfSneaking(matrixStack, livingEntity);
         ICurioRenderer.rotateIfSneaking(matrixStack, livingEntity);
-       // matrixStack.scale(1.0F, 1.0F, 1.0F);
-       // matrixStack.translate(0.2F, 0.1F, 0.8F);
-        matrixStack.translate(-0.2F, 0.8F, 0.8F);
+        matrixStack.translate(-0.2F, 0.5F, 0.8F);
         matrixStack.mulPose(Vector3f.XP.rotationDegrees(rotation));
         matrixStack.mulPose(Vector3f.XP.rotationDegrees(90.0f));
         matrixStack.mulPose(Vector3f.ZP.rotationDegrees(195.0f));
-          Minecraft.getInstance().getItemRenderer()
+        Minecraft.getInstance().getItemRenderer()
                 .renderStatic(stack, ItemTransforms.TransformType.NONE, light, OverlayTexture.NO_OVERLAY,
                         matrixStack, renderTypeBuffer, 0);
     }
