@@ -1,0 +1,72 @@
+{
+  "type": "minecraft:smelting",
+  "group": "iron_ingot",
+  "ingredient": [
+    {
+      "item": "aquilarpg:iron_rivets"
+    },
+    {
+      "item": "aquilarpg:raw_iron"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "aquilarpg:chainparts_iron"
+    },
+    {
+      "item": "aquilarpg:iron_fittings"
+    },
+    {
+      "item": "aquilarpg:hammer_head_iron"
+    },
+    {
+      "item": "aquilarpg:basic_axe_head"
+    },
+    {
+      "item": "aquilarpg:basic_blade"
+    },
+    {
+      "item": "aquilarpg:basic_claymore_blade"
+    },
+    {
+      "item": "aquilarpg:basic_handguard"
+    },
+    {
+      "item": "aquilarpg:basic_grip"
+    },
+    {
+      "item": "aquilarpg:chisel"
+    },
+    {
+      "item": "aquilarpg:file"
+    },
+    {
+      "item": "aquilarpg:forge_hammer_iron"
+    },
+    {
+      "item": "aquilarpg:lockpick"
+    },
+    {
+      "item": "aquilarpg:knife"
+    },
+    {
+      "item": "aquilarpg:peeling_iron"
+    },
+    {
+      "item": "aquilarpg:pan"
+    },
+    {
+      "item": "aquilarpg:spatula"
+    },
+    {
+      "item": "aquilarpg:iron_scrap"
+    },
+    {
+      "item": "aquilarpg:iron_plate"
+    }
+  ],
+  "result": "aquilarpg:hot_iron_ingot",
+  "experience": 1,
+  "cookingtime": 1147
+}

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#L ",
+    "#/ ",
+    " / "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:bone"
+    },
+    "L": {
+      "item": "aquilarpg:leatherstripes"
+    },
+    "/": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "aquilarpg:bone_axe",
+    "count": 1
+  }
+}
+
+
+
+

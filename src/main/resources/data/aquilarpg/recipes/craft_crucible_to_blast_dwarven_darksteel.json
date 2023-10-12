@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:coal"
+    },
+    {
+      "item": "aquilarpg:raw_zinc"
+    },
+    {
+      "item": "aquilarpg:raw_darkiron"
+    },
+    {
+      "item": "aquilarpg:clay_crucible"
+    }
+  ],
+  "result": {
+    "item": "aquilarpg:crucible_coal_zinc_darkiron_mix",
+    "count": 1
+  }
+}

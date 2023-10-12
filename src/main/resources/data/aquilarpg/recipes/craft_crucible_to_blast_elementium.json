@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "aquilarpg:raw_ebony"
+    },
+    {
+      "item": "aquilarpg:raw_stahlrim"
+    },
+    {
+      "item": "aquilarpg:raw_adamant"
+    },
+    {
+      "item": "aquilarpg:clay_crucible"
+    }
+  ],
+  "result": {
+    "item": "aquilarpg:crucible_stahlrim_adamant_ebony_mix",
+    "count": 1
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "L#S",
+    "#LS",
+    "L#S"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:bone"
+    },
+    "L": {
+      "item": "aquilarpg:leatherstripes"
+    },
+    "S": {
+      "item": "aquilarpg:bowstring"
+    }
+  },
+  "result": {
+    "item": "aquilarpg:bone_longbow",
+    "count": 1
+  }
+}
+
+
+
+

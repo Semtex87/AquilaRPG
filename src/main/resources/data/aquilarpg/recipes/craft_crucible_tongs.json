@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S S",
+    " N ",
+    "S S"
+  ],
+  "key": {
+    "S": {
+      "item": "aquilarpg:hot_iron_ingot"
+    },
+    "N": {
+      "tag": "aquilarpg:rpg_hammer_tool"
+    }
+  },
+  "result": {
+    "item": "aquilarpg:crucible_tongs"
+  }
+}

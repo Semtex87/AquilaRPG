@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smelting",
+  "group": "zinc_ingot",
+  "ingredient": [
+    {
+      "item": "aquilarpg:raw_zinc"
+    },
+    {
+      "item": "aquilarpg:zinc_ingot"
+    }
+  ],
+  "result": "aquilarpg:hot_zinc_ingot",
+  "experience": 0.6,
+  "cookingtime": 420
+}

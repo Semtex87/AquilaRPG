@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "aquilarpg:elementium_ingot"
+    },
+    {
+      "item": "aquilarpg:stahlrim_ingot"
+    },
+    {
+      "item": "aquilarpg:clay_crucible"
+    },
+    {
+      "item": "aquilarpg:rune_dust"
+    }
+  ],
+  "result": {
+    "item": "aquilarpg:crucible_stahlrim_elementium_rune_dust_mix",
+    "count": 1
+  }
+}

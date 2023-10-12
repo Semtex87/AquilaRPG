@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  I",
+    " N ",
+    "S  "
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:iron_nugget"
+    },
+    "N": {
+      "item": "aquilarpg:hot_iron_ingot"
+    },
+    "S": {
+      "item": "aquilarpg:tool_stick"
+    }
+  },
+  "result": {
+    "item": "aquilarpg:chisel"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smelting",
+  "group": "copper_ingot",
+  "ingredient": [
+    {
+      "item": "aquilarpg:raw_copper"
+    },
+    {
+      "item": "aquilarpg:copper_ingot"
+    }
+  ],
+  "result": "aquilarpg:hot_copper_ingot",
+  "experience": 1.0,
+  "cookingtime": 1085
+}

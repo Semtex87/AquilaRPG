@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "aquilarpg:crucible_helstone_iron_coal_mix"
+  },
+  "result": "aquilarpg:crucible_molten_crimson_steel",
+  "experience": 0.0,
+  "cookingtime": 1000
+}

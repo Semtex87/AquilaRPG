@@ -15,7 +15,7 @@ import java.util.function.Supplier;
 public enum RPGArmorMaterial implements ArmorMaterial {
 
     DWARVEN_FIELDPLATE("dwarven_fieldplate", "Heavy Armor", SoundEvents.ARMOR_EQUIP_NETHERITE, 6, 0,
-           0, 1,20, new int[]{4, 6, 8, 4},0.5f, new int[]{2, 8, 10, 4},() -> Ingredient.of(RPGItems.METALSCRAP.get())),
+           0, 1,20, new int[]{4, 6, 8, 4},0.5f, new int[]{2, 8, 10, 4},() -> Ingredient.of(RPGItems.IRON_PLATE.get())),
     MARAUDER("marauder", "Heavy Armor", SoundEvents.ARMOR_EQUIP_IRON, 6, 0,
             0, 1,20, new int[]{3, 5, 6, 4},0.5f, new int[]{2, 8, 10, 4},() -> Ingredient.of(RPGItems.IRON_PLATE.get())),
     TOWNGUARD_CHAINMAIL_BLACK_WHITE_01("townguard_chainmail_black_white_01", "medium armor", SoundEvents.ARMOR_EQUIP_CHAIN, 6, 0,
@@ -51,13 +51,13 @@ public enum RPGArmorMaterial implements ArmorMaterial {
 
     //TODO IMPLEMENTATION
     STAHLRIM_HEAVY("stahlrim_heavy", "medium armor", SoundEvents.ARMOR_EQUIP_NETHERITE, 6, 0,
-            0, 1,20, new int[]{3, 5, 8, 3},0.5f, new int[]{2, 8, 10, 4},() -> Ingredient.of(RPGItems.METALSCRAP.get())),
+            0, 1,20, new int[]{3, 5, 8, 3},0.5f, new int[]{2, 8, 10, 4},() -> Ingredient.of(RPGItems.IRON_PLATE.get())),
 
     STAHLRIM_LIGHT("stahlrim_light", "medium armor", SoundEvents.ARMOR_EQUIP_LEATHER, 6, 0,
-            0, 1,20, new int[]{3, 5, 8, 3},0.5f, new int[]{2, 8, 10, 4},() -> Ingredient.of(RPGItems.METALSCRAP.get())),
+            0, 1,20, new int[]{3, 5, 8, 3},0.5f, new int[]{2, 8, 10, 4},() -> Ingredient.of(RPGItems.IRON_PLATE.get())),
 
     DWARVENCROWN("dwarvencrown", "light armor", SoundEvents.ARMOR_EQUIP_GOLD, 6, 0,
-            0, 1,20, new int[]{3, 0, 0, 0},0.5f, new int[]{2, 0, 0, 0},() -> Ingredient.of(RPGItems.METALSCRAP.get())),
+            0, 1,20, new int[]{3, 0, 0, 0},0.5f, new int[]{2, 0, 0, 0},() -> Ingredient.of(RPGItems.IRON_PLATE.get())),
 
     ;
     //TODO FIXING Class

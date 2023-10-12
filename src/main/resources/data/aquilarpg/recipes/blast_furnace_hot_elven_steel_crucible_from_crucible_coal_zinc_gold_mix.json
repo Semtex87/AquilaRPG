@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "aquilarpg:crucible_coal_zinc_gold_mix"
+  },
+  "result": "aquilarpg:crucible_molten_elven_steel",
+  "experience": 0.0,
+  "cookingtime": 1000
+}

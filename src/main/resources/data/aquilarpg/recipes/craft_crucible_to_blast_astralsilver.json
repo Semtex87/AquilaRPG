@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "aquilarpg:raw_silver"
+    },
+	    {
+      "item": "aquilarpg:raw_zinc"
+    },
+    {
+      "item": "aquilarpg:clay_crucible"
+    }
+  ],
+  "result": {
+    "item": "aquilarpg:crucible_silver_zinc_mix",
+    "count": 1
+  }
+}

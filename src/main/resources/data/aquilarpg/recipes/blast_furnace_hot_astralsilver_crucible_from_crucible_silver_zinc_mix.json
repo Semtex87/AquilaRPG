@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "aquilarpg:crucible_silver_zinc_mix"
+  },
+  "result": "aquilarpg:crucible_molten_astralsilver",
+  "experience": 0.0,
+  "cookingtime": 800
+}

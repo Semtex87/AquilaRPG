@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:blasting",
+  "group": "ebony_ingot",
+  "ingredient": [
+    {
+      "item": "aquilarpg:ebony_ingot"
+    }
+  ],
+  "result": "aquilarpg:hot_ebony_ingot",
+  "experience": 1.0,
+  "cookingtime": 1400
+}

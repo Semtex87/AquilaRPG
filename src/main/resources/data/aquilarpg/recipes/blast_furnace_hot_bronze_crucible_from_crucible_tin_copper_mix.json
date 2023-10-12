@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "aquilarpg:crucible_tin_copper_mix"
+  },
+  "result": "aquilarpg:crucible_molten_bronze",
+  "experience": 0.8,
+  "cookingtime": 950
+}

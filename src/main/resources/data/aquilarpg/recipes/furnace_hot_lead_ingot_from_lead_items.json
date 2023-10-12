@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smelting",
+  "group": "lead_ingot",
+  "ingredient": [
+    {
+      "item": "aquilarpg:raw_lead"
+    },
+    {
+      "item": "aquilarpg:lead_ingot"
+    }
+  ],
+  "result": "aquilarpg:hot_lead_ingot",
+  "experience": 1.0,
+  "cookingtime": 330
+}

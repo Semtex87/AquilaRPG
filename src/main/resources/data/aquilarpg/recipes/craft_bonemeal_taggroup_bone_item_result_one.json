@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "aquilarpg:irpg_bone_items_result_one"
+    },
+    {
+      "tag": "aquilarpg:rpg_hammer_tool"
+    }
+  ],
+  "result": {
+    "item": "minecraft:bone_meal",
+    "count": 1
+  }
+}

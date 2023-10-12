@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "cobalt_ingot",
+  "ingredients": [
+    {
+      "item": "aquilarpg:cobalt_block"
+    }
+  ],
+  "result": {
+    "item": "aquilarpg:cobalt_ingot",
+    "count": 9
+  }
+}

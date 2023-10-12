@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "aquilarpg:crucible_stahlrim_adamant_ebony_mix"
+  },
+  "result": "aquilarpg:crucible_molten_elementium",
+  "experience": 3.0,
+  "cookingtime": 1600
+}

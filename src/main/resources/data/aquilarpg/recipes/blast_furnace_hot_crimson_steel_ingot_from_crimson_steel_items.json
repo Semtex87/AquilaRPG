@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "group": "crimson_steel_ingot",
+  "ingredient": [
+    {
+      "item": "aquilarpg:crimson_steel_ingot"
+    }
+  ],
+  "result": "aquilarpg:hot_crimson_steel_ingot",
+  "experience": 1.0,
+  "cookingtime": 1000
+}

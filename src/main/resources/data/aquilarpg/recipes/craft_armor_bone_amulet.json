@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "LLL",
+    "###"
+
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:bone"
+    },
+    "L": {
+      "item": "aquilarpg:leatherstripes"
+    }
+
+  },
+  "result": {
+    "item": "aquilarpg:bone_amulet",
+    "count": 1
+  }
+}
+
+
+
+

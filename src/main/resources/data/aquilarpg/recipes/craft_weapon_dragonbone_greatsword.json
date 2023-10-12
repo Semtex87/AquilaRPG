@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RRD",
+    "LDR",
+    "SLR"
+  ],
+  "key": {
+    "D": {
+      "item": "aquilarpg:dragon_spine"
+    },
+    "S": {
+      "item": "aquilarpg:steel_ingot"
+    },
+    "R": {
+      "item": "aquilarpg:rune_dust"
+    },
+    "L": {
+      "item": "aquilarpg:leatherstripes"
+    }
+  },
+  "result": {
+    "item": "aquilarpg:dragonbone_greatsword",
+    "count": 1
+  }
+}
+
+
+
+

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "L  ",
+    "/  "
+  ],
+  "key": {
+    "L": {
+      "item": "aquilarpg:dragon_spine"
+    },
+    "/": {
+      "item": "aquilarpg:leatherstripes"
+    }
+  },
+  "result": {
+    "item": "aquilarpg:dragonbone_dagger",
+    "count": 1
+  }
+}
+
+
+
+

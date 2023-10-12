@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:blasting",
+  "group": "stahlrim_ingot",
+  "ingredient": [
+    {
+      "item": "aquilarpg:raw_stahlrim"
+    },
+    {
+      "item": "aquilarpg:stahlrim_ingot"
+    }
+  ],
+  "result": "aquilarpg:hot_stahlrim_ingot",
+  "experience": 2.0,
+  "cookingtime": 1300
+}

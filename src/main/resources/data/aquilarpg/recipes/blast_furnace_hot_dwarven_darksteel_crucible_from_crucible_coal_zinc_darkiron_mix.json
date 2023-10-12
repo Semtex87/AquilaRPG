@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "aquilarpg:crucible_coal_zinc_darkiron_mix"
+  },
+  "result": "aquilarpg:crucible_molten_dwarven_darksteel",
+  "experience": 0.0,
+  "cookingtime": 1100
+}

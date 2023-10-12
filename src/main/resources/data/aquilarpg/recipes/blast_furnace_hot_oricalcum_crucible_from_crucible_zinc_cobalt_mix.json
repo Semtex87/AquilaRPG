@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "aquilarpg:crucible_zinc_cobalt_mix"
+  },
+  "result": "aquilarpg:crucible_molten_oricalcum",
+  "experience": 0.0,
+  "cookingtime": 900
+}

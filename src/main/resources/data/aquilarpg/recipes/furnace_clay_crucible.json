@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "aquilarpg:raw_clay_crucible"
+  },
+  "result": "aquilarpg:clay_crucible",
+  "experience": 0.2,
+  "cookingtime": 200
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "group": "brass_ingot",
+  "ingredient": [
+
+    {
+      "item": "aquilarpg:brass_ingot"
+    }
+  ],
+  "result": "aquilarpg:hot_brass_ingot",
+  "experience": 1.0,
+  "cookingtime": 927
+}

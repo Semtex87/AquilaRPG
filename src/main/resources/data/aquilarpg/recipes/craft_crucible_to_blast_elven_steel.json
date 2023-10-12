@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:coal"
+    },
+    {
+      "item": "aquilarpg:raw_zinc"
+    },
+    {
+      "item": "aquilarpg:raw_gold"
+    },
+    {
+      "item": "aquilarpg:clay_crucible"
+    }
+  ],
+  "result": {
+    "item": "aquilarpg:crucible_coal_zinc_gold_mix",
+    "count": 1
+  }
+}

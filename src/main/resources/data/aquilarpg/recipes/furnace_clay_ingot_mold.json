@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "aquilarpg:raw_clay_ingot_mold"
+  },
+  "result": "aquilarpg:ingot_mold",
+  "experience": 0.0,
+  "cookingtime": 160
+}

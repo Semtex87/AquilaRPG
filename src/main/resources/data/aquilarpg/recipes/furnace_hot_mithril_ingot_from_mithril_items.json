@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smelting",
+  "group": "mithril_ingot",
+  "ingredient": [
+    {
+      "item": "aquilarpg:raw_mithril"
+    },
+    {
+      "item": "aquilarpg:mithril_ingot"
+    }
+  ],
+  "result": "aquilarpg:hot_mithril_ingot",
+  "experience": 1.0,
+  "cookingtime": 1500
+}

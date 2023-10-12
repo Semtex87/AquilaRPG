@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "aquilarpg:runic_solution"
+    },
+    {
+      "item": "aquilarpg:scroll"
+    },
+    {
+      "item": "aquilarpg:mana_crystal"
+    }
+  ],
+  "result": {
+    "item": "aquilarpg:scroll_of_mana",
+    "count": 1
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "group": "void_steel_ingot",
+  "ingredient": {
+    "item": "aquilarpg:void_steel_ingot"
+  },
+  "result": "aquilarpg:hot_void_steel_ingot",
+  "experience": 1.0,
+  "cookingtime": 1800
+}

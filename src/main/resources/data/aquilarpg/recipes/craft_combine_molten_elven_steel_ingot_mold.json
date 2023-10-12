@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "aquilarpg:crucible_molten_elven_steel"
+    },
+    {
+      "item": "aquilarpg:ingot_mold"
+    }
+  ],
+  "result": {
+    "item": "aquilarpg:hot_elven_steel_ingot",
+        "count": 1
+  }
+}

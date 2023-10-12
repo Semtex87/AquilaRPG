@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:stick"
+    },
+    {
+      "item": "aquilarpg:leatherstripes"
+    }
+  ],
+  "result": {
+    "item": "aquilarpg:tool_stick",
+    "count": 1
+  }
+}

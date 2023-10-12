@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "aquilarpg:crucible_molten_brass"
+    },
+    {
+      "item": "aquilarpg:ingot_mold"
+    }
+  ],
+  "result": {
+    "item": "aquilarpg:hot_brass_ingot",
+        "count": 1
+  }
+}

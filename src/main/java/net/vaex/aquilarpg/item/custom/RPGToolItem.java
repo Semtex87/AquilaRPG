@@ -3,6 +3,7 @@ package net.vaex.aquilarpg.item.custom;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.item.TooltipFlag;
@@ -24,6 +25,7 @@ public class RPGToolItem extends TieredItem {
      int itemWeight;
      boolean isFoil = false;
      String materialType;
+
     public RPGToolItem(RPGTierInterface pTier, Properties pProperties) {
         super(pTier, pProperties.tab(RPGCreativeModeTab.RPG_TOOLS).setNoRepair());
         this.durability = pTier.getUses();
@@ -49,6 +51,8 @@ public class RPGToolItem extends TieredItem {
         isFoil = foil;
         return this;
     }
+
+
 
     @Override
     @OnlyIn(Dist.CLIENT)

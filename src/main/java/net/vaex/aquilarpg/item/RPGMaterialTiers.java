@@ -137,7 +137,7 @@ public class RPGMaterialTiers implements Tier, RPGTierInterface {
         RUSTY = new RPGMaterialTiers("Rusty",  2, 70, 0.0F, 0.4F, 0, 0, 10, 1.0f, Ingredient::of);
         BONE = new RPGMaterialTiers("Bone",  2, 50, 0.0F, 0.4F, 0, 0, 15, 0.7f, () -> Ingredient.of(Items.BONE));
         FLINT = new RPGMaterialTiers("Flint",  1, 60, 0.0F, 0.2F, 0, 0, 15, 1.1f, () -> Ingredient.of(Items.FLINT));
-        TIN = new RPGMaterialTiers("Tin",  1, 45, 0.0F, 0.1F, 0, 0, 5, 1.8f, () -> Ingredient.of(Items.STICK));
+        TIN = new RPGMaterialTiers("Tin",  1, 45, 0.0F, 0.1F, 180, 232, 5, 1.8f, () -> Ingredient.of(Items.STICK));
         LEAD = new RPGMaterialTiers("Lead",  1, 55, 0.0F, 0.1F, 0, 0, 5, 2.0f, () -> Ingredient.of(Items.STICK));
         LEATHER = new RPGMaterialTiers("Leather",  0, 180, 0.0F, 0.6F, 0, 0, 25, 0.9f, Ingredient::of);
         HARDLEATHER = new RPGMaterialTiers("Hardleather",  220, 0, 0.0F, 0.8F, 0, 0, 30, 1.0f, Ingredient::of);
@@ -161,15 +161,15 @@ public class RPGMaterialTiers implements Tier, RPGTierInterface {
         RUBY_TIER = new RPGMaterialTiers("Ruby", 3, 50, 0.0F, 0.6F, 0, 0, 10, 1.2f,Ingredient::of);
         GLASS = new RPGMaterialTiers("Glass", 4, 600, 0.0F, 2.0F, 1300, 950, 90, 1.0f, Ingredient::of);
         //EQ NETHERITE
-        MITHRIL = new RPGMaterialTiers("Mithril", 4, 1250, 0.0F, 2.2F, 900, 1200, 150, 1.3f, Ingredient::of);
-        DRAGONBONE = new RPGMaterialTiers("Dragonbone",  4, 700, 0.0F, 1.9F, 0, 0, 120, 1.6f, () -> Ingredient.of(Items.STICK));
-        ADAMANTIUM = new RPGMaterialTiers("Adamantium",  4, 1500, 0.0F, 2.1F, 1400, 1600, 130, 1.9f,() -> Ingredient.of(Items.STICK));
-        EBONY = new RPGMaterialTiers("Ebony",  4, 1250, 0.0F, 2.7F, 0, 0, 155, 0.7f, () -> Ingredient.of(Items.STICK));
-        CRIMSON = new RPGMaterialTiers("Crimson",  4, 1500, 0.0F, 2.3F, 0, 0, 100, 1.9f, () -> Ingredient.of(Items.STICK));
-        STAHLRIM = new RPGMaterialTiers("Stahlrim",  4, 1650, 0.0F, 2.8F, 0, 0, 150, 1.4f, () -> Ingredient.of(Items.STICK));
+        MITHRIL = new RPGMaterialTiers("Mithril", 4, 1250, 0.0F, 2.2F, 900, 1200, 450, 1.3f, Ingredient::of);
+        DRAGONBONE = new RPGMaterialTiers("Dragonbone",  4, 700, 0.0F, 1.9F, 0, 0, 350, 1.6f, () -> Ingredient.of(Items.STICK));
+        ADAMANTIUM = new RPGMaterialTiers("Adamantium",  4, 1500, 0.0F, 2.1F, 1400, 1600, 400, 1.9f,() -> Ingredient.of(Items.STICK));
+        EBONY = new RPGMaterialTiers("Ebony",  4, 1250, 0.0F, 2.7F, 0, 0, 350, 0.7f, () -> Ingredient.of(Items.STICK));
+        CRIMSON = new RPGMaterialTiers("Crimson",  4, 1500, 0.0F, 2.3F, 0, 0, 300, 1.9f, () -> Ingredient.of(Items.STICK));
+        STAHLRIM = new RPGMaterialTiers("Stahlrim",  4, 1650, 0.0F, 2.8F, 1300, 1500, 450, 1.4f, () -> Ingredient.of(Items.STICK));
         //EQ NETHERITE+
-        ELEMENTIUM = new RPGMaterialTiers("Elementium", 5, 2000, 0.0F, 2.5F, 2600, 3000, 155, 3.2f, Ingredient::of);
-        VOID = new RPGMaterialTiers("Void",  6, 2000, 0.0F, 4.0F, 3800, 4000, 200, 4.0f, () -> Ingredient.of(Items.STICK));
+        ELEMENTIUM = new RPGMaterialTiers("Elementium", 5, 2000, 0.0F, 2.5F, 1500, 2000, 600, 3.2f, Ingredient::of);
+        VOID = new RPGMaterialTiers("Void",  6, 2200, 0.0F, 4.0F, 1800, 2500, 750, 4.0f, () -> Ingredient.of(Items.STICK));
         //UNIQUE ITEMS
         //UNIQUE_TIER1 = new AquilaItemTier("unique", 4, 750, 3.0F, 2.5F, 175, 1.0F, Ingredient::of);
         //UNIQUE_TIER2 = new AquilaItemTier("legendary", 5, 850, 3.0F, 2.8F, 200, 1.0F, () -> Ingredient.of(ItemInit.MAGIC_DUST.get()));

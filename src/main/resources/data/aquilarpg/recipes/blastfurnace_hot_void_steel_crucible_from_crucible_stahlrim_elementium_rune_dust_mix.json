@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "aquilarpg:crucible_stahlrim_elementium_rune_dust_mix"
+  },
+  "result": "aquilarpg:crucible_molten_void_steel",
+  "experience": 3.6,
+  "cookingtime": 1800
+}

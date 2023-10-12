@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:blasting",
+  "group": "steel_ingot",
+  "ingredient": [
+    {
+      "item": "aquilarpg:steel_plate"
+    },
+    {
+      "item": "aquilarpg:hammer_head_steel"
+    },
+    {
+      "item": "aquilarpg:steel_ingot"
+    },
+    {
+      "item": "aquilarpg:forge_hammer_steel"
+    },
+    {
+      "item": "aquilarpg:tongs"
+    },
+    {
+      "item": "aquilarpg:crucible_tongs"
+    }
+  ],
+  "result": "aquilarpg:hot_steel_ingot",
+  "experience": 1,
+  "cookingtime": 1425
+}

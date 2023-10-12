@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:blasting",
+  "group": "dwarven_darksteel_ingot",
+  "ingredient": [
+    {
+      "item": "aquilarpg:dwarven_darksteel_ingot"
+    }
+  ],
+  "result": "aquilarpg:hot_dwarven_darksteel_ingot",
+  "experience": 1.0,
+  "cookingtime": 1100
+}

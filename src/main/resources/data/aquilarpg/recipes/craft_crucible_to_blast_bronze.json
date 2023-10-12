@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "aquilarpg:raw_copper"
+    },
+    {
+      "item": "aquilarpg:raw_tin"
+    },
+    {
+      "item": "aquilarpg:clay_crucible"
+    }
+  ],
+  "result": {
+    "item": "aquilarpg:crucible_tin_copper_mix",
+    "count": 1
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "aquilarpg:crucible_copper_zinc_mix"
+  },
+  "result": "aquilarpg:crucible_molten_brass",
+  "experience": 0.0,
+  "cookingtime": 927
+}

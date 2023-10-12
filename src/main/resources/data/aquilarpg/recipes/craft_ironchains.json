@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " h ",
+    " It",
+    "   "
+  ],
+  "key": {
+    "I": {
+      "item": "aquilarpg:hot_iron_ingot"
+    },
+    "t": {
+      "item": "aquilarpg:tongs"
+    },
+    "h": {
+      "item": "aquilarpg:forge_hammer_iron"
+    }
+  },
+  "result": {
+    "item": "aquilarpg:chainparts_iron",
+    "count": 3
+  }
+}
