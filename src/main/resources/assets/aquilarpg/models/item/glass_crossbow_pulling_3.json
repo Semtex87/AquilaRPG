@@ -1,0 +1,6 @@
+{
+  "parent": "aquilarpg:item/glass_crossbow",
+  "textures": {
+    "layer0": "aquilarpg:item/weapon/range/glass_crossbow_pulling_3"
+  }
+}

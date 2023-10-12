@@ -1,0 +1,38 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:item/generated",
+	"textures": {
+		"layer0": "aquilarpg:item/weapon/range/steel_long_warbow"
+	},
+	"overrides": [
+		{"predicate": {"minecraft:pulling": 1}, "model": "aquilarpg:item/steel_long_warbow_pulling_0"},
+		{"predicate": {"minecraft:pulling": 1, "minecraft:pull": 0.65}, "model": "aquilarpg:item/steel_long_warbow_pulling_1"},
+		{"predicate": {"minecraft:pulling": 1, "minecraft:pull": 0.9}, "model": "aquilarpg:item/steel_long_warbow_pulling_2"}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [-80, 260, -40],
+			"translation": [-0.25, -2.25, 0.25],
+			"scale": [1.5, 1.5, 1]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [9.5, -80, 140],
+			"translation": [0.25, -2.25, 3.75],
+			"scale": [1.5, 1.5, 1]
+		},
+		"firstperson_righthand": {
+			"rotation": [-80, 260, -40],
+			"translation": [-1, -2.25, 3.75],
+			"scale": [1.5, 1.5, 1]
+		},
+		"firstperson_lefthand": {
+			"rotation": [9.5, -80, 140],
+			"translation": [0.25, -2.25, 3.75],
+			"scale": [1.5, 1.5, 1]
+		},
+		"fixed": {
+			"translation": [2, -1.5, -2.25],
+			"scale": [2, 2, 1]
+		}
+	}
+}

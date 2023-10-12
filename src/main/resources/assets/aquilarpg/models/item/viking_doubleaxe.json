@@ -1,0 +1,38 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "item/handheld",
+	"textures": {
+		"layer0": "aquilarpg:item/weapon/melee/viking_doubleaxe"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [50, 90, 0],
+			"translation": [0.25, 9.75, 2],
+			"scale": [1.5, 1.5, 0.5]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [161.41, 84.53, 159.7],
+			"translation": [-0.25, 9, 2],
+			"scale": [1.5, 1.5, 0.5]
+		},
+		"firstperson_righthand": {
+			"rotation": [-91.02, -31.87, -29.98],
+			"translation": [-0.75, 5.75, 2],
+			"scale": [1.8, 1.8, 0.5]
+		},
+		"firstperson_lefthand": {
+			"rotation": [92.28, 39.99, -152.57],
+			"translation": [3, 5.75, 1.25],
+			"scale": [1.8, 1.8, 0.5]
+		},
+		"ground": {
+			"translation": [0, 4.5, 0],
+			"scale": [1, 1, 0.5]
+		},
+		"fixed": {
+			"rotation": [-8.25, 0.74, 90.11],
+			"translation": [0, 0.5, -2],
+			"scale": [3, 3, 1]
+		}
+	}
+}

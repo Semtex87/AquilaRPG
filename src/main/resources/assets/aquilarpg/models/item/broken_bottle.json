@@ -1,0 +1,33 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "item/handheld",
+	"textures": {
+		"layer0": "aquilarpg:item/weapon/melee/broken_bottle"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [-45.25, -90, 0],
+			"translation": [0, 4.25, 1.25],
+			"scale": [0.8, 0.8, 0.5]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [-45.25, 90, 0],
+			"translation": [0, 4, 1.75],
+			"scale": [0.8, 0.8, 0.5]
+		},
+		"firstperson_righthand": {
+			"rotation": [-45.25, -90, 0],
+			"translation": [0, 3.75, 2],
+			"scale": [0.8, 0.8, 0.5]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-45.25, 90, 0],
+			"translation": [0, 3.75, 2.25],
+			"scale": [0.8, 0.8, 0.5]
+		},
+		"ground": {
+			"translation": [0, 0.75, 0],
+			"scale": [0.8, 0.8, 1]
+		}
+	}
+}

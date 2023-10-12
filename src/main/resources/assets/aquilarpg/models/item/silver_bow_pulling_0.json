@@ -1,0 +1,6 @@
+{
+  "parent": "aquilarpg:item/silver_bow",
+  "textures": {
+    "layer0": "aquilarpg:item/weapon/range/silver_bow_pulling_0"
+  }
+}

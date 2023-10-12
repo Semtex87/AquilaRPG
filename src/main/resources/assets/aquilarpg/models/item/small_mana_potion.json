@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+   "layer0": "aquilarpg:item/mana/small_mana_potion"
+  }
+}

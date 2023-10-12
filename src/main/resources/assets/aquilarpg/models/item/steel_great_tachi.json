@@ -1,0 +1,47 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "item/handheld",
+	"textures": {
+		"layer0": "aquilarpg:item/weapon/melee/steel_great_tachi"
+	},
+	"overrides": [
+		{"predicate": {"minecraft:blocking": 1}, "model": "aquilarpg:item/steel_great_tachi_blocking"}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [-109.34, -89, -65],
+			"translation": [-0.25, 14, 2],
+			"scale": [1.8, 1.8, 0.5]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [29.16, 89, -74],
+			"translation": [-0.25, 13.5, 2],
+			"scale": [1.8, 1.8, 0.5]
+		},
+		"firstperson_righthand": {
+			"rotation": [-96, -52.51, -28.93],
+			"translation": [-1, 8.5, 0.25],
+			"scale": [1.8, 1.8, 0.5]
+		},
+		"firstperson_lefthand": {
+			"rotation": [90.07, 56.22, -160.13],
+			"translation": [-1.5, 12, 0],
+			"scale": [1.8, 1.8, 0.5]
+		},
+		"ground": {
+			"translation": [0, 4.5, 0],
+			"scale": [1, 1, 0.5]
+		},
+		"gui": {
+			"translation": [0.25, 0.25, 0]
+		},
+		"head": {
+			"translation": [0, -18, 6.25]
+		},
+		"fixed": {
+			"rotation": [-4, -5.75, 89.62],
+			"translation": [0, 0.5, -2],
+			"scale": [2.4, 2.4, 1]
+		}
+	}
+}

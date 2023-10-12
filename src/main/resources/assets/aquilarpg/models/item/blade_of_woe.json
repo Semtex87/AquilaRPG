@@ -1,0 +1,38 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "item/handheld",
+	"textures": {
+		"layer0": "aquilarpg:item/weapon/melee/blade_of_woe"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [-110, -90, -66],
+			"translation": [-0.25, 8.25, 0.75],
+			"scale": [1.4, 1.4, 0.5]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [161.41, 84.53, 159.7],
+			"translation": [-0.25, 8.5, 1.75],
+			"scale": [1.4, 1.4, 0.5]
+		},
+		"firstperson_righthand": {
+			"rotation": [-110, -90, -66],
+			"translation": [-0.25, 8.25, 0.75],
+			"scale": [1.4, 1.4, 0.5]
+		},
+		"firstperson_lefthand": {
+			"rotation": [161.41, 84.53, 159.7],
+			"translation": [-0.25, 8.5, 1.75],
+			"scale": [1.4, 1.4, 0.5]
+		},
+		"ground": {
+			"translation": [0, 4.5, 0],
+			"scale": [1, 1, 0.5]
+		},
+		"fixed": {
+			"rotation": [0, 0, 90],
+			"translation": [0, 0.5, -2],
+			"scale": [2, 2, 1]
+		}
+	}
+}

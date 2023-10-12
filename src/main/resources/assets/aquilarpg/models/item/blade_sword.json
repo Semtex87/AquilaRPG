@@ -1,0 +1,38 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "item/handheld",
+	"textures": {
+		"layer0": "aquilarpg:item/weapon/melee/blade_sword"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [-110, 90, 159],
+			"translation": [-0.25, 9.25, 2],
+			"scale": [1.6, 1.6, 0.5]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [160, 84, 159],
+			"translation": [-0.25, 9.25, 2],
+			"scale": [1.6, 1.6, 0.5]
+		},
+		"firstperson_righthand": {
+			"rotation": [-110, 90, 159],
+			"translation": [-0.25, 9.25, 2],
+			"scale": [1.6, 1.6, 0.5]
+		},
+		"firstperson_lefthand": {
+			"rotation": [160, 84, 159],
+			"translation": [-0.25, 9.25, 2],
+			"scale": [1.6, 1.6, 0.5]
+		},
+		"ground": {
+			"translation": [0, 4.5, 0],
+			"scale": [1, 1, 0.5]
+		},
+		"fixed": {
+			"rotation": [-2, -2, 90],
+			"translation": [0, 0.5, -2],
+			"scale": [2, 2, 1]
+		}
+	}
+}

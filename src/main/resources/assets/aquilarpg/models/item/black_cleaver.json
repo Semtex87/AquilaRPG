@@ -1,0 +1,38 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "item/handheld",
+	"textures": {
+		"layer0": "aquilarpg:item/weapon/melee/black_cleaver"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [110, -90, 157],
+			"translation": [0.25, 11.75, 1.5],
+			"scale": [1.6, 1.6, 0.5]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [160, 90, 158],
+			"translation": [-0.25, 12.25, 3],
+			"scale": [1.6, 1.6, 0.5]
+		},
+		"firstperson_righthand": {
+			"rotation": [-91.02, -31.87, -29.98],
+			"translation": [-1.75, 5.75, 2],
+			"scale": [1.6, 1.6, 0.5]
+		},
+		"firstperson_lefthand": {
+			"rotation": [88.89, 39.89, -147.37],
+			"translation": [-0.25, 5.75, 2],
+			"scale": [1.6, 1.6, 0.5]
+		},
+		"ground": {
+			"translation": [0, 4.5, 0],
+			"scale": [1, 1, 0.5]
+		},
+		"fixed": {
+			"rotation": [-2, -2, 90],
+			"translation": [0, 0.5, -2],
+			"scale": [3, 3, 1]
+		}
+	}
+}

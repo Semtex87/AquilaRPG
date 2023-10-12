@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "aquilarpg:item/material/metal/filled_crucible/crucible_stahlrim_adamant_ebony_mix"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "aquilarpg:item/demonic_embrace",
+  "textures": {
+    "layer0": "aquilarpg:item/weapon/range/demonic_embrace_pulling_2"
+  }
+}

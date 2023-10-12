@@ -1,0 +1,38 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "item/handheld",
+	"textures": {
+		"layer0": "aquilarpg:item/weapon/melee/bone_axe"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [119.66, -84.53, 159.7],
+			"translation": [-0.25, 3, 2],
+			"scale": [1, 1, 0.5]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [161.41, 84.53, 159.7],
+			"translation": [-0.25, 2.75, 2],
+			"scale": [1, 1, 0.5]
+		},
+		"firstperson_righthand": {
+			"rotation": [119.66, -84.53, 159.7],
+			"translation": [-0.25, 3, 2],
+			"scale": [1, 1, 0.5]
+		},
+		"firstperson_lefthand": {
+			"rotation": [161.41, 84.53, 159.7],
+			"translation": [-0.25, 2.75, 2],
+			"scale": [1, 1, 0.5]
+		},
+		"ground": {
+			"translation": [0, 4.5, 0],
+			"scale": [1, 1, 0.5]
+		},
+		"fixed": {
+			"rotation": [-2, 178, 90],
+			"translation": [0, 0.5, -2],
+			"scale": [2, 2, 1]
+		}
+	}
+}

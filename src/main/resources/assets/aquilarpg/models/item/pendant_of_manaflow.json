@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "aquilarpg:item/jewellery/amulet/pendant_of_manaflow"
+  }
+}

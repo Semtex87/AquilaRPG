@@ -1,0 +1,41 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "item/handheld",
+	"textures": {
+		"layer0": "aquilarpg:item/weapon/melee/steel_chakram"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [155.91, 84.53, 159.7],
+			"translation": [-0.25, 2.75, 2],
+			"scale": [0.8, 0.8, 0.5]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [-109.34, 84.53, 159.7],
+			"translation": [-0.25, 2.5, 2],
+			"scale": [0.8, 0.8, 0.5]
+		},
+		"firstperson_righthand": {
+			"rotation": [139.91, 84.53, 159.7],
+			"translation": [1, 3, 2.5],
+			"scale": [0.8, 0.8, 0.5]
+		},
+		"firstperson_lefthand": {
+			"rotation": [146.53, -74.12, -147.26],
+			"translation": [0, 3.5, 3.75],
+			"scale": [0.8, 0.8, 0.5]
+		},
+		"ground": {
+			"translation": [0, 4.5, 0],
+			"scale": [0.8, 0.8, 0.5]
+		},
+		"gui": {
+			"rotation": [0, 0, -90],
+			"scale": [1.4, 1.4, 1.4]
+		},
+		"fixed": {
+			"translation": [0, 0.25, 0.5],
+			"scale": [1.6, 1.6, 1]
+		}
+	}
+}

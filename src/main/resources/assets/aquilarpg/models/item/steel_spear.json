@@ -1,0 +1,44 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "item/handheld",
+	"textures": {
+		"layer0": "aquilarpg:item/weapon/melee/steel_spear"
+	},
+	"overrides": [
+		{"predicate": {"throwing": 1}, "model": "aquilarpg:item/steel_spear_throwing"}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [45, 90, 0],
+			"translation": [-0.25, 2.25, 2],
+			"scale": [1.8, 1.8, 0.8]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [-45, 90, 0],
+			"translation": [-0.25, 2.25, 2],
+			"scale": [1.8, 1.8, 0.8]
+		},
+		"firstperson_righthand": {
+			"rotation": [175, 90, 150],
+			"translation": [1, 3, 3],
+			"scale": [1.8, 1.8, 0.5]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-125, 90, 0],
+			"translation": [0, 3.5, 3.75],
+			"scale": [1.8, 1.8, 0.5]
+		},
+		"ground": {
+			"translation": [0, 4.5, 0],
+			"scale": [1, 1, 0.5]
+		},
+		"gui": {
+			"translation": [0.25, 0.5, 0]
+		},
+		"fixed": {
+			"rotation": [-2, 0, 0],
+			"translation": [0, 0.25, -1.25],
+			"scale": [2.5, 2.5, 1]
+		}
+	}
+}

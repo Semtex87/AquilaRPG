@@ -1,0 +1,6 @@
+{
+  "parent": "aquilarpg:item/crimson_crossbow",
+  "textures": {
+    "layer0": "aquilarpg:item/weapon/range/crimson_crossbow_pulling_2"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "aquilarpg:item/windforce",
+  "textures": {
+    "layer0": "aquilarpg:item/weapon/range/windforce_pulling_0"
+  }
+}

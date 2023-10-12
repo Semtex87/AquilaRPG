@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "aquilarpg:advancements/fire_orb"
+  }
+}

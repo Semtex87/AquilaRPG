@@ -1,0 +1,12 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "item/handheld",
+	"textures": {
+		"layer0": "aquilarpg:item/jewellery/etc/bronze_quiver"
+	},
+	"display": {
+		"ground": {
+			"translation": [0, 4, 0]
+		}
+	}
+}

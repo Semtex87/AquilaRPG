@@ -1,0 +1,42 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "item/handheld",
+	"textures": {
+		"layer0": "aquilarpg:item/weapon/melee/shotel"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [-41, -90, 0],
+			"translation": [-0.25, 11.75, 2.5],
+			"scale": [1.5, 1.5, 0.5]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [25, 90, -68],
+			"translation": [-0.25, 13, 2],
+			"scale": [1.5, 1.5, 0.5]
+		},
+		"firstperson_righthand": {
+			"rotation": [-63.25, -90, 0],
+			"translation": [-0.25, 11.75, -0.25],
+			"scale": [1.5, 1.5, 0.5]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-83, 90, 0],
+			"translation": [-0.25, 12.25, -2.25],
+			"scale": [1.5, 1.5, 0.5]
+		},
+		"ground": {
+			"translation": [0, 4.5, 0],
+			"scale": [1, 1, 0.5]
+		},
+		"gui": {
+			"translation": [4, 4.25, 0],
+			"scale": [1.5, 1.5, 1]
+		},
+		"fixed": {
+			"rotation": [-4.5, 1, 90.08],
+			"translation": [-5.25, 6, -2],
+			"scale": [2.5, 2.5, 1]
+		}
+	}
+}

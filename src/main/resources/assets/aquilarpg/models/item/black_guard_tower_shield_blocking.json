@@ -1,0 +1,112 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"textures": {
+		"0": "aquilarpg:item/shield/black_guard_tower_shield",
+		"1": "aquilarpg:item/shield/black_guard_tower_shield_back",
+		"particle": "aquilarpg:item/shield/black_guard_tower_shield"
+	},
+	"elements": [
+		{
+			"from": [3, 0, 0.5],
+			"to": [10.5, 29, 1.5],
+			"faces": {
+				"north": {"uv": [6, 0.75, 9.75, 15.25], "texture": "#1"},
+				"east": {"uv": [6, 0.75, 9.75, 15.25], "texture": "#0"},
+				"south": {"uv": [6, 0.75, 9.75, 15.25], "texture": "#0"},
+				"west": {"uv": [6, 0.75, 9.75, 15.25], "texture": "#0"},
+				"up": {"uv": [6, 0.75, 9.75, 1.25], "texture": "#0"},
+				"down": {"uv": [6, 14.75, 9.75, 15.25], "texture": "#0"}
+			}
+		},
+		{
+			"from": [0.37213, 0.5, -0.37081],
+			"to": [3.37213, 28.5, 0.62919],
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [0.99713, 15.975, 0.12919]},
+			"faces": {
+				"north": {"uv": [9.75, 1, 11.25, 15], "texture": "#1"},
+				"east": {"uv": [4.5, 1, 6, 15], "texture": "#0"},
+				"south": {"uv": [4.5, 1, 6, 15], "texture": "#0"},
+				"west": {"uv": [4.5, 1, 6, 15], "texture": "#0"},
+				"up": {"uv": [4.5, 1, 6, 1.5], "texture": "#0"},
+				"down": {"uv": [4.5, 14.5, 6, 15], "texture": "#0"}
+			}
+		},
+		{
+			"from": [-1.02321, 1.5, -0.897],
+			"to": [0.47679, 27.9, 0.103],
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [-0.27321, 15.825, -0.397]},
+			"faces": {
+				"north": {"uv": [11.25, 1.25, 12, 14.75], "texture": "#1"},
+				"east": {"uv": [3.75, 1.25, 4.5, 14.75], "texture": "#0"},
+				"south": {"uv": [3.75, 1.25, 4.5, 14.75], "texture": "#0"},
+				"west": {"uv": [11.75, 1.25, 12, 14.7], "texture": "#0"},
+				"up": {"uv": [3.75, 1.25, 4.5, 1.75], "texture": "#0"},
+				"down": {"uv": [3.75, 14.25, 4.5, 14.75], "texture": "#0"}
+			}
+		},
+		{
+			"from": [13.12787, 1.5, -0.77081],
+			"to": [14.62787, 28, 0.22919],
+			"rotation": {"angle": 22.5, "axis": "y", "origin": [13.50287, 15.975, 0.12919]},
+			"faces": {
+				"north": {"uv": [3.75, 1.25, 4.5, 14.75], "texture": "#1"},
+				"east": {"uv": [11.75, 1.25, 12, 14.75], "texture": "#0"},
+				"south": {"uv": [11.25, 1.25, 12, 14.75], "texture": "#0"},
+				"west": {"uv": [11.25, 1.25, 12, 14.75], "texture": "#0"},
+				"up": {"uv": [11.25, 1.25, 12, 1.75], "texture": "#0"},
+				"down": {"uv": [11.25, 14.25, 12, 14.75], "texture": "#0"}
+			}
+		},
+		{
+			"from": [10.12787, 0.5, -0.77081],
+			"to": [13.12787, 28.5, 0.22919],
+			"rotation": {"angle": 22.5, "axis": "y", "origin": [13.50287, 15.975, 0.12919]},
+			"faces": {
+				"north": {"uv": [4.5, 1, 6, 15], "texture": "#1"},
+				"east": {"uv": [9.75, 1, 11.25, 15], "texture": "#0"},
+				"south": {"uv": [9.75, 1, 11.25, 15], "texture": "#0"},
+				"west": {"uv": [9.75, 1, 11.25, 15], "texture": "#0"},
+				"up": {"uv": [9.75, 1, 11.25, 1.5], "texture": "#0"},
+				"down": {"uv": [9.75, 14.5, 11.25, 15], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [45, 135, 0],
+			"translation": [3.75, 0, -5],
+			"scale": [0.8, 0.8, 0.5]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [45, 135, 0],
+			"translation": [5, -1.25, -4.5],
+			"scale": [0.8, 0.8, 0.5]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, -180, 0],
+			"translation": [-7, -12, -2]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, -180, 0],
+			"translation": [-4, -12, -2]
+		},
+		"ground": {
+			"translation": [0, 2.75, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"gui": {
+			"translation": [1, -3, 0],
+			"scale": [0.5, 0.5, 1]
+		},
+		"head": {
+			"rotation": [0, 0, -19.75],
+			"translation": [-3.5, -26, 15.25]
+		},
+		"fixed": {
+			"rotation": [-178.5, 1.5, -180],
+			"translation": [-2.25, -20.25, -10],
+			"scale": [1.5, 1.5, 1]
+		}
+	}
+}

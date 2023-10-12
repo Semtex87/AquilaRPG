@@ -1,0 +1,6 @@
+{
+  "parent": "aquilarpg:item/firestaff",
+  "textures": {
+    "layer0": "aquilarpg:item/weapon/magic/firestaff_pulling_1"
+  }
+}

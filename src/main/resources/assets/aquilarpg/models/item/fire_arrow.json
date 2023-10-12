@@ -1,0 +1,12 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "item/handheld",
+	"textures": {
+		"layer0": "aquilarpg:item/weapon/projectile/fire_arrow"
+	},
+	"display": {
+		"gui": {
+			"translation": [-0.5, 0.5, 0]
+		}
+	}
+}

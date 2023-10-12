@@ -1,0 +1,17 @@
+{
+  "loader": "forge:separate-perspective",
+  "base": {
+    "parent": "aquilarpg:item/spellbook_3d"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "aquilarpg:item/tome_of_defense_2d"
+    },
+    "ground": {
+      "parent": "aquilarpg:item/tome_of_defense_2d"
+    },
+    "fixed": {
+      "parent": "aquilarpg:item/tome_of_defense_2d"
+    }
+  }
+}

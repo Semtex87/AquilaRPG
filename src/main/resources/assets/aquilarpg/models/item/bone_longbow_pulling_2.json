@@ -1,0 +1,6 @@
+{
+  "parent": "aquilarpg:item/bone_longbow",
+  "textures": {
+    "layer0": "aquilarpg:item/weapon/range/bone_longbow_pulling_2"
+  }
+}

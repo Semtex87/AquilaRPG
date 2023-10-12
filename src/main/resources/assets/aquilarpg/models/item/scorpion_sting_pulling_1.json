@@ -1,0 +1,6 @@
+{
+  "parent": "aquilarpg:item/scorpion_sting",
+  "textures": {
+    "layer0": "aquilarpg:item/weapon/range/scorpion_sting_pulling_1"
+  }
+}

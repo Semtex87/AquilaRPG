@@ -1,0 +1,6 @@
+{
+  "parent": "aquilarpg:item/daedric_bow",
+  "textures": {
+    "layer0": "aquilarpg:item/weapon/range/daedric_bow_pulling_0"
+  }
+}

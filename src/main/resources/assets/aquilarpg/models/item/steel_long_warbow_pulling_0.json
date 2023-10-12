@@ -1,0 +1,6 @@
+{
+  "parent": "aquilarpg:item/steel_long_warbow",
+  "textures": {
+    "layer0": "aquilarpg:item/weapon/range/steel_long_warbow_pulling_0"
+  }
+}

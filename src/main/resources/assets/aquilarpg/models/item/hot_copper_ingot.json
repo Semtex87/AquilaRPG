@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "aquilarpg:item/material/metal/ingot/hot/hot_copper_ingot"
+  }
+}

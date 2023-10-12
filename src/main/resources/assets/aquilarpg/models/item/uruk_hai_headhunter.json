@@ -1,0 +1,41 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "item/handheld",
+	"textures": {
+		"layer0": "aquilarpg:item/weapon/melee/uruk_hai_headhunter"
+	},
+	"overrides": [
+		{"predicate": {"minecraft:blocking": 1}, "model": "aquilarpg:item/uruk_hai_headhunter_blocking"}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [-109.34, -92, -70],
+			"translation": [-0.25, 13.5, 3.75],
+			"scale": [2, 2, 0.5]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [161.41, 84.53, 159.7],
+			"translation": [-0.25, 13, 4],
+			"scale": [2, 2, 0.5]
+		},
+		"firstperson_righthand": {
+			"rotation": [-88.93, -51.12, -49.89],
+			"translation": [-3.25, 7.5, 2.75],
+			"scale": [2, 2, 0.5]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-95.73, 46.12, 30.41],
+			"translation": [-11, 5.75, 2],
+			"scale": [2, 1, 0.5]
+		},
+		"ground": {
+			"translation": [0, 4.5, 0],
+			"scale": [1, 1, 0.5]
+		},
+		"fixed": {
+			"rotation": [-3.75, -4.75, 89.69],
+			"translation": [0, 0.5, -2],
+			"scale": [2.5, 2.5, 1]
+		}
+	}
+}

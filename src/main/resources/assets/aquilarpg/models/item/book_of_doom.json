@@ -1,0 +1,17 @@
+{
+  "loader": "forge:separate-perspective",
+  "base": {
+    "parent": "aquilarpg:item/spellbook_3d"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "aquilarpg:item/book_of_doom_2d"
+    },
+    "ground": {
+      "parent": "aquilarpg:item/book_of_doom_2d"
+    },
+    "fixed": {
+      "parent": "aquilarpg:item/book_of_doom_2d"
+    }
+  }
+}

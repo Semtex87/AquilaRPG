@@ -1,0 +1,6 @@
+{
+  "parent": "aquilarpg:item/stahlrim_bow",
+  "textures": {
+    "layer0": "aquilarpg:item/weapon/range/stahlrim_bow_pulling_2"
+  }
+}

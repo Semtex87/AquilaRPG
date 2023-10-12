@@ -1,0 +1,6 @@
+{
+  "parent": "aquilarpg:item/daedric_crossbow",
+  "textures": {
+    "layer0": "aquilarpg:item/weapon/range/daedric_crossbow_pulling_1"
+  }
+}

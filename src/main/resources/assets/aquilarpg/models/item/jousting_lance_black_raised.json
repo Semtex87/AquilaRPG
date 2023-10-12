@@ -1,0 +1,36 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "item/handheld",
+	"textures": {
+		"layer0": "aquilarpg:item/weapon/melee/jousting_lance_black"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [-20, -90, 0],
+			"translation": [0, 20.25, 11.5],
+			"scale": [3, 3, 0.5]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [-27.75, 90, 0],
+			"translation": [0, 21.5, 8.5],
+			"scale": [3, 3, 0.5]
+		},
+		"firstperson_righthand": {
+			"rotation": [70, -90, 129.25],
+			"translation": [0, 13.25, 2],
+			"scale": [2, 2, 0.5]
+		},
+		"firstperson_lefthand": {
+			"rotation": [34, -90, 0],
+			"translation": [0, 13.25, 2],
+			"scale": [2, 2, 0.5]
+		},
+		"ground": {
+			"translation": [0, 4.75, 0]
+		},
+		"fixed": {
+			"translation": [0, 0, -2.5],
+			"scale": [2.5, 2.5, 1]
+		}
+	}
+}
