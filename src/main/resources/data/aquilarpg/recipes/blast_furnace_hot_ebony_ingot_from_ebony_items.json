@@ -3,6 +3,9 @@
   "group": "ebony_ingot",
   "ingredient": [
     {
+      "item": "aquilarpg:raw_ebony"
+    },
+    {
       "item": "aquilarpg:ebony_ingot"
     }
   ],

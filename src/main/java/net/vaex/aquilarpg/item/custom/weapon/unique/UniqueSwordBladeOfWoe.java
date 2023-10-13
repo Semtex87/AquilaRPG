@@ -54,7 +54,9 @@ public class UniqueSwordBladeOfWoe extends RPGSwordWeapon {
 
     @Override
     public void appendHoverText(ItemStack itemStack, @org.jetbrains.annotations.Nullable Level level, List<Component> pTooltip, TooltipFlag pFlag) {
-        int var;
+        int damageValue = itemStack.getDamageValue();
+        int maxDurability = itemStack.getMaxDamage();
+        int currentDamage = maxDurability - damageValue;
         if (Screen.hasShiftDown()) {
             pTooltip.add(new TextComponent("also known as the Night Mother's Kiss, is a ritualistic dagger associated with Sithis and the Dark Brotherhood").withStyle(ChatFormatting.ITALIC));
             pTooltip.add(new TextComponent("It is said that anyone slain with the dagger has their soul sent straight to the Void").withStyle(ChatFormatting.ITALIC));
@@ -71,15 +73,14 @@ public class UniqueSwordBladeOfWoe extends RPGSwordWeapon {
         if (!itemStack.isDamaged()) {
             pTooltip.add(new TextComponent(durability + " / " + durability).withStyle(ChatFormatting.GREEN));
         } else {
-            var = Integer.parseInt(itemStack.getTag().getString("damage"));
-            if (var >= (durability * 90) / 100) {
-                pTooltip.add(new TextComponent(var + " / " + durability).withStyle(ChatFormatting.GREEN));
+            if (currentDamage >= (maxDurability * 90) / 100) {
+                pTooltip.add(new TextComponent(currentDamage + " / " + maxDurability).withStyle(ChatFormatting.GREEN));
             }
-            if (var < (durability * 90) / 100 && var >= (durability * 20) / 100) {
-                pTooltip.add(new TextComponent(var + " / " + durability).withStyle(ChatFormatting.YELLOW));
+            if (currentDamage < (maxDurability * 90) / 100 && currentDamage >= (maxDurability * 20) / 100) {
+                pTooltip.add(new TextComponent(currentDamage + " / " + maxDurability).withStyle(ChatFormatting.YELLOW));
             }
-            if (var <= (durability * 20) / 100) {
-                pTooltip.add(new TextComponent(var + " / " + durability).withStyle(ChatFormatting.RED));
+            if (currentDamage <= (maxDurability * 20) / 100) {
+                pTooltip.add(new TextComponent(currentDamage + " / " + maxDurability).withStyle(ChatFormatting.RED));
             }
         }
         pTooltip.add(new TextComponent("Material: " + materialType + " ").withStyle(ChatFormatting.BLUE));

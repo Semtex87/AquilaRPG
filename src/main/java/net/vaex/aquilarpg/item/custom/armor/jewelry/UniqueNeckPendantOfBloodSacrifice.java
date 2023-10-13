@@ -13,7 +13,10 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.vaex.aquilarpg.capabilities.mana.ManaProvider;
 import net.vaex.aquilarpg.item.RPGMaterialTiers;
+import net.vaex.aquilarpg.network.ManaSyncS2CPacket;
+import net.vaex.aquilarpg.network.NetworkHandler;
 import net.vaex.aquilarpg.util.RPGCreativeModeTab;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -29,6 +32,7 @@ public class UniqueNeckPendantOfBloodSacrifice extends Item implements ICurioIte
     final int durability;
     final String materialType;
     boolean isFoil;
+    int ticks;
     public UniqueNeckPendantOfBloodSacrifice(RPGMaterialTiers pTier, Properties pProperties) {
         super(pProperties.tab(RPGCreativeModeTab.RPG_ARMOR));
         this.durability = pTier.getUses();
@@ -41,7 +45,11 @@ public class UniqueNeckPendantOfBloodSacrifice extends Item implements ICurioIte
         if(!player.level.isClientSide()) {
             boolean hasPlayerFireResistance =
                     !Objects.equals(player.hasEffect(MobEffects.REGENERATION), null);
-                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100,0,false,false,false));
+            ticks++;
+            if(ticks == 100) {
+                player.heal(2);
+                ticks = 0;
+            }
                 if(new Random().nextFloat() > 0.6f) {
                     stack.hurtAndBreak(1, player, p -> CuriosApi.getCuriosHelper().onBrokenCurio(
                             SlotTypePreset.NECKLACE.getIdentifier(), index, p));
@@ -54,7 +62,9 @@ public class UniqueNeckPendantOfBloodSacrifice extends Item implements ICurioIte
 
     @Override
     public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> pTooltip, TooltipFlag pFlag) {
-        int var;
+        int damageValue = itemStack.getDamageValue();
+        int maxDurability = itemStack.getMaxDamage();
+        int currentDamage = maxDurability - damageValue;
         if (Screen.hasShiftDown()) {
             pTooltip.add(new TextComponent("This old Necklace pulsates like a Heart as you hold it in your Hand").withStyle(ChatFormatting.ITALIC));
             } else {
@@ -63,15 +73,14 @@ public class UniqueNeckPendantOfBloodSacrifice extends Item implements ICurioIte
         if (!itemStack.isDamaged()) {
             pTooltip.add(new TextComponent(durability + " / " + durability).withStyle(ChatFormatting.GREEN));
         } else {
-            var = Integer.parseInt(itemStack.getTag().getString("damage"));
-            if (var >= (durability * 90) / 100) {
-                pTooltip.add(new TextComponent(var + " / " + durability).withStyle(ChatFormatting.GREEN));
+            if (currentDamage >= (maxDurability * 90) / 100) {
+                pTooltip.add(new TextComponent(currentDamage + " / " + maxDurability).withStyle(ChatFormatting.GREEN));
             }
-            if (var < (durability * 90) / 100 && var >= (durability * 20) / 100) {
-                pTooltip.add(new TextComponent(var + " / " + durability).withStyle(ChatFormatting.YELLOW));
+            if (currentDamage < (maxDurability * 90) / 100 && currentDamage >= (maxDurability * 20) / 100) {
+                pTooltip.add(new TextComponent(currentDamage + " / " + maxDurability).withStyle(ChatFormatting.YELLOW));
             }
-            if (var <= (durability * 20) / 100) {
-                pTooltip.add(new TextComponent(var + " / " + durability).withStyle(ChatFormatting.RED));
+            if (currentDamage <= (maxDurability * 20) / 100) {
+                pTooltip.add(new TextComponent(currentDamage + " / " + maxDurability).withStyle(ChatFormatting.RED));
             }
         }
         pTooltip.add(new TextComponent("Material: " + materialType + " ").withStyle(ChatFormatting.BLUE));

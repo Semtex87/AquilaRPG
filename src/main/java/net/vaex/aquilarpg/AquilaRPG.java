@@ -159,11 +159,11 @@ public class AquilaRPG {
         CuriosRendererRegistry.register(RPGItems.ROUND_SHIELD_TWISTED.get(), RenderShieldOnBack::new);
 
         //BackWeapons x Slot
-        //CuriosRendererRegistry.register(RPGItems.DAEDRIC_BOW.get(), RenderShieldOnBack::new);                    //TODO TESTING
-        //CuriosRendererRegistry.register(RPGItems.DAEDRIC_CROSSBOW.get(), RenderShieldOnBack::new);               //TODO TESTING
+        CuriosRendererRegistry.register(RPGItems.DAEDRIC_BOW.get(), RenderShieldOnBack::new);                    //TODO TESTING
+        CuriosRendererRegistry.register(RPGItems.DAEDRIC_CROSSBOW.get(), RenderShieldOnBack::new);               //TODO TESTING
 
         //SideWeapons BeltSlot
-        //CuriosRendererRegistry.register(RPGItems.BLADE_SWORD.get(), RenderShieldOnBack::new);                    //TODO TESTING
+        CuriosRendererRegistry.register(RPGItems.BLADE_SWORD.get(), RenderShieldOnBack::new);                    //TODO TESTING
     }
 
     private void blockRenderer() {

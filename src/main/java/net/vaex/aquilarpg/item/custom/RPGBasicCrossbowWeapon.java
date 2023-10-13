@@ -160,11 +160,6 @@ public class RPGBasicCrossbowWeapon extends CrossbowItem {
     }
     private static void shootProjectile(Level pLevel, LivingEntity pShooter, InteractionHand pHand, ItemStack pCrossbowStack, ItemStack pAmmoStack, float pSoundPitch, boolean pIsCreativeMode, float pVelocity, float pInaccuracy, float pProjectileAngle) {
         if (!pLevel.isClientSide) {
-            int maxDurability = pCrossbowStack.getMaxDamage();
-            int currentDamage = (maxDurability - 1) - pCrossbowStack.getDamageValue();
-            String itmdamage = "" + currentDamage;
-            if (!pCrossbowStack.hasTag()) pCrossbowStack.setTag(new CompoundTag());
-            pCrossbowStack.getTag().putString("damage", itmdamage);
             boolean flag = pAmmoStack.is(Items.FIREWORK_ROCKET);
             Projectile projectile;
             if (flag) {
@@ -227,19 +222,20 @@ public class RPGBasicCrossbowWeapon extends CrossbowItem {
 
     @Override
     public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> pTooltip, TooltipFlag pFlag) {
-        int var;
+        int damageValue = itemStack.getDamageValue();
+        int maxDurability = itemStack.getMaxDamage();
+        int currentDamage = maxDurability - damageValue;
         if (!itemStack.isDamaged()) {
             pTooltip.add(new TextComponent("Durability: " + durability + " / " + durability).withStyle(ChatFormatting.GREEN));
         } else {
-            var = Integer.parseInt(itemStack.getTag().getString("damage"));
-            if (var >= (durability * 90) / 100) {
-                pTooltip.add(new TextComponent("Durability: " + var + " / " + durability).withStyle(ChatFormatting.GREEN));
+            if (currentDamage >= (maxDurability * 90) / 100) {
+                pTooltip.add(new TextComponent(currentDamage + " / " + maxDurability).withStyle(ChatFormatting.GREEN));
             }
-            if (var < (durability * 90) / 100 && var >= (durability * 20) / 100) {
-                pTooltip.add(new TextComponent("Durability: " + var + " / " + durability).withStyle(ChatFormatting.YELLOW));
+            if (currentDamage < (maxDurability * 90) / 100 && currentDamage >= (maxDurability * 20) / 100) {
+                pTooltip.add(new TextComponent(currentDamage + " / " + maxDurability).withStyle(ChatFormatting.YELLOW));
             }
-            if (var <= (durability * 20) / 100) {
-                pTooltip.add(new TextComponent("Durability: " + var + " / " + durability).withStyle(ChatFormatting.RED));
+            if (currentDamage <= (maxDurability * 20) / 100) {
+                pTooltip.add(new TextComponent(currentDamage + " / " + maxDurability).withStyle(ChatFormatting.RED));
             }
         }
         pTooltip.add(new TextComponent("Material: " + materialType + " ").withStyle(ChatFormatting.BLUE));

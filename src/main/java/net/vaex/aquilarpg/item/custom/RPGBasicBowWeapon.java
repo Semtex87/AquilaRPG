@@ -54,11 +54,6 @@ public class RPGBasicBowWeapon extends BowItem {
             Player player = (Player)pEntityLiving;
             boolean flag = player.getAbilities().instabuild || EnchantmentHelper.getItemEnchantmentLevel(Enchantments.INFINITY_ARROWS, pStack) > 0;
             ItemStack itemstack = player.getProjectile(pStack);
-            int maxDurability = pStack.getMaxDamage();
-            int currentDamage = (maxDurability - 1) - pStack.getDamageValue();
-            String damage = "" + currentDamage;
-            if (!pStack.hasTag()) pStack.setTag(new CompoundTag());
-            pStack.getTag().putString("damage", damage);
             int i = this.getUseDuration(pStack) - pTimeLeft;
             i = net.minecraftforge.event.ForgeEventFactory.onArrowLoose(pStack, pLevel, player, i, !itemstack.isEmpty() || flag);
             if (i < 0) return;
@@ -136,19 +131,20 @@ public class RPGBasicBowWeapon extends BowItem {
 
     @Override
     public void appendHoverText(ItemStack itemStack, @Nullable Level level,  List<Component> pTooltip,  TooltipFlag pFlag) {
-        int var;
+        int damageValue = itemStack.getDamageValue();
+        int maxDurability = itemStack.getMaxDamage();
+        int currentDamage = maxDurability - damageValue;
         if (!itemStack.isDamaged()) {
             pTooltip.add(new TextComponent("Durability: " + durability + " / " + durability).withStyle(ChatFormatting.GREEN));
         } else {
-            var = Integer.parseInt(itemStack.getTag().getString("damage"));
-            if (var >= (durability*90)/100){
-                pTooltip.add(new TextComponent( "Durability: " + var + " / " + durability).withStyle(ChatFormatting.GREEN));
+            if (currentDamage >= (maxDurability * 90) / 100) {
+                pTooltip.add(new TextComponent(currentDamage + " / " + maxDurability).withStyle(ChatFormatting.GREEN));
             }
-            if (var < (durability*90)/100 && var >= (durability*20)/100){
-                pTooltip.add(new TextComponent("Durability: " + var + " / " + durability).withStyle(ChatFormatting.YELLOW));
+            if (currentDamage < (maxDurability * 90) / 100 && currentDamage >= (maxDurability * 20) / 100) {
+                pTooltip.add(new TextComponent(currentDamage + " / " + maxDurability).withStyle(ChatFormatting.YELLOW));
             }
-            if (var <= (durability*20)/100) {
-                pTooltip.add(new TextComponent("Durability: " + var + " / " + durability).withStyle(ChatFormatting.RED));
+            if (currentDamage <= (maxDurability * 20) / 100) {
+                pTooltip.add(new TextComponent(currentDamage + " / " + maxDurability).withStyle(ChatFormatting.RED));
             }
         }
         pTooltip.add(new TextComponent("Material: " + materialType + " ").withStyle(ChatFormatting.BLUE));

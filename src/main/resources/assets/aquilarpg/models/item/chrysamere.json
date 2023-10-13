@@ -5,7 +5,7 @@
 		"layer0": "aquilarpg:item/weapon/melee/chrysamere"
 	},
 	"overrides": [
-		{"predicate": {"minecraft:blocking": 1}, "model": "aquilarpg:item/bronze_claymore_blocking"}
+		{"predicate": {"minecraft:blocking": 1}, "model": "aquilarpg:item/chrysamere_blocking"}
 	],
 	"display": {
 		"thirdperson_righthand": {
