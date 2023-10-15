@@ -8,6 +8,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.vaex.aquilarpg.AquilaRPG;
 import net.vaex.aquilarpg.item.custom.*;
+import net.vaex.aquilarpg.item.custom.armor.cape.BlueCapeWithStarsItem;
+import net.vaex.aquilarpg.item.custom.armor.head.*;
 import net.vaex.aquilarpg.item.custom.armor.jewelry.UniqueNeckPendantOfBloodSacrifice;
 import net.vaex.aquilarpg.item.custom.weapon.*;
 import net.vaex.aquilarpg.item.custom.weapon.gun.BlowGun;
@@ -27,6 +29,8 @@ import net.vaex.aquilarpg.item.custom.weapon.unique.*;
 import net.vaex.aquilarpg.util.RPGCreativeModeTab;
 import net.vaex.aquilarpg.util.RPGRarity;
 import top.theillusivec4.curios.api.SlotTypePreset;
+
+import static net.minecraft.world.item.ArmorMaterials.IRON;
 
 public class RPGItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, AquilaRPG.MOD_ID);
@@ -221,7 +225,62 @@ public class RPGItems {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //INGREDIENT
     public static final RegistryObject<Item> DISTILLED_WATER = ITEMS.register("distilled_water",
-        () -> new Item(new Item.Properties().rarity(RPGRarity.RPG_COMMON)));
+            () -> new RPGIngredientDiscovered(new Item.Properties().rarity(RPGRarity.RPG_COMMON), 1.0F, RPGIngedientTiers.Tier1,"","","",""));
+    //BASIC ALCHEMIC INGREDIENT
+    public static final RegistryObject<Item> ASH_FROM_A_FOREST_FIRE = ITEMS.register("ash_from_a_forest_fire",
+            () -> new RPGIngredientDiscovered(new Item.Properties().rarity(RPGRarity.RPG_UNCOMMON), 1F, RPGIngedientTiers.Tier2,"blindness","restore_heal","",""));
+    public static final RegistryObject<Item> CAVE_SPIDER_POISON = ITEMS.register("cave_spider_poison",
+            () -> new RPGIngredientDiscovered(new Item.Properties().rarity(RPGRarity.RPG_COMMON), 0.6F, RPGIngedientTiers.Tier1,"poison","","",""));
+    public static final RegistryObject<Item> BEHOLDERS_EYE = ITEMS.register("beholders_eye",
+            () -> new RPGIngredientDiscovered(new Item.Properties().rarity(RPGRarity.RPG_EPIC), 1.2F, RPGIngedientTiers.Tier4,"blindness","harm","poison","infravision"));
+    public static final RegistryObject<Item> AQUA_REGIA = ITEMS.register("aqua_regia",
+            () -> new RPGIngredientDiscovered(new Item.Properties().rarity(RPGRarity.RPG_EPIC), 1.0F, RPGIngedientTiers.Tier1,"","","",""));
+    public static final RegistryObject<Item> ASKIR_CAVE_CATFISH = ITEMS.register("askir_cave_catfish",
+            () -> new RPGIngredientDiscovered(new Item.Properties().rarity(RPGRarity.RPG_COMMON), 2.5F, RPGIngedientTiers.Tier1,"","","",""));
+    public static final RegistryObject<Item> BEAST_TONGUE = ITEMS.register("beast_tongue",
+            () -> new RPGIngredientDiscovered(new Item.Properties().rarity(RPGRarity.RPG_COMMON), 1.0F, RPGIngedientTiers.Tier1,"","","",""));
+    public static final RegistryObject<Item> BEAST_TOOTH = ITEMS.register("beast_tooth",
+            () -> new RPGIngredientDiscovered(new Item.Properties().rarity(RPGRarity.RPG_COMMON), 1.0F, RPGIngedientTiers.Tier1,"","","",""));
+    public static final RegistryObject<Item> BLACK_PEARL = ITEMS.register("black_pearl",
+            () -> new RPGIngredientDiscovered(new Item.Properties().rarity(RPGRarity.RPG_COMMON), 0.2F, RPGIngedientTiers.Tier1,"","","",""));
+    public static final RegistryObject<Item> CREEPER_BLOOD = ITEMS.register("creeper_blood",
+            () -> new RPGIngredientDiscovered(new Item.Properties().rarity(RPGRarity.RPG_COMMON), 1.0F, RPGIngedientTiers.Tier1,"","","",""));
+    public static final RegistryObject<Item> DRAGON_SPINE = ITEMS.register("dragon_spine",
+            () -> new RPGIngredientDiscovered(new Item.Properties().rarity(RPGRarity.RPG_RARE), 2.0F, RPGIngedientTiers.Tier1,"","","",""));
+
+    public static final RegistryObject<Item> FISH_BONE = ITEMS.register("fish_bone",
+            () -> new RPGIngredientDiscovered(new Item.Properties().rarity(RPGRarity.RPG_COMMON), 0.4F, RPGIngedientTiers.Tier1,"","","",""));
+    public static final RegistryObject<Item> FROST_SALT = ITEMS.register("frost_salt",
+            () -> new RPGIngredientDiscovered(new Item.Properties().rarity(RPGRarity.RPG_RARE), 1.0F, RPGIngedientTiers.Tier1,"","","",""));
+    public static final RegistryObject<Item> HOLY_WATER = ITEMS.register("holy_water",
+            () -> new RPGIngredientDiscovered(new Item.Properties().rarity(RPGRarity.RPG_RARE), 1.0F, RPGIngedientTiers.Tier1,"","","",""));
+    public static final RegistryObject<Item> HUMAN_BLOOD = ITEMS.register("human_blood",
+            () -> new RPGIngredientDiscovered(new Item.Properties().rarity(RPGRarity.RPG_COMMON), 1.0F, RPGIngedientTiers.Tier1,"","","",""));
+    public static final RegistryObject<Item> HUMAN_EYE = ITEMS.register("human_eye",
+            () -> new RPGIngredientDiscovered(new Item.Properties().rarity(RPGRarity.RPG_COMMON), 0.2F, RPGIngedientTiers.Tier1,"","","",""));
+    public static final RegistryObject<Item> HYDROCHLORIC_ACID = ITEMS.register("hydrochloric_acid",
+            () -> new RPGIngredientDiscovered(new Item.Properties().rarity(RPGRarity.RPG_COMMON), 1.5F, RPGIngedientTiers.Tier1,"","","",""));
+    public static final RegistryObject<Item> LIQUID_DEATH = ITEMS.register("liquid_death",
+            () -> new RPGIngredientDiscovered(new Item.Properties().rarity(RPGRarity.RPG_EPIC), 1.0F, RPGIngedientTiers.Tier1,"","","",""));
+    public static final RegistryObject<Item> MAPLE_ROOT = ITEMS.register("maple_root",
+            () -> new RPGIngredientDiscovered(new Item.Properties().rarity(RPGRarity.RPG_COMMON), 0.4F, RPGIngedientTiers.Tier1,"","","",""));
+    public static final RegistryObject<Item> MISTLETOE = ITEMS.register("mistletoe",
+            () -> new RPGIngredientDiscovered(new Item.Properties().rarity(RPGRarity.RPG_COMMON), 1.0F, RPGIngedientTiers.Tier1,"","","",""));
+    public static final RegistryObject<Item> NITRIC_ACID = ITEMS.register("nitric_acid",
+            () -> new RPGIngredientDiscovered(new Item.Properties().rarity(RPGRarity.RPG_UNCOMMON), 1.0F, RPGIngedientTiers.Tier1,"","","",""));
+    public static final RegistryObject<Item> PIXIE_TEARS = ITEMS.register("pixie_tears",
+            () -> new RPGIngredientDiscovered(new Item.Properties().rarity(RPGRarity.RPG_UNCOMMON), 1.0F, RPGIngedientTiers.Tier1,"","","",""));
+    public static final RegistryObject<Item> PURE_WATER = ITEMS.register("pure_water",
+            () -> new RPGIngredientDiscovered(new Item.Properties().rarity(RPGRarity.RPG_UNCOMMON), 1.0F, RPGIngedientTiers.Tier1,"","","",""));
+    public static final RegistryObject<Item> SALTPETER = ITEMS.register("saltpeter",
+            () -> new RPGIngredientDiscovered(new Item.Properties().rarity(RPGRarity.RPG_COMMON), 1.5F, RPGIngedientTiers.Tier1,"","","",""));
+    public static final RegistryObject<Item> SULFUR_DUST = ITEMS.register("sulfur_dust",
+            () -> new RPGIngredientDiscovered(new Item.Properties().rarity(RPGRarity.RPG_COMMON), 1.5F, RPGIngedientTiers.Tier1,"","","",""));
+    public static final RegistryObject<Item> SULFURIC_ACID = ITEMS.register("sulfuric_acid",
+            () -> new RPGIngredientDiscovered(new Item.Properties().rarity(RPGRarity.RPG_COMMON), 1.0F, RPGIngedientTiers.Tier1,"","","",""));
+    public static final RegistryObject<Item> WINESTONE = ITEMS.register("winestone",
+            () -> new RPGIngredientDiscovered(new Item.Properties().rarity(RPGRarity.RPG_EPIC).durability(50).setNoRepair(), 0.5F, RPGIngedientTiers.Tier1,"","","",""));
+
 
 
 
@@ -1013,12 +1072,36 @@ public class RPGItems {
 
 
 
+    //ASKIR
 
 
 
     //non sets
+    //HEAD
+    public static final RegistryObject<Item> ARABIAN_HELMET = ITEMS.register("arabian_helmet",
+            () -> new ArabianHelmetArmorItem(RPGArmorTiers.CLOTH, new Item.Properties().tab(RPGCreativeModeTab.RPG_ARMOR)));
+    public static final RegistryObject<Item> STRAWHAT_HELMET = ITEMS.register("strawhat_helmet",
+            () -> new StrawhatHelmetArmorItem(RPGArmorTiers.THATCH,new Item.Properties()));
+    public static final RegistryObject<Item> ASKIR_LEGIONNAIRE_CENTURIO_HELMET = ITEMS.register("askir_legionnaire_centurio_helmet",
+            () -> new AskirLegionnaireCenturioHelmetArmorItem(RPGArmorTiers.STEEL_PLATE, new Item.Properties().tab(RPGCreativeModeTab.RPG_ARMOR)));
+    public static final RegistryObject<Item> ASKIR_LEGIONNAIRE_HELMET = ITEMS.register("askir_legionnaire_helmet",
+            () -> new AskirLegionnaireHelmetArmorItem(RPGArmorTiers.STEEL_PLATE,new Item.Properties().tab(RPGCreativeModeTab.RPG_ARMOR).rarity(RPGRarity.RPG_UNCOMMON)));
+    public static final RegistryObject<Item> CENTURION_HELMET = ITEMS.register("centurion_helmet",
+            () -> new CenturionHelmetArmorItem(RPGArmorTiers.STEEL_PLATE, new Item.Properties().tab(RPGCreativeModeTab.RPG_ARMOR)));
+    public static final RegistryObject<Item> LEGIONNAIRE_HELMET = ITEMS.register("legionnaire_helmet",
+            () -> new LegionnaireHelmetArmorItem(RPGArmorTiers.STEEL_PLATE, new Item.Properties().tab(RPGCreativeModeTab.RPG_ARMOR)));
+    public static final RegistryObject<Item> PLAGUE_DOCTOR_HELMET = ITEMS.register("plague_doctor_helmet",
+            () -> new PlagueDoctorHelmetArmorItem(RPGArmorTiers.CLOTH, new Item.Properties().tab(RPGCreativeModeTab.RPG_ARMOR)));
+    public static final RegistryObject<Item> FLOWER_CROWN_HELMET = ITEMS.register("flower_crown_helmet",
+            () -> new FlowerCrownHelmetArmorItem(RPGArmorTiers.THATCH, new Item.Properties().tab(RPGCreativeModeTab.RPG_ARMOR)));
+    //CHEST
+    //LEGGINGS
+    //BOOTS
 
-
+    //CAPE
+    public static final RegistryObject<Item> BLUE_CAPE_WITH_STARS = ITEMS.register("blue_cape_with_stars",          //TODO FIXING
+            () -> new BlueCapeWithStarsItem(IRON, EquipmentSlot.CHEST, SlotTypePreset.BACK,
+                    new Item.Properties().tab(RPGCreativeModeTab.RPG_ARMOR)));
 
 
 

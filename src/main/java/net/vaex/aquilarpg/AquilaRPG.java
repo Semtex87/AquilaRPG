@@ -4,8 +4,11 @@ import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
@@ -18,6 +21,7 @@ import net.vaex.aquilarpg.block.RPGBlocks;
 import net.vaex.aquilarpg.block.entity.RPGBlockEntities;
 import net.vaex.aquilarpg.effects.RPGEffectManager;
 import net.vaex.aquilarpg.effects.RPGPotionManager;
+import net.vaex.aquilarpg.effects.RPGSimpleBrewingRecipe;
 import net.vaex.aquilarpg.enchantment.RPGEnchantments;
 import net.vaex.aquilarpg.entity.RPGModEntities;
 import net.vaex.aquilarpg.entity.curio.shield.RenderShieldOnBack;
@@ -25,7 +29,9 @@ import net.vaex.aquilarpg.entity.item.renderer.*;
 import net.vaex.aquilarpg.item.*;
 import net.vaex.aquilarpg.network.NetworkHandler;
 import net.vaex.aquilarpg.overlay.Overlays;
+import net.vaex.aquilarpg.util.RPGAdvancedAlchemicalRecipe;
 import net.vaex.aquilarpg.util.RPGItemProperties;
+import net.vaex.aquilarpg.util.RPGSimpleAlchemicalRecipe;
 import net.vaex.aquilarpg.util.RPGSoundEvents;
 import org.slf4j.Logger;
 import top.theillusivec4.curios.api.CuriosApi;
@@ -68,6 +74,47 @@ public class AquilaRPG {
 
     private void setup(final FMLCommonSetupEvent event) {
         event.enqueueWork(NetworkHandler::register);
+        event.enqueueWork(() -> {
+            BrewingRecipeRegistry.addRecipe(new RPGSimpleBrewingRecipe(Potions.AWKWARD, RPGPotionManager.RANDOM_TP.get(), Items.ENDER_PEARL));
+            BrewingRecipeRegistry.addRecipe(new RPGSimpleBrewingRecipe(Potions.AWKWARD, RPGPotionManager.BLEEDING.get(), Items.CACTUS));
+            BrewingRecipeRegistry.addRecipe(new RPGSimpleBrewingRecipe(Potions.AWKWARD, RPGPotionManager.INFRAVISION.get(), RPGIngredientItems.BEHOLDERS_EYE.get()));
+            //todo = ash_from_a_forest_fire
+            //todo = askir_cave_catfish
+            //todo = beast_tongue
+            //todo = beast_tooth
+            //todo = black_pearl
+            //todo = cave_spider_poison
+            //todo = creeper_blood
+            //todo = fish_bone
+            //todo = frost_salt
+            //todo = human_blood
+            //todo = human_eye
+            //todo = maple_root
+            //todo = mistletoe
+            // mana recipes
+            BrewingRecipeRegistry.addRecipe(new RPGAdvancedAlchemicalRecipe(RPGItems.MANA_SHARD.get(), RPGItems.SMALL_MANA_POTION.get(),  RPGItems.DISTILLED_WATER.get()));
+            BrewingRecipeRegistry.addRecipe(new RPGAdvancedAlchemicalRecipe(RPGItems.MANA_STONE.get(), RPGItems.MEDIUM_MANA_POTION.get(),  RPGItems.PURE_WATER.get()));
+            BrewingRecipeRegistry.addRecipe(new RPGAdvancedAlchemicalRecipe(RPGItems.MANA_CRYSTAL.get(), RPGItems.LARGE_MANA_POTION.get(),  RPGItems.HOLY_WATER.get()));
+
+            //Brewing items (no Potions)
+            // basic recipes
+            BrewingRecipeRegistry.addRecipe(new RPGSimpleAlchemicalRecipe(Potions.WATER, RPGItems.SULFURIC_ACID.get(),  RPGItems.SULFUR_DUST.get()));
+            BrewingRecipeRegistry.addRecipe(new RPGSimpleAlchemicalRecipe(Potions.WATER, RPGItems.NITRIC_ACID.get(),  RPGItems.SALTPETER.get()));
+            BrewingRecipeRegistry.addRecipe(new RPGSimpleAlchemicalRecipe(Potions.WATER, RPGItems.HYDROCHLORIC_ACID.get(),  RPGItems.SALT.get()));
+            BrewingRecipeRegistry.addRecipe(new RPGSimpleAlchemicalRecipe(Potions.WATER, RPGItems.CAVE_SPIDER_POISON.get(),  Items.SPIDER_EYE));
+
+
+
+            // advanced recipes
+            BrewingRecipeRegistry.addRecipe(new RPGAdvancedAlchemicalRecipe(RPGItems.HYDROCHLORIC_ACID.get(), RPGItems.AQUA_REGIA.get(),  RPGItems.NITRIC_ACID.get()));
+            BrewingRecipeRegistry.addRecipe(new RPGAdvancedAlchemicalRecipe(RPGItems.AQUA_REGIA.get(), RPGItems.RUNIC_SOLUTION.get(),  RPGItems.RUNE_DUST.get()));
+            BrewingRecipeRegistry.addRecipe(new RPGAdvancedAlchemicalRecipe(RPGItems.PURE_WATER.get(), RPGItems.LIQUID_DEATH.get(),  RPGItems.WINESTONE.get()));
+            BrewingRecipeRegistry.addRecipe(new RPGAdvancedAlchemicalRecipe(RPGItems.DISTILLED_WATER.get(), RPGItems.HOLY_WATER.get(),  RPGItems.PIXIE_TEARS.get()));
+            BrewingRecipeRegistry.addRecipe(new RPGAdvancedAlchemicalRecipe(RPGItems.DISTILLED_WATER.get(), RPGItems.PURE_WATER.get(),  RPGItems.HOLY_WATER.get()));
+
+
+        });
+
         Overlays.registerOverlays();
         // some preinit code
         LOGGER.info("HELLO FROM PREINIT");

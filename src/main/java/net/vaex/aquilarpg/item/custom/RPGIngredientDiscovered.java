@@ -14,6 +14,7 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.vaex.aquilarpg.effects.RPGEffectManager;
 import net.vaex.aquilarpg.item.RPGIngedientTiers;
+import net.vaex.aquilarpg.util.RPGCreativeModeTab;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -29,7 +30,7 @@ public class RPGIngredientDiscovered extends TestIngredient {
     public String effectMaster;
 
     public RPGIngredientDiscovered(Properties pProperties, float weight, RPGIngedientTiers tiers, String pEffectBasic, String pEffectNovice, String pEffectExpert, String pEffectMaster) {
-        super(pProperties, weight, tiers);
+        super(pProperties.tab(RPGCreativeModeTab.RPG_MISC), weight, tiers);
             this.effectBasic = pEffectBasic;
             this.effectNovice = pEffectNovice;
             this.effectExpert = pEffectExpert;

@@ -37,6 +37,8 @@ public class RPGSoundEvents {
             registerSoundEvent("flintlock_pistol_use");
     public static final RegistryObject<SoundEvent>GUN_RELOAD =
             registerSoundEvent("gun_reload");
+    public static final RegistryObject<SoundEvent>GUN_CLICK =
+            registerSoundEvent("gun_click");
     public static final RegistryObject<SoundEvent>NINJA_STAR_THROWING =
             registerSoundEvent("ninja_star_throwing");
     public static final RegistryObject<SoundEvent>NINJA_STAR_IMPACT =
@@ -49,6 +51,10 @@ public class RPGSoundEvents {
     public static final RegistryObject<SoundEvent> FORCE_FIELD_HIT =
             registerSoundEvent("force_field_hit");
 
+    public static final RegistryObject<SoundEvent> CHAINMAIL_MOVING =
+            registerSoundEvent("chainmail_moving");
+    public static final RegistryObject<SoundEvent> CLOTH_MOVING =
+            registerSoundEvent("cloth_moving");
 
     public static final RegistryObject<SoundEvent> BROTHERHOOD_HOWL =
             registerSoundEvent("brotherhood_howl");

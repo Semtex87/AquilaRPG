@@ -13,6 +13,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.CrossbowAttackMob;
 import net.minecraft.world.entity.player.Player;
@@ -80,7 +81,24 @@ public class FlintlockPistol extends CrossbowItem {
             return InteractionResultHolder.fail(itemstack);
         }
     }
-
+    public void onUseTick(Level pLevel, LivingEntity pLivingEntity, ItemStack pStack, int pCount) {
+        if (!pLevel.isClientSide) {
+            int i = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.QUICK_CHARGE, pStack);
+            SoundEvent soundevent = this.getStartSound();
+            float f = (float)(pStack.getUseDuration() - pCount) / (float)getChargeDuration(pStack);
+            if (f < 0.2F) {
+                this.startSoundPlayed = false;
+                this.midLoadSoundPlayed = false;
+            }
+            if (f >= 0.2F && !this.startSoundPlayed) {
+                this.startSoundPlayed = true;
+                pLevel.playSound((Player)null, pLivingEntity.getX(), pLivingEntity.getY(), pLivingEntity.getZ(), soundevent, SoundSource.PLAYERS, 0.5F, 1.0F);
+            }
+        }
+    }
+    private SoundEvent getStartSound() {
+        return RPGSoundEvents.GUN_RELOAD.get();
+    }
     public static void performShooting(Level pLevel, LivingEntity pShooter, InteractionHand pUsedHand, ItemStack pCrossbowStack, float pVelocity, float pInaccuracy) {
         List<ItemStack> list = getChargedProjectiles(pCrossbowStack);
         float[] afloat = getShotPitches(pShooter.getRandom());
@@ -108,7 +126,7 @@ public class FlintlockPistol extends CrossbowItem {
         if (f >= 1.0F && !isCharged(pStack) && tryLoadProjectiles(pEntityLiving, pStack)) {
             setCharged(pStack, true);
             SoundSource soundsource = pEntityLiving instanceof Player ? SoundSource.PLAYERS : SoundSource.HOSTILE;
-            pLevel.playSound((Player)null, pEntityLiving.getX(), pEntityLiving.getY(), pEntityLiving.getZ(), SoundEvents.CROSSBOW_LOADING_END, soundsource, 1.0F, 1.0F / (pLevel.getRandom().nextFloat() * 0.5F + 1.0F) + 0.2F);
+            pLevel.playSound((Player)null, pEntityLiving.getX(), pEntityLiving.getY(), pEntityLiving.getZ(), RPGSoundEvents.GUN_CLICK.get(), soundsource, 1.0F, 1.0F / (pLevel.getRandom().nextFloat() * 0.5F + 1.0F) + 0.2F);
         }
 
     }
@@ -219,11 +237,6 @@ public class FlintlockPistol extends CrossbowItem {
     }
     private static void shootProjectile(Level pLevel, LivingEntity pShooter, InteractionHand pHand, ItemStack pCrossbowStack, ItemStack pAmmoStack, float pSoundPitch, boolean pIsCreativeMode, float pVelocity, float pInaccuracy, float pProjectileAngle) {
         if (!pLevel.isClientSide) {
-            int maxDurability = pCrossbowStack.getMaxDamage();
-            int currentDamage = (maxDurability - 1) - pCrossbowStack.getDamageValue();
-            String itmdamage = "" + currentDamage;
-            if (!pCrossbowStack.hasTag()) pCrossbowStack.setTag(new CompoundTag());
-            pCrossbowStack.getTag().putString("damage", itmdamage);
             boolean flag = pAmmoStack.is(RPGItems.BULLET.get());
             Projectile projectile;
             if (flag) {

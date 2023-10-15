@@ -9,6 +9,10 @@ public class RPGAttributeUUID {
     public static final UUID ARMOR_PENETRATION_UUID = UUID.fromString("02f6c8a9-b496-4f71-86da-1634d22d5ae5");
     public static final UUID SHIELD_PENETRATION_UUID = UUID.fromString("732a2b28-7a8e-4186-bc8d-b081e0fa2e80");
 
+    public static final UUID BASE_ARMOR_UUID = UUID.fromString("1648ae71-2961-417b-822a-ef4e237fc799");
+    public static final UUID ARMOR_TOUGHNESS = UUID.fromString("7d0b9264-4adb-47cc-8f4a-8a8e1f4cdf57");
+
+
     public static final UUID RESIST_ALL_UUID = UUID.fromString("21f218b9-35e1-4c2f-8041-9259d8da613c");
     public static final UUID ELEMENTAL_PYRO_RESIST_UUID = UUID.fromString("14469c7f-bd39-4a50-a524-edf80ba62716");
     public static final UUID ELEMENTAL_AERO_RESIST_UUID = UUID.fromString("f12c3887-54bb-4284-9753-ee05ea7a796b");

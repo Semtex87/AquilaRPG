@@ -111,7 +111,7 @@ public class Blunderbuss extends CrossbowItem {
         if (f >= 1.0F && !isCharged(pStack) && tryLoadProjectiles(pEntityLiving, pStack)) {
             setCharged(pStack, true);
             SoundSource soundsource = pEntityLiving instanceof Player ? SoundSource.PLAYERS : SoundSource.HOSTILE;
-            pLevel.playSound((Player)null, pEntityLiving.getX(), pEntityLiving.getY(), pEntityLiving.getZ(), SoundEvents.CROSSBOW_LOADING_END, soundsource, 1.0F, 1.0F / (pLevel.getRandom().nextFloat() * 0.5F + 1.0F) + 0.2F);
+            pLevel.playSound((Player)null, pEntityLiving.getX(), pEntityLiving.getY(), pEntityLiving.getZ(), RPGSoundEvents.GUN_CLICK.get(), soundsource, 1.0F, 1.0F / (pLevel.getRandom().nextFloat() * 0.5F + 1.0F) + 0.2F);
         }
 
     }
@@ -123,7 +123,24 @@ public class Blunderbuss extends CrossbowItem {
 
         return f;
     }
-
+    public void onUseTick(Level pLevel, LivingEntity pLivingEntity, ItemStack pStack, int pCount) {
+        if (!pLevel.isClientSide) {
+            int i = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.QUICK_CHARGE, pStack);
+            SoundEvent soundevent = this.getStartSound();
+            float f = (float)(pStack.getUseDuration() - pCount) / (float)getChargeDuration(pStack);
+            if (f < 0.2F) {
+                this.startSoundPlayed = false;
+                this.midLoadSoundPlayed = false;
+            }
+            if (f >= 0.2F && !this.startSoundPlayed) {
+                this.startSoundPlayed = true;
+                pLevel.playSound((Player)null, pLivingEntity.getX(), pLivingEntity.getY(), pLivingEntity.getZ(), soundevent, SoundSource.PLAYERS, 0.5F, 1.0F);
+            }
+        }
+    }
+    private SoundEvent getStartSound() {
+        return RPGSoundEvents.GUN_RELOAD.get();
+    }
     private static boolean tryLoadProjectiles(LivingEntity pShooter, ItemStack pCrossbowStack) {
         int i = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.MULTISHOT, pCrossbowStack);
         int j = i == 0 ? 1 : 3;

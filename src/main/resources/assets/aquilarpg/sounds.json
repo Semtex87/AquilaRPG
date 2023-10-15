@@ -13,6 +13,20 @@
       "aquilarpg:blowgun_use"
     ]
   },
+  "chainmail_moving": {
+    "category": "effect",
+    "subtitle": "aquilarpg.chainmail_moving",
+    "sounds": [
+      "aquilarpg:chainmail_moving"
+    ]
+  },
+  "cloth_moving": {
+    "category": "effect",
+    "subtitle": "aquilarpg.cloth_moving",
+    "sounds": [
+      "aquilarpg:cloth_moving"
+    ]
+  },
   "full_charge": {
     "category": "effect",
     "subtitle": "aquilarpg.full_charge",
@@ -116,6 +130,13 @@
     "subtitle": "aquilarpg.gun_reload",
     "sounds": [
       "aquilarpg:gun_reload"
+    ]
+  },
+  "gun_click": {
+    "category": "effect",
+    "subtitle": "aquilarpg.gun_click",
+    "sounds": [
+      "aquilarpg:gun_click"
     ]
   },
   "ench_weapon_hit": {
