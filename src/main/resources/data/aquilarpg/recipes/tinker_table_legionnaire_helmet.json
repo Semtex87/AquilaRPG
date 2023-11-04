@@ -1,0 +1,16 @@
+{
+  "type": "aquilarpg:tinker_table",
+  "ingredient": [
+    {
+      "item": "aquilarpg:hot_iron_ingot"
+    },
+    {
+      "item": "aquilarpg:linen"
+    },
+    {
+      "item": "aquilarpg:leatherstripes"
+    }
+  ],
+  "result": "aquilarpg:legionnaire_helmet",
+  "count": 1
+}

@@ -118,7 +118,7 @@ public class RPGItems {
     public static final RegistryObject<Item> FORGE_HAMMER_ELEMENTIUM = ITEMS.register("forge_hammer_elementium",
             () -> new RPGRepairItem(RPGMaterialTiers.ELEMENTIUM, new Item.Properties().rarity(RPGRarity.RPG_EPIC)).setFoil(true));
 
-    public static final RegistryObject<Item> BONE_PICKAXE = ITEMS.register("bone_pickaxe",
+  public static final RegistryObject<Item> BONE_PICKAXE = ITEMS.register("bone_pickaxe",
             () -> new PickaxeItem(RPGMaterialTiers.BONE, 1,1,new Item.Properties().tab(RPGCreativeModeTab.RPG_TOOLS).durability(RPGMaterialTiers.BONE.getUses()).rarity(RPGRarity.RPG_COMMON)));
     public static final RegistryObject<Item> BRONZE_PICKAXE = ITEMS.register("bronze_pickaxe",
             () -> new PickaxeItem(RPGMaterialTiers.BRONZE, 1,1,new Item.Properties().tab(RPGCreativeModeTab.RPG_TOOLS).durability(RPGMaterialTiers.BRONZE.getUses()).rarity(RPGRarity.RPG_COMMON)));
@@ -135,11 +135,11 @@ public class RPGItems {
 
     //MANA
     public static final RegistryObject<Item> MANA_SHARD = ITEMS.register("mana_shard",
-            () -> new RPGManCrystalItem(new Item.Properties().tab(RPGCreativeModeTab.RPG_MISC).food(RPGFoodItem.MANA), 10));
+            () -> new RPGManCrystalItem(new Item.Properties().tab(RPGCreativeModeTab.RPG_MISC), 10));
     public static final RegistryObject<Item> MANA_STONE = ITEMS.register("mana_stone",
-            () -> new RPGManCrystalItem(new Item.Properties().tab(RPGCreativeModeTab.RPG_MISC).food(RPGFoodItem.MANA), 15));
+            () -> new RPGManCrystalItem(new Item.Properties().tab(RPGCreativeModeTab.RPG_MISC), 15));
     public static final RegistryObject<Item> MANA_CRYSTAL = ITEMS.register("mana_crystal",
-            () -> new RPGManCrystalItem(new Item.Properties().tab(RPGCreativeModeTab.RPG_MISC).food(RPGFoodItem.MANA), 25));
+            () -> new RPGManCrystalItem(new Item.Properties().tab(RPGCreativeModeTab.RPG_MISC), 25));
     public static final RegistryObject<Item> SMALL_MANA_POTION = ITEMS.register("small_mana_potion",
             () -> new RPGManaPotionItem(new Item.Properties().tab(RPGCreativeModeTab.RPG_MISC).food(RPGFoodItem.MANA), 20));
     public static final RegistryObject<Item> MEDIUM_MANA_POTION = ITEMS.register("medium_mana_potion",
@@ -314,7 +314,11 @@ public class RPGItems {
     public static final RegistryObject<Item> IRON_KEY = ITEMS.register("iron_key", () -> new Item(basicStackableItem));
     public static final RegistryObject<Item> GOLD_KEY = ITEMS.register("gold_key", () -> new Item(basicStackableItem));
 
-    public static final RegistryObject<Item> SCROLL = ITEMS.register("scroll", () -> new Item(basicStackableItem));
+  public static final RegistryObject<Item> BLUEPRINT_AXE = ITEMS.register("blueprint_axe", () -> new Item(basicStackableItem));
+  public static final RegistryObject<Item> BLUEPRINT_BOW = ITEMS.register("blueprint_bow", () -> new Item(basicStackableItem));
+  public static final RegistryObject<Item> BLUEPRINT_DAGGER = ITEMS.register("blueprint_dagger", () -> new Item(basicStackableItem));
+  public static final RegistryObject<Item> BLUEPRINT_SWORD = ITEMS.register("blueprint_sword", () -> new Item(basicStackableItem));
+  public static final RegistryObject<Item> SCROLL = ITEMS.register("scroll", () -> new Item(basicStackableItem));
 
 
 
@@ -325,6 +329,7 @@ public class RPGItems {
     public static final RegistryObject<Item> LEATHERSTRIPES = ITEMS.register("leatherstripes", () -> new Item(basicStackableItem));
     public static final RegistryObject<Item> LINEN = ITEMS.register("linen", () -> new RPGBandageItem(basicStackableItem));
     public static final RegistryObject<Item> MAGIC_DUST = ITEMS.register("magic_dust", () -> new Item(basicStackableItem.rarity(RPGRarity.RPG_UNCOMMON)));
+    public static final RegistryObject<Item> WOOD_PLANK = ITEMS.register("wood_plank", () -> new Item(basicStackableItem.rarity(RPGRarity.RPG_COMMON)));
     public static final RegistryObject<Item> RUNE_DUST = ITEMS.register("rune_dust", () -> new Item(basicStackableItem.rarity(RPGRarity.RPG_RARE)));
     public static final RegistryObject<Item> IRON_SCRAP = ITEMS.register("iron_scrap", () -> new Item(basicStackableItem));
     public static final RegistryObject<Item> RAW_BLADE_HOT = ITEMS.register("raw_blade_hot", () -> new RPGMaterialItem(RPGMaterialTiers.IRON, new Item.Properties().stacksTo(1)));
@@ -375,7 +380,7 @@ public class RPGItems {
     public static final RegistryObject<Item> ELEMENTIUM_INGOT = ITEMS.register("elementium_ingot", () -> new Item(new Item.Properties().stacksTo(64).rarity(RPGRarity.RPG_COMMON).tab(RPGCreativeModeTab.RPG_MISC)));
     public static final RegistryObject<Item> ORICALCUM_INGOT = ITEMS.register("oricalcum_ingot", () -> new Item(new Item.Properties().stacksTo(64).rarity(RPGRarity.RPG_COMMON).tab(RPGCreativeModeTab.RPG_MISC)));
     public static final RegistryObject<Item> STEEL_INGOT = ITEMS.register("steel_ingot", () -> new Item(new Item.Properties().stacksTo(64).rarity(RPGRarity.RPG_COMMON).tab(RPGCreativeModeTab.RPG_MISC)));
-    public static final RegistryObject<Item> VOIDSTEEL_INGOT = ITEMS.register("voidsteel_ingot", () -> new Item(basicStackableItem.rarity(RPGRarity.RPG_EPIC)));
+    public static final RegistryObject<Item> VOID_STEEL_INGOT = ITEMS.register("void_steel_ingot", () -> new Item(basicStackableItem.rarity(RPGRarity.RPG_EPIC)));
     public static final RegistryObject<Item> ASTRALSILVER_INGOT = ITEMS.register("astralsilver_ingot", () -> new Item(basicStackableItem.rarity(RPGRarity.RPG_RARE)));
     public static final RegistryObject<Item> BRASS_INGOT = ITEMS.register("brass_ingot", () -> new Item(basicStackableItem.rarity(RPGRarity.RPG_COMMON)));
     public static final RegistryObject<Item> BRONZE_INGOT = ITEMS.register("bronze_ingot", () -> new Item(basicStackableItem.rarity(RPGRarity.RPG_COMMON)));
@@ -393,7 +398,7 @@ public class RPGItems {
     public static final RegistryObject<Item> HOT_ELEMENTIUM_INGOT = ITEMS.register("hot_elementium_ingot", () -> new RPGHeatedItem(RPGMaterialTiers.STEEL, basicStackableItem.rarity(RPGRarity.RPG_COMMON).tab(null)));
     public static final RegistryObject<Item> HOT_ELVEN_STEEL_INGOT = ITEMS.register("hot_elven_steel_ingot", () -> new RPGHeatedItem(RPGMaterialTiers.STEEL, basicStackableItem.rarity(RPGRarity.RPG_COMMON).tab(null)));
     public static final RegistryObject<Item> HOT_ORICALCUM_INGOT = ITEMS.register("hot_oricalcum_ingot", () -> new RPGHeatedItem(RPGMaterialTiers.STEEL, basicStackableItem.rarity(RPGRarity.RPG_COMMON).tab(null)));
-    public static final RegistryObject<Item> HOT_VOIDSTEEL_INGOT = ITEMS.register("hot_voidsteel_ingot", () -> new RPGHeatedItem(RPGMaterialTiers.STEEL, basicStackableItem.rarity(RPGRarity.RPG_COMMON).tab(null)));
+    public static final RegistryObject<Item> HOT_VOID_STEEL_INGOT = ITEMS.register("hot_void_steel_ingot", () -> new RPGHeatedItem(RPGMaterialTiers.STEEL, basicStackableItem.rarity(RPGRarity.RPG_COMMON).tab(null)));
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //nugget
     public static final RegistryObject<Item> COBALT_NUGGET = ITEMS.register("cobalt_nugget", () -> new Item(new Item.Properties().stacksTo(64).rarity(RPGRarity.RPG_COMMON).tab(RPGCreativeModeTab.RPG_MISC)));
@@ -515,12 +520,14 @@ public class RPGItems {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //wands scepters
     public static final RegistryObject<Item> SCEPTER_OF_LIFE = ITEMS.register("scepter_of_life",
-            () -> new ScepterOfLife(new Item.Properties().tab(RPGCreativeModeTab.RPG_WEAPON).durability(RPGMaterialTiers.VOID.getUses()).rarity(RPGRarity.RPG_EPIC)));
+            () -> new ScepterOfLife(RPGMaterialTiers.WOOD,new Item.Properties().durability(RPGMaterialTiers.WOOD.getUses()).rarity(RPGRarity.RPG_EPIC)));
     //magic staffs
     public static final RegistryObject<Item> TELEPORT_STAFF = ITEMS.register("teleport_staff",
-            () -> new TeleportStaff(new Item.Properties().tab(RPGCreativeModeTab.RPG_WEAPON).durability(RPGMaterialTiers.VOID.getUses()).rarity(RPGRarity.RPG_EPIC)));
+            () -> new TeleportStaff(RPGMaterialTiers.WOOD,new Item.Properties().durability(RPGMaterialTiers.VOID.getUses()).rarity(RPGRarity.RPG_EPIC)));
     public static final RegistryObject<Item> FIRESTAFF = ITEMS.register("firestaff",
-            () -> new FireStaff(new Item.Properties().tab(RPGCreativeModeTab.RPG_WEAPON).durability(RPGMaterialTiers.VOID.getUses()).rarity(RPGRarity.RPG_EPIC)));
+            () -> new FireStaff(RPGMaterialTiers.WOOD,new Item.Properties().durability(RPGMaterialTiers.VOID.getUses()).rarity(RPGRarity.RPG_EPIC)));
+  public static final RegistryObject<Item> APOSTEL_STAFF = ITEMS.register("apostel_staff",
+          () -> new RPGMagicWeapon(RPGMaterialTiers.GOLD,new Item.Properties().durability(RPGMaterialTiers.GOLD.getUses()).rarity(RPGRarity.RPG_RARE)));
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //guns
     public static final RegistryObject<Item> BLOWGUN = ITEMS.register("blowgun",
@@ -749,6 +756,7 @@ public class RPGItems {
             () -> new RPGLanceWeapon(RPGMaterialTiers.WOOD, new Item.Properties().rarity(RPGRarity.RPG_COMMON).durability(RPGMaterialTiers.WOOD.getUses())));
     public static final RegistryObject<Item> KRUSH_IRMAK = ITEMS.register("krush_irmak",
             () -> new RPGLanceWeapon(RPGMaterialTiers.ORC, new Item.Properties().rarity(RPGRarity.RPG_COMMON).durability(RPGMaterialTiers.ORC.getUses())));
+
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //spear
     public static final RegistryObject<Item> STAHLRIM_SPEAR = ITEMS.register("stahlrim_spear",
@@ -1082,10 +1090,10 @@ public class RPGItems {
             () -> new ArabianHelmetArmorItem(RPGArmorTiers.CLOTH, new Item.Properties().tab(RPGCreativeModeTab.RPG_ARMOR)));
     public static final RegistryObject<Item> STRAWHAT_HELMET = ITEMS.register("strawhat_helmet",
             () -> new StrawhatHelmetArmorItem(RPGArmorTiers.THATCH,new Item.Properties()));
-    public static final RegistryObject<Item> ASKIR_LEGIONNAIRE_CENTURIO_HELMET = ITEMS.register("askir_legionnaire_centurio_helmet",
-            () -> new AskirLegionnaireCenturioHelmetArmorItem(RPGArmorTiers.STEEL_PLATE, new Item.Properties().tab(RPGCreativeModeTab.RPG_ARMOR)));
+    public static final RegistryObject<Item> ASKIR_IMPERIAL_GUARD_HELMET = ITEMS.register("askir_imperial_guard_helmet",
+            () -> new AskirImperialGuardHelmetArmorItem(RPGArmorTiers.STEEL_PLATE, new Item.Properties().tab(RPGCreativeModeTab.RPG_ARMOR).rarity(RPGRarity.RPG_UNCOMMON)));
     public static final RegistryObject<Item> ASKIR_LEGIONNAIRE_HELMET = ITEMS.register("askir_legionnaire_helmet",
-            () -> new AskirLegionnaireHelmetArmorItem(RPGArmorTiers.STEEL_PLATE,new Item.Properties().tab(RPGCreativeModeTab.RPG_ARMOR).rarity(RPGRarity.RPG_UNCOMMON)));
+            () -> new AskirLegionnaireHelmetArmorItem(RPGArmorTiers.STEEL_PLATE,new Item.Properties().tab(RPGCreativeModeTab.RPG_ARMOR)));
     public static final RegistryObject<Item> CENTURION_HELMET = ITEMS.register("centurion_helmet",
             () -> new CenturionHelmetArmorItem(RPGArmorTiers.STEEL_PLATE, new Item.Properties().tab(RPGCreativeModeTab.RPG_ARMOR)));
     public static final RegistryObject<Item> LEGIONNAIRE_HELMET = ITEMS.register("legionnaire_helmet",
@@ -1099,7 +1107,7 @@ public class RPGItems {
     //BOOTS
 
     //CAPE
-    public static final RegistryObject<Item> BLUE_CAPE_WITH_STARS = ITEMS.register("blue_cape_with_stars",          //TODO FIXING
+    public static final RegistryObject<Item> BLUE_CAPE_WITH_STARS = ITEMS.register("mage_cape",                   //TODO FIXING
             () -> new BlueCapeWithStarsItem(IRON, EquipmentSlot.CHEST, SlotTypePreset.BACK,
                     new Item.Properties().tab(RPGCreativeModeTab.RPG_ARMOR)));
 
@@ -1128,7 +1136,7 @@ public class RPGItems {
             () -> new RPGBasicJewelry(RPGMaterialTiers.GOLD,  SlotTypePreset.RING,new Item.Properties().rarity(RPGRarity.RPG_UNCOMMON)));
     public static final RegistryObject<Item> BAND_OF_THORNS = ITEMS.register("band_of_thorns",
             () -> new RPGBasicJewelry(RPGMaterialTiers.BONE,  SlotTypePreset.RING,new Item.Properties().rarity(RPGRarity.RPG_EPIC)));
-    public static final RegistryObject<Item> COPPER_RIG = ITEMS.register("copper_ring",
+    public static final RegistryObject<Item> COPPER_RING = ITEMS.register("copper_ring",
             () -> new RPGBasicJewelry(RPGMaterialTiers.COPPER,  SlotTypePreset.RING,new Item.Properties().rarity(RPGRarity.RPG_COMMON)));
 
 
@@ -1137,10 +1145,10 @@ public class RPGItems {
 
     //arm
     public static final RegistryObject<Item> BRONZE_BRACELET = ITEMS.register("bronze_bracelet",
-            () -> new RPGBasicJewelry(RPGMaterialTiers.COPPER,  SlotTypePreset.RING,new Item.Properties().rarity(RPGRarity.RPG_COMMON)));
+            () -> new RPGBasicJewelry(RPGMaterialTiers.COPPER,  SlotTypePreset.BRACELET,new Item.Properties().rarity(RPGRarity.RPG_COMMON)));
     //back
     public static final RegistryObject<Item> BRONZE_QUIVER = ITEMS.register("bronze_quiver",
-            () -> new RPGBasicJewelry(RPGMaterialTiers.BRONZE, SlotTypePreset.BACK, new Item.Properties().rarity(RPGRarity.RPG_UNCOMMON)));
+            () -> new RPGQuiverItem(RPGMaterialTiers.BRONZE, SlotTypePreset.BACK, new Item.Properties().rarity(RPGRarity.RPG_UNCOMMON)));
     //charm
     public static final RegistryObject<Item> BOOK_OF_DOOM = ITEMS.register("book_of_doom",
             () -> new BookOfDoom(RPGMaterialTiers.CLUTTER, EquipmentSlot.OFFHAND, new Item.Properties().rarity(RPGRarity.RPG_RARE)));

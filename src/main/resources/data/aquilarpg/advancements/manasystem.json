@@ -4,12 +4,12 @@
       "item": "aquilarpg:mana"
     },
     "title": "Mana",
-    "description": "You discovered the Mana now its up to u how u use and restore it",
+    "description": "You discovered Mana. Now its up to you how u use and restore it",
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true
   },
-  "parent": "aquilarpg:aquilarpg",
+  "parent": "aquilarpg:functions",
   "criteria": {
     "requirement": {
       "trigger": "minecraft:inventory_changed",
@@ -17,7 +17,9 @@
         "items": [
           {
             "items": [
-              "aquilarpg:mana_flask"
+              "aquilarpg:mana_stone",
+              "aquilarpg:mana_crystal",
+              "aquilarpg:mana_shard"
             ]
           }
         ]

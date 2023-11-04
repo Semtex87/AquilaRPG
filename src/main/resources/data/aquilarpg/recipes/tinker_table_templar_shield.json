@@ -1,0 +1,16 @@
+{
+  "type": "aquilarpg:tinker_table",
+  "ingredient": [
+    {
+      "item": "aquilarpg:iron_fittings"
+    },
+    {
+      "item": "aquilarpg:leather"
+    },
+    {
+      "item": "aquilarpg:wood_plank"
+    }
+  ],
+  "result": "aquilarpg:templar_shield",
+  "count": 1
+}

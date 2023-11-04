@@ -66,7 +66,7 @@ public class RPGTags {
         //public static final TagKey<Item> DWARVEN_DARKSTEEL = tag("dwarven_darksteel");//todo fill Tag.json <>
         //public static final TagKey<Item> ELVEN_STEEL = tag("elven_steel");//todo fill Tag.json <>
         //public static final TagKey<Item> ORICALCUM = tag("oricalcum");//todo fill Tag.json <>
-        //public static final TagKey<Item> VOIDSTEEL = tag("voidsteel");//todo fill Tag.json <>
+        //public static final TagKey<Item> VOID_STEEL = tag("void_steel");//todo fill Tag.json <>
 
         //public static final TagKey<Item> STEEL = tag("steel");//todo fill Tag.json <>
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////

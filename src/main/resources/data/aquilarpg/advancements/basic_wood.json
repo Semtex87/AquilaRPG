@@ -1,0 +1,23 @@
+{
+  "display": {
+    "title": {
+      "text": "WOOD RECIPES"
+    },
+    "description": {
+      "text": "Wood Recipes"
+    },
+    "icon": {
+      "item": "minecraft:wooden_sword"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "aquilarpg:aquilarpg_recipes_basic",
+  "criteria": {
+    "tick": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

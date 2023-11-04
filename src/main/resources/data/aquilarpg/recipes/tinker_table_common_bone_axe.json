@@ -1,0 +1,16 @@
+{
+  "type": "aquilarpg:tinker_table",
+  "ingredient": [
+    {
+      "item": "minecraft:bone"
+    },
+    {
+      "item": "minecraft:stick"
+    },
+    {
+      "item": "aquilarpg:leatherstripes"
+    }
+  ],
+  "result": "aquilarpg:bone_axe",
+  "count": 1
+}

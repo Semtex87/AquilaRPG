@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "clicked=false": { "model": "aquilarpg:block/cobalt_lamp_off" },
+    "clicked=true": { "model": "aquilarpg:block/cobalt_lamp_on" }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "display": {
+    "title": {
+      "text": "Aquila RPG Artifacts",
+      "bold": true
+    },
+    "description": {
+      "text": "All discovered Artifacts",
+      "italic": true
+    },
+    "icon": {
+      "item": "aquilarpg:bipolarblade"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false,
+    "background": "aquilarpg:textures/gui/generic_background.png"
+  },
+  "criteria": {
+    "c1": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

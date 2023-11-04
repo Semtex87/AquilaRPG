@@ -109,8 +109,8 @@ public class RPGHeatedItem extends Item {
             player.addItem(new ItemStack(RPGItems.STAHLRIM_INGOT.get()));
         if (stack.is(RPGItems.HOT_TIN_INGOT.get()))
             player.addItem(new ItemStack(RPGItems.TIN_INGOT.get()));
-        if (stack.is(RPGItems.HOT_VOIDSTEEL_INGOT.get()))
-            player.addItem(new ItemStack(RPGItems.VOIDSTEEL_INGOT.get()));
+        if (stack.is(RPGItems.HOT_VOID_STEEL_INGOT.get()))
+            player.addItem(new ItemStack(RPGItems.VOID_STEEL_INGOT.get()));
         if (stack.is(RPGItems.HOT_ZINC_INGOT.get()))
             player.addItem(new ItemStack(RPGItems.ZINC_INGOT.get()));
         if (stack.is(RPGItems.HOT_GOLD_INGOT.get()))
@@ -165,8 +165,8 @@ public class RPGHeatedItem extends Item {
                     if (pContext.getPlayer().getMainHandItem().is(RPGItems.HOT_ZINC_INGOT.get())) {
                         pContext.getPlayer().addItem(new ItemStack(RPGItems.ZINC_INGOT.get()));
                     }
-                    if (pContext.getPlayer().getMainHandItem().is(RPGItems.HOT_VOIDSTEEL_INGOT.get())) {
-                        pContext.getPlayer().addItem(new ItemStack(RPGItems.VOIDSTEEL_INGOT.get()));
+                    if (pContext.getPlayer().getMainHandItem().is(RPGItems.HOT_VOID_STEEL_INGOT.get())) {
+                        pContext.getPlayer().addItem(new ItemStack(RPGItems.VOID_STEEL_INGOT.get()));
                     }
                     if (pContext.getPlayer().getMainHandItem().is(RPGItems.HOT_SILVER_INGOT.get())) {
                         pContext.getPlayer().addItem(new ItemStack(RPGItems.SILVER_INGOT.get()));

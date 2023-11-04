@@ -40,8 +40,15 @@ public class RPGBlocks {
     public static final RegistryObject<Block> COBALT_BLASTER = registerBlock("smeltery",
             () -> new CobaltBlasterBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()),
             RPGCreativeModeTab.RPG_BLOCKS);
+    public static final RegistryObject<Block> TINKER_TABLE = registerBlock("tinker_table",
+            () -> new TinkerTableBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()),
+            RPGCreativeModeTab.RPG_BLOCKS);
 
-
+    public static final RegistryObject<Block> COBALT_LAMP = registerBlock("cobalt_lamp",
+            () -> new CobaltLampBlock(BlockBehaviour.Properties.of(Material.METAL)
+                    .strength(2f).requiresCorrectToolForDrops()
+                    .lightLevel((state) -> state.getValue(CobaltLampBlock.CLICKED) ? 15 : 0)),
+            RPGCreativeModeTab.RPG_BLOCKS);
 
 
     //--------------------------REGISTRY--------------------------------------

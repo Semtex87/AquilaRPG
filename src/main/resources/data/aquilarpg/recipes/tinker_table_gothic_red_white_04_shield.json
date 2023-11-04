@@ -1,0 +1,16 @@
+{
+  "type": "aquilarpg:tinker_table",
+  "ingredient": [
+    {
+      "item": "aquilarpg:iron_fittings"
+    },
+    {
+      "item": "aquilarpg:leather"
+    },
+    {
+      "item": "aquilarpg:wood_plank"
+    }
+  ],
+  "result": "aquilarpg:gothic_red_white_04_shield",
+  "count": 1
+}

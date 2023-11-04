@@ -391,11 +391,11 @@
 	"display": {
 		"thirdperson_righthand": {
 			"rotation": [1, 98, 0],
-			"translation": [5.25, -11, -0.5]
+			"translation": [6, -11, -0.5]
 		},
 		"thirdperson_lefthand": {
 			"rotation": [1, 108, 0],
-			"translation": [5.75, -11, -0.5]
+			"translation": [6.5, -11, -0.5]
 		},
 		"firstperson_righthand": {
 			"rotation": [-21, 108, 0],

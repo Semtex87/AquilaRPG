@@ -2,8 +2,10 @@ package net.vaex.aquilarpg.overlay;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiComponent;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.gui.ForgeIngameGui;
 import net.minecraftforge.client.gui.IIngameOverlay;
@@ -19,6 +21,9 @@ public class MainHUDDeco implements IIngameOverlay {
 
     @Override
     public void render(ForgeIngameGui gui, PoseStack poseStack, float partialTick, int width, int height) {
+        Player player = (Player) Minecraft.getInstance().cameraEntity;
+        if (player == null) return;
+        if(player.isCreative()) return;
         this.x = (width - IMAGE_WIDTH);
         this.y = (height - IMAGE_HEIGHT);
         RenderSystem.setShaderTexture(0, MAIN_HUD);

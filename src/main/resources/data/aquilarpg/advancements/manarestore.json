@@ -1,23 +1,30 @@
 {
   "display": {
+    "title": {
+      "text": "Restore Mana"
+    },
+    "description": {
+      "text": "Crystals restore mana by breaking them in your hands. You can also use them for brewing Mana Potions. Potions restore more Mana Points!"
+    },
     "icon": {
       "item": "aquilarpg:mana_flask"
     },
-    "title": "Restore Mana",
-    "description": "There are some items to restore your Mana. U can use Mana shards, stones or crystals to restore. A better way is combine these items via alchemy to more powerful Mana Potions",
     "frame": "task",
     "show_toast": true,
-    "announce_to_chat": true
+    "announce_to_chat": true,
+    "hidden": false
   },
   "parent": "aquilarpg:manasystem",
   "criteria": {
     "requirement": {
-      "trigger": "minecraft:inventory_changed",
+      "trigger": "minecraft:consume_item",
       "conditions": {
         "items": [
           {
             "items": [
-              "aquilarpg:mana_flask"
+              "aquilarpg:small_mana_potion",
+              "aquilarpg:medium_mana_potion",
+              "aquilarpg:large_mana_potion"
             ]
           }
         ]

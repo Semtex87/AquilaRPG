@@ -8,6 +8,7 @@ import net.minecraft.network.chat.TextComponent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.stats.Stats;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -18,22 +19,30 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.vaex.aquilarpg.capabilities.mana.ClientManaData;
 import net.vaex.aquilarpg.capabilities.mana.ManaProvider;
+import net.vaex.aquilarpg.entity.item.AxeEntity;
+import net.vaex.aquilarpg.entity.item.CustomSmallFireball;
+import net.vaex.aquilarpg.entity.item.DaggerEntity;
+import net.vaex.aquilarpg.item.RPGMaterialTiers;
+import net.vaex.aquilarpg.item.custom.RPGBasicMeleeWeapon;
+import net.vaex.aquilarpg.item.custom.weapon.RPGAxeWeapon;
 import net.vaex.aquilarpg.network.ManaC2SPacket;
 import net.vaex.aquilarpg.network.ManaSyncS2CPacket;
 import net.vaex.aquilarpg.network.NetworkHandler;
+import net.vaex.aquilarpg.util.RPGCreativeModeTab;
 import org.jetbrains.annotations.NotNull;
+import org.jline.utils.Log;
 
 import javax.annotation.Nullable;
 import java.util.Comparator;
@@ -41,7 +50,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
-public class TeleportStaff extends Item {
+public class TeleportStaff extends RPGBasicMeleeWeapon {
     protected final Random random = new Random();
     private int manaConsume = 30;
     private int manaBonus = 10;
@@ -50,19 +59,19 @@ public class TeleportStaff extends Item {
     int ticks;
     float currentMana;
     float currentMaxMana;
-    public TeleportStaff(Properties properties) {
-        super(properties);
+    int clicks;
+
+    public TeleportStaff(RPGMaterialTiers pTier, Properties pProperties) {
+        super(pTier, pProperties.tab(RPGCreativeModeTab.RPG_WEAPON));
     }
+
 
     @Override
     public void inventoryTick(@NotNull ItemStack itemstack, @NotNull Level world, @NotNull Entity entity, int slot, boolean selected) {
-
-
-        if (selected) {
+        if (entity instanceof Player player && player.getItemInHand(InteractionHand.MAIN_HAND).equals(itemstack)) {
             if (new Random().nextInt(100) == 1) {
                 addParticlesAroundSelf(entity, world);
             }
-
             if (entity instanceof ServerPlayer serverplayer) {
                 serverplayer.getCapability(ManaProvider.PLAYER_MANA).ifPresent(mana -> {
                     mana.addMaxMana(manaBonus); // add Mana Bonus 10
@@ -70,15 +79,10 @@ public class TeleportStaff extends Item {
                 });
             }
         }
-
-        if (!selected) { //auto recharge
-            if (new Random().nextInt(200) == 1) {
-                itemstack.setDamageValue(itemstack.getDamageValue() + (-1));
-            }
-
+        else {
             if (entity instanceof ServerPlayer serverplayer) {
                 serverplayer.getCapability(ManaProvider.PLAYER_MANA).ifPresent(mana -> {
-                     mana.setDefaultMaxMana();
+                    mana.setDefaultMaxMana();
                     /*
                     if (mana.getActualMaxMana() != mana.getDefaultMana()) { // actual Max Mana not default Max Mana Pool?  e.g. 110/100
                         int remaining = mana.getActualMaxMana() - mana.getDefaultMana(); // actual Max Mana Pool - default Max Mana Pool e.g. 110 - 100 = remaining
@@ -93,7 +97,6 @@ public class TeleportStaff extends Item {
                     NetworkHandler.sendPacketTo(new ManaSyncS2CPacket(mana.getMana()), serverplayer);
                 });
             }
-
         }
 
         if (entity instanceof ServerPlayer serverplayer) {
@@ -109,6 +112,11 @@ public class TeleportStaff extends Item {
         super.inventoryTick(itemstack, world, entity, slot, selected);
     }
 
+
+
+
+
+
     public @NotNull UseAnim getUseAnimation(@NotNull ItemStack pstack) {
         return UseAnim.BOW;
     }
@@ -117,30 +125,32 @@ public class TeleportStaff extends Item {
     public int getUseDuration(@NotNull ItemStack itemStack) {
         return 7200;
     }
-
-
-    public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, @NotNull Player pPlayer, @NotNull InteractionHand pHand) {
-        int currentMana = ClientManaData.getPlayerMana(pPlayer);
-        ItemStack itemstack = pPlayer.getItemInHand(pHand);
-        if (manaConsume <= currentMana) {
-            if (itemstack.getDamageValue() >= itemstack.getMaxDamage() - 1) {
-                return InteractionResultHolder.fail(itemstack);
-            } else {
-                pPlayer.startUsingItem(pHand);
-                pLevel.playSound(pPlayer, pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(), SoundEvents.PORTAL_AMBIENT, SoundSource.PLAYERS, 1.0F, 1.0F);
-                pLevel.addParticle(getParticle(), pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(), 0.5, 0.5, 0.5);
-
-                return InteractionResultHolder.consume(itemstack);
-            }
-
-        } else {
-
-            pLevel.playSound(pPlayer, pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(), SoundEvents.LAVA_EXTINGUISH, SoundSource.PLAYERS, 1.0F, 1.0F);
-
+/*
+    @Override
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+        int currentMana = ClientManaData.getPlayerMana(player);
+        if (currentMana > manaConsume) {
+            player.startUsingItem(hand);
+            level.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.PORTAL_AMBIENT, SoundSource.PLAYERS, 1.0F, 1.0F);
+            level.addParticle(ParticleTypes.REVERSE_PORTAL, player.getX(), player.getY(), player.getZ(), 0.5, 0.5, 0.5);
         }
-        return InteractionResultHolder.fail(pPlayer.getItemInHand(pHand));
+        if (currentMana <= manaConsume) {
+            clicks++;
+            if (clicks == 50) {
+                player.sendMessage(new TextComponent("not enough mana"), player.getUUID());
+                level.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.LAVA_EXTINGUISH, SoundSource.PLAYERS, 1.0F, 1.0F);
+                clicks = 0;
+            }
+        }
+        Log.info(currentMana);
+        return super.use(level, player, hand);
     }
-
+*/
+public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, @NotNull Player pPlayer, @NotNull InteractionHand pHand) {
+    ItemStack itemstack = pPlayer.getItemInHand(pHand);
+    pPlayer.startUsingItem(pHand);
+    return InteractionResultHolder.consume(itemstack);
+}
     private void addParticlesAroundSelf(Entity entity, Level level) {
         for (int i = 0; i < 5; ++i) {
             double d0 = this.random.nextGaussian() * 0.02D;
@@ -148,7 +158,6 @@ public class TeleportStaff extends Item {
             double d2 = this.random.nextGaussian() * 0.02D;
             level.addParticle(getParticle(), entity.getRandomX(0.5D), entity.getRandomY() + 0.5D, entity.getRandomZ(0.5D), d0, d1, d2);
         }
-
     }
 
     private ParticleOptions getParticle() {
@@ -173,39 +182,46 @@ public class TeleportStaff extends Item {
         }
     }
 */
-    @Override //right click on range to throw (like trident)
-    public void releaseUsing(ItemStack pStack, Level pLevel, LivingEntity pEntityLiving, int pTimeLeft) {
-        if (pEntityLiving instanceof Player player) {
-            BlockPos leftPos1 = new BlockPos(pEntityLiving.getX(), pEntityLiving.getY() + 1, pEntityLiving.getZ());
-            InteractionHand hand = player.getUsedItemHand();
-            int i = this.getUseDuration(pStack) - pTimeLeft;
-            if (i >= 10) {
-                BlockHitResult ray = getTeleportHitResult(pLevel, player, ClipContext.Fluid.NONE);
-                BlockPos lookPos = ray.getBlockPos().relative(ray.getDirection());
-                player.setPos(lookPos.getX(), lookPos.getY(), lookPos.getZ());
-                player.getCooldowns().addCooldown(this, 60);
-                player.fallDistance = 0F;
-                pLevel.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.ENDERMAN_TELEPORT, SoundSource.PLAYERS, 1.0F, 1.0F);
-                //custom item damage + break
-                ItemStack stack = player.getItemInHand(hand);
-                stack.setDamageValue(stack.getDamageValue() + 1);
-                player.getCapability(ManaProvider.PLAYER_MANA).ifPresent(mana -> {
-                    mana.subMana(manaConsume);
-                    NetworkHandler.sendPacketToServer((new ManaC2SPacket()));
+    public void releaseUsing(@NotNull ItemStack pStack, @NotNull Level pLevel, @NotNull LivingEntity pEntityLiving, int pTimeLeft) {
+        if (!pLevel.isClientSide) {
+            if (pEntityLiving instanceof ServerPlayer serverplayer && !serverplayer.isCreative()) {
+                InteractionHand hand = serverplayer.getUsedItemHand();
+                BlockPos leftPos1 = new BlockPos(pEntityLiving.getX(), pEntityLiving.getY() + 1, pEntityLiving.getZ());
+                int i = this.getUseDuration(pStack) - pTimeLeft;
+                serverplayer.getCapability(ManaProvider.PLAYER_MANA).ifPresent(mana -> {
+                    if (i > 10) {
+                        if (mana.getMana() > manaConsume) {
+                            mana.subMana(manaConsume);
+                            Log.info(manaConsume);
+                            BlockHitResult ray = getTeleportHitResult(pLevel, serverplayer, ClipContext.Fluid.NONE);
+                            BlockPos lookPos = ray.getBlockPos().relative(ray.getDirection());
+                            serverplayer.setPos(lookPos.getX(), lookPos.getY(), lookPos.getZ());
+                            serverplayer.getCooldowns().addCooldown(this, 60);
+                            serverplayer.fallDistance = 0F;
+                            pLevel.playSound(null, serverplayer.getX(), serverplayer.getY(), serverplayer.getZ(), SoundEvents.ENDERMAN_TELEPORT, SoundSource.PLAYERS, 1.0F, 1.0F);
+                            ItemStack stack = serverplayer.getItemInHand(hand);
+                            stack.setDamageValue(stack.getDamageValue() + 1);
+                            if (stack.getDamageValue() >= stack.getMaxDamage()) {
+                                stack.hurtAndBreak(1, serverplayer, (breakEvent) -> {
+                                    breakEvent.broadcastBreakEvent(EquipmentSlot.MAINHAND);
+                                });
+                            }
+                            for (int j = 0; j < 4; ++j) {
+                                addParticlesAroundSelf(serverplayer, pLevel);
+                            }
+                            spawnLingeringCloud(pLevel, leftPos1, pEntityLiving);
+                        } else {
+                            serverplayer.sendMessage(new TextComponent("not enough mana"), serverplayer.getUUID());
+                            pLevel.playSound(null, serverplayer.getX(), serverplayer.getY(), serverplayer.getZ(), SoundEvents.LAVA_EXTINGUISH, SoundSource.PLAYERS, 1.0F, 1.0F);
+
+                        }
+
+                    }
                 });
-                if (stack.getDamageValue() >= stack.getMaxDamage()) {
-                    stack.hurtAndBreak(1, player, (p_43076_) -> {
-                        p_43076_.broadcastBreakEvent(EquipmentSlot.MAINHAND);
-                    });
-                }
-
-                spawnLingeringCloud(pLevel, leftPos1, pEntityLiving);
-                super.use(pLevel, player, hand);
             }
-
         }
-
     }
+
 
     private void spawnLingeringCloud(Level level, BlockPos cloud, LivingEntity livingEntity) {
         if (!level.isClientSide()) {

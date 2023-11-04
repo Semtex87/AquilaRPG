@@ -9,17 +9,20 @@ import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.ai.attributes.AttributeMap;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.client.gui.ForgeIngameGui;
 import net.minecraftforge.client.gui.IIngameOverlay;
 import net.minecraftforge.client.gui.OverlayRegistry;
+import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.vaex.aquilarpg.AquilaRPG;
+import net.vaex.aquilarpg.util.RPGAttributes;
 
-@Mod.EventBusSubscriber(value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class HealthOverlay implements IIngameOverlay {
     private static final ResourceLocation HEALTH_BAR_FULL = new ResourceLocation(AquilaRPG.MOD_ID, "textures/gui/health/health_bar_full.png");
     private static final ResourceLocation HEALTH_BAR_WITHER = new ResourceLocation(AquilaRPG.MOD_ID, "textures/gui/health/health_bar_wither.png");
@@ -43,6 +46,7 @@ public class HealthOverlay implements IIngameOverlay {
         Player player = (Player) Minecraft.getInstance().cameraEntity;
         Font font = gui.getFont();
         if (player != null) {
+            if(player.isCreative()) return;
             float maxHealth =  player.getMaxHealth();
             float currentHealth =  player.getHealth();
             float oneUnit =  (IMAGE_HEIGHT / player.getMaxHealth());

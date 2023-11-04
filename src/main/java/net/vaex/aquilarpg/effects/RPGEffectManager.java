@@ -7,6 +7,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.vaex.aquilarpg.AquilaRPG;
+import org.checkerframework.checker.units.qual.A;
 
 import java.awt.*;
 
@@ -51,15 +52,16 @@ public class RPGEffectManager {
             () -> new BleedingEffect(MobEffectCategory.HARMFUL, Color.TRANSLUCENT));
     public static final RegistryObject<MobEffect> MANA_SHIELD = MOB_EFFECTS.register("force_field_effect",
             () -> new ManaShieldEffect(MobEffectCategory.HARMFUL));
+
+    public static final RegistryObject<MobEffect> AGING = MOB_EFFECTS.register("aging_effect",
+            () -> new AgingEffect(MobEffectCategory.HARMFUL, 0));
     public static final RegistryObject<MobEffect> LACERATION = MOB_EFFECTS.register("laceration_effect",
             LacerationEffect::new);
     public static final RegistryObject<MobEffect> FREEZE = MOB_EFFECTS.register("freeze_effect",
             () -> new FreezeEffect(MobEffectCategory.HARMFUL, Color.CYAN));
-
-    public static final RegistryObject<MobEffect> RETURNOWNER = MOB_EFFECTS.register("returnowner_effect",
-            () -> new ReturnToOwner(MobEffectCategory.HARMFUL, Color.CYAN));
     public static final RegistryObject<MobEffect> SANGUINE = MOB_EFFECTS.register("sanguine_effect",
             SanguineRose::new);
+
     public static final RegistryObject<MobEffect> SUNBURN = MOB_EFFECTS.register("sunburn_effect",
             () -> new SunburnEffect(MobEffectCategory.HARMFUL, Color.RED));
     public static final RegistryObject<MobEffect> RECALL = MOB_EFFECTS.register("recall_effect",

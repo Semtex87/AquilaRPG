@@ -8,22 +8,22 @@
 		"thirdperson_righthand": {
 			"rotation": [-146, 32, -170],
 			"translation": [-4.5, 7.75, 4.25],
-			"scale": [1.4, 1.4, 0.5]
+			"scale": [1.6, 1.6, 0.5]
 		},
 		"thirdperson_lefthand": {
 			"rotation": [59, 148, -82],
 			"translation": [-5, 6.5, 7.75],
-			"scale": [1.4, 1.4, 0.5]
+			"scale": [1.6, 1.6, 0.5]
 		},
 		"firstperson_righthand": {
 			"rotation": [-180, 6, -180],
 			"translation": [-12.5, 6, 2],
-			"scale": [1.4, 1.4, 0.5]
+			"scale": [1.6, 1.6, 0.5]
 		},
 		"firstperson_lefthand": {
 			"rotation": [0, -6, 0],
 			"translation": [-12.25, 6, 2],
-			"scale": [1.4, 1.4, 0.5]
+			"scale": [1.6, 1.6, 0.5]
 		},
 		"ground": {
 			"translation": [0, 4.5, 0],

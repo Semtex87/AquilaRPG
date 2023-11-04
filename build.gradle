@@ -171,7 +171,7 @@ dependencies {
     implementation fg.deobf("curse.maven:playeranimator-658587:4418152")
     // Better Combat
     implementation fg.deobf("curse.maven:better-combat-by-daedelus-639842:4428885")
-    // Cecko Lib
+    // Gecko Lib
     implementation fg.deobf("curse.maven:geckolib-388172:4181370")
     // Jei
     implementation fg.deobf("curse.maven:jei-238222:4593548")

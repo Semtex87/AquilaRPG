@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "item": "aquilarpg:forge_hammer_iron"
+    },
+    "title": "TOOLS",
+    "description": "With Aquila RPG comes few tools for enchant, repair, crafting and more",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "aquilarpg:functions",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "aquilarpg:peeling_iron",
+              "aquilarpg:forge_hammer_iron",
+              "aquilarpg:forge_hammer_steel"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

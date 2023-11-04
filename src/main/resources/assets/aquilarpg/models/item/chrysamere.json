@@ -10,23 +10,23 @@
 	"display": {
 		"thirdperson_righthand": {
 			"rotation": [-109.34, 84.53, 159.7],
-			"translation": [-0.25, 9.25, 2],
-			"scale": [1.4, 1.4, 0.5]
+			"translation": [-0.25, 10, 2],
+			"scale": [1.5, 1.5, 0.5]
 		},
 		"thirdperson_lefthand": {
 			"rotation": [29.16, -88, -20.3],
 			"translation": [-0.25, 9.25, 2],
-			"scale": [1.4, 1.4, 0.5]
+			"scale": [1.5, 1.5, 0.5]
 		},
 		"firstperson_righthand": {
 			"rotation": [78, 78, -50],
 			"translation": [-5, 10, 2.5],
-			"scale": [1.4, 1.4, 0.5]
+			"scale": [1.5, 1.5, 0.5]
 		},
 		"firstperson_lefthand": {
 			"rotation": [-78, -78, -102],
 			"translation": [-5, 10, 2.5],
-			"scale": [1.4, 1.4, 0.5]
+			"scale": [1.5, 1.5, 0.5]
 		},
 		"ground": {
 			"translation": [0, 4.5, 0],

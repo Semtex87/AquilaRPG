@@ -11,6 +11,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.LogicalSide;
 import net.minecraftforge.fml.common.Mod;
 import net.vaex.aquilarpg.AquilaRPG;
 import net.vaex.aquilarpg.capabilities.mana.ClientManaData;
@@ -26,9 +27,10 @@ import java.util.Random;
 public class ManaShieldEffect extends MobEffect {
     protected final Random random = new Random();
     int ticks;
+
     protected ManaShieldEffect(MobEffectCategory category) {
-        super(category,0);
-        
+        super(category, 0);
+
     }
 
     @Override
@@ -36,21 +38,24 @@ public class ManaShieldEffect extends MobEffect {
         return "Mana_shield";
     }
 
-    @Override
-    public void applyEffectTick(@NotNull LivingEntity entity, int amplifier) {
-        Level level = entity.getLevel();
-        if (entity instanceof Player player) {
-            int currentMana = ClientManaData.getPlayerMana(player);
-            if (player.hasEffect(RPGEffectManager.MANA_SHIELD.get()) && currentMana > 0) {
-                ticks++;
-                if(ticks == 80) {
-                    entity.level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), RPGSoundEvents.FORCE_FIELD.get(), SoundSource.PLAYERS, 1.0F, 0.0f);
-                    ticks = 0;
+        @Override
+        public void applyEffectTick(@NotNull LivingEntity entity, int amplifier) {
+            Level level = entity.getLevel();
+            if (entity instanceof Player player) {
+                if (player.hasEffect(RPGEffectManager.MANA_SHIELD.get())) {
+                    player.getCapability(ManaProvider.PLAYER_MANA).ifPresent(mana -> {
+                        if (mana.getMana() > 0) {
+                            ticks++;
+                            if (ticks == 80) {
+                                level.playSound(null, player.getX(), player.getY(), player.getZ(),RPGSoundEvents.FORCE_FIELD.get(), SoundSource.PLAYERS, 1.5F, 1F);
+                                ticks = 0;
+                            }
+                        }
+                    });
                 }
             }
+            super.applyEffectTick(entity, amplifier);
         }
-        super.applyEffectTick(entity, amplifier);
-    }
 
     @Override
     public boolean isDurationEffectTick(int p_19455_, int p_19456_) {
@@ -62,13 +67,48 @@ public class ManaShieldEffect extends MobEffect {
         Level level = event.getEntity().getLevel();
         LivingEntity entity = event.getEntityLiving();
         DamageSource source = event.getSource();
+        float damage = event.getAmount();
+        LivingAttackEvent event1 = new LivingAttackEvent(entity, source, damage);
+        if (!level.isClientSide()) {
+            if (entity instanceof ServerPlayer serverPlayer) {
+                if (serverPlayer.hasEffect(RPGEffectManager.MANA_SHIELD.get())) {
+                    serverPlayer.getCapability(ManaProvider.PLAYER_MANA).ifPresent(mana -> {
+                        if (mana.getMana() > damage) {
+                            mana.subMana((int) damage);
+                            event.setCanceled(true);
+                            event1.setCanceled(true);
+                            NetworkHandler.sendPacketTo(new ManaSyncS2CPacket(mana.getMana()), serverPlayer);
+                            serverPlayer.level.playSound(null, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(), RPGSoundEvents.FORCE_FIELD_HIT.get(), SoundSource.PLAYERS, 4.0F, 1.0f);
+                        }
+                        if (mana.getMana() < damage) {
+                            float remaining = damage - mana.getMana();
+                            float shieldDamage = mana.getMana() - remaining;
+                            mana.subMana((int) shieldDamage);
+                            event.setCanceled(false);
+                            event1.setCanceled(false);
+                            serverPlayer.hurt(source, remaining);
+                            NetworkHandler.sendPacketTo(new ManaSyncS2CPacket(mana.getMana()), serverPlayer);
+                        }
+                    });
+                }
+
+            }
+        }
+    }
+
+/*
+    @SubscribeEvent
+    public static void onAttack(LivingAttackEvent event) {
+        Level level = event.getEntity().getLevel();
+        LivingEntity entity = event.getEntityLiving();
+        DamageSource source = event.getSource();
         Entity attacker = event.getSource().getEntity();
         float damage = event.getAmount();
         if (!entity.level.isClientSide()) {
         if (entity instanceof ServerPlayer serverPlayer) {
             if (serverPlayer.hasEffect(RPGEffectManager.MANA_SHIELD.get())) {
                 LivingAttackEvent event1 = new LivingAttackEvent(entity,source,damage);
-                int currentMana = ClientManaData.getPlayerMana(serverPlayer);
+                int currentMana = ClientManaData.getPlayerMana();
                 if (currentMana > damage) {
                     event.setCanceled(true);
                     event1.setCanceled(true);
@@ -90,4 +130,7 @@ public class ManaShieldEffect extends MobEffect {
         }
     }
     }
+*/
+
+
 }

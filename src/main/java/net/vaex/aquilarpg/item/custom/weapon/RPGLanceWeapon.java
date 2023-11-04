@@ -100,28 +100,17 @@ public class RPGLanceWeapon extends RPGBasicMeleeWeapon {
     public boolean getRaised() {
         return isRaised;
     }
-    public boolean isMounted() {
-        Player player = Minecraft.getInstance().player;
-        return (player != null && player.isPassenger()) ? true : false;
-    }
 
     @Override
     public InteractionResult useOn(UseOnContext context)
     {
         return InteractionResult.PASS;
     }
-    public void setRiseAfterHit(boolean raised) {
+    public void setRiseAfterHit(Player player, boolean raised) {
         isRaised = raised;
-        Player player = Minecraft.getInstance().player;
         if (player != null) {
             ItemStack pStack = player.getItemBySlot(MAINHAND);
-            if (isRaised) {
-                setRaised(pStack, true);
-            }
-            else {
-                setRaised(pStack, false);
-
-            }
+            setRaised(pStack, isRaised);
         }
     }
 

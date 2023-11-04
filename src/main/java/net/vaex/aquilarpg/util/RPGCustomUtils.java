@@ -21,6 +21,7 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.vaex.aquilarpg.item.custom.weapon.RPGLanceWeapon;
 import org.jline.utils.Log;
 
@@ -87,6 +88,7 @@ public class RPGCustomUtils {
 
     }
 
+    @SubscribeEvent
     public static void killonSight(LevelAccessor level, double x, double y, double z, Entity entity) {
         final Vec3 _center = new Vec3(x, y, z);
         if (level != null && !level.isClientSide()) {
@@ -94,8 +96,8 @@ public class RPGCustomUtils {
                     .sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).collect(Collectors.toList());
             if (entity instanceof Player player && player.getMainHandItem().getItem() instanceof RPGLanceWeapon lance) {
                 if (player.isPassenger() && player.getRootVehicle() instanceof AbstractHorse horse) {
-                    if (!lance.getRaised()) {
-                        Log.info(player.getMainHandItem().getItem() + "rised?" + (lance.getRaised()));
+                   // if (!lance.getRaised()) {
+                        //Log.info(player.getMainHandItem().getItem() + "rised?" + (lance.getRaised()));
                         for (Entity entityiterator : _entfound) {
                             if (!(entityiterator == entity)) {
                                 if (entityiterator instanceof LivingEntity _entity && !(_entity instanceof Horse)) {
@@ -116,7 +118,7 @@ public class RPGCustomUtils {
                                             offHandTarget.hurtAndBreak((int) finalDamage, ((LivingEntity) entityiterator), (var) -> var.broadcastBreakEvent(EquipmentSlot.OFFHAND));
                                         }
                                         Log.info(horse + " has : " + breedSpeed + " speed");
-                                        lance.setRiseAfterHit(true);
+                                        lance.setRiseAfterHit(player, true);
                                         player.getCooldowns().addCooldown(player.getMainHandItem().getItem(), 60);
                                     }
                                 }
@@ -128,7 +130,7 @@ public class RPGCustomUtils {
                             }
                         }
 
-                    }
+                 //   }
 
                 }
             }

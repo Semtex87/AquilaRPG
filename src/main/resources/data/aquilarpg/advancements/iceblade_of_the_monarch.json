@@ -1,0 +1,25 @@
+{
+  "display": {
+    "icon": {
+      "item": "aquilarpg:icebladeofthemonarch"
+    },
+    "title": "ICEBLADE OF THE MONARCH",
+    "description": "This Sword is forged with a combination of Stahlrim, Frost Salts and cooled down deep in a frozen cavern for Months",
+    "frame": "challenge"
+  },
+  "parent": "aquilarpg:aquilarpg_artifacts",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "aquilarpg:icebladeofthemonarch"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "aquilarpg:block/tinker_table",
+      "y": 90},
+    "facing=north": {
+      "model": "aquilarpg:block/tinker_table"},
+    "facing=west": {
+      "model": "aquilarpg:block/tinker_table",
+      "y": 270},
+    "facing=south": {
+      "model": "aquilarpg:block/tinker_table",
+      "y": 180}
+  }
+}

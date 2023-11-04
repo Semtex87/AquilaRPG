@@ -38,33 +38,16 @@ public class RPGWetStone extends RPGToolItem {
 
     }
 
-    private void calcDamage(@Nonnull ItemStack tool) {
-        Player player = Minecraft.getInstance().player;
-        int damageValueTool = tool.getDamageValue();
-        int maxDurabilityTool = tool.getMaxDamage();
-        if (damageValueTool >= maxDurabilityTool) {
-            tool.shrink(1);
-            if (player != null) {
-                playBreakSound(player);
-            }
-        } else {
-            if (player != null) {
-                playToolSound(player);
-            }
-        }
-    }
-
-
     private void playToolSound(Entity entity) {
-        entity.playSound(SoundEvents.ANVIL_USE, 0.8F, 1.0f);
+       entity.playSound(SoundEvents.ANVIL_USE, 0.8F, 1.0f);
     }
 
     private void playBreakSound(Entity entity) {
-        entity.playSound(SoundEvents.ITEM_BREAK, 1.0F, 1.0f);
+       entity.playSound(SoundEvents.ITEM_BREAK, 1.0F, 1.0f);
     }
 
 
-    public boolean overrideStackedOnOther(ItemStack pStack, Slot pSlot, ClickAction pAction, Player pPlayer) {
+    public boolean overrideStackedOnOther(ItemStack pStack, @NotNull Slot pSlot, @NotNull ClickAction pAction, @NotNull Player pPlayer) {
         String sharpen ="SHARPEN";
         int num = 3;
         Random rand = new Random();
@@ -87,8 +70,6 @@ public class RPGWetStone extends RPGToolItem {
             } else {
                     playToolSound(pPlayer);
             }
-            Log.info(pSlot.getItem().getItem() + " string is:" + pStack.getTag().getString("sharpened_effect"));
-            Log.info(pSlot.getItem().getItem() + " has Keys " + pStack.getTag().getAllKeys());
 
             return true;
         } else {

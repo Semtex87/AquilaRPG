@@ -1,0 +1,25 @@
+{
+  "display": {
+    "title": {
+      "text": "Aquila Void Recipes",
+      "bold": true
+    },
+    "description": {
+      "text": "Void Recipes are the final Mastery of Crafting. Beneath Artifacts they are the most powerful Items available",
+      "italic": true
+    },
+    "icon": {
+      "item": "aquilarpg:void_steel_ingot"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "aquilarpg:aquilarpg_recipes_expert",
+  "criteria": {
+    "tick": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

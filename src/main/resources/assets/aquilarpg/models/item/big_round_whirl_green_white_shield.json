@@ -351,12 +351,12 @@
 	"display": {
 		"thirdperson_righthand": {
 			"rotation": [-168.38, 81.35, -101.74],
-			"translation": [9.25, 0, -2.75],
+			"translation": [10.25, 0, -2.75],
 			"scale": [0.9, 0.9, 1]
 		},
 		"thirdperson_lefthand": {
 			"rotation": [-168.38, 81.35, -101.74],
-			"translation": [9.25, -3.75, -2.75],
+			"translation": [10.25, -3.75, -2.75],
 			"scale": [0.9, 0.9, 1]
 		},
 		"firstperson_righthand": {

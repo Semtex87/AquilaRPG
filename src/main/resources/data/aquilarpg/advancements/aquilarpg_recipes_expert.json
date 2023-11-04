@@ -1,0 +1,25 @@
+{
+  "display": {
+    "title": {
+      "text": "Aquila Expert Recipes",
+      "bold": true
+    },
+    "description": {
+      "text": "Expert recipes covers all Metal Alloys ",
+      "italic": true
+    },
+    "icon": {
+      "item": "aquilarpg:steel_ingot"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "aquilarpg:aquilarpg_recipes",
+  "criteria": {
+    "tick": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

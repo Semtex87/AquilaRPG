@@ -345,12 +345,12 @@
 	"display": {
 		"thirdperson_righthand": {
 			"rotation": [50, 100, 0],
-			"translation": [7, -5, -4.25],
+			"translation": [7.5, -5, -4.25],
 			"scale": [0.8, 0.8, 0.5]
 		},
 		"thirdperson_lefthand": {
 			"rotation": [50, 100, 0],
-			"translation": [7, -5, -4.25],
+			"translation": [7.75, -5, -4.25],
 			"scale": [0.8, 0.8, 0.5]
 		},
 		"firstperson_righthand": {

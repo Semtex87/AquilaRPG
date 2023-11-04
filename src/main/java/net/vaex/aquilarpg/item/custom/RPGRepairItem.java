@@ -8,6 +8,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ClickAction;
@@ -16,6 +17,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.vaex.aquilarpg.item.RPGMaterialTiers;
 import net.vaex.aquilarpg.util.RPGCreativeModeTab;
 import net.vaex.aquilarpg.util.RPGTierInterface;
 import org.jetbrains.annotations.NotNull;
@@ -36,50 +38,53 @@ public class RPGRepairItem extends RPGToolItem {
 
     @Override
     public ItemStack getContainerItem(@Nonnull ItemStack itemStack) {
+        Player player = Minecraft.getInstance().player;
+        Level level = player.getLevel();
         final ItemStack copy = itemStack.copy();
         if (copy.hurt(1, new Random(), null)) {
-            calcDamage(itemStack);
+            playBreakSound(level,player);
             return ItemStack.EMPTY;
         } else {
+            playToolSound(level,player);
             return copy;
         }
     }
 
     public boolean overrideStackedOnOther(ItemStack pStack, Slot pSlot, ClickAction pAction, Player pPlayer) {
         int damageValueToRepair = pSlot.getItem().getDamageValue();
-        if (pAction == ClickAction.SECONDARY && pSlot.allowModification(pPlayer) && pSlot.getItem().isDamaged() && !(pSlot.getItem().getItem() instanceof RPGRepairItem) &&
+        if (!pPlayer.getLevel().isClientSide && pAction == ClickAction.SECONDARY && pSlot.allowModification(pPlayer) && pSlot.getItem().isDamaged() && !(pSlot.getItem().getItem() instanceof RPGRepairItem) &&
                 !(pSlot.getItem().getItem() instanceof RPGBasicTwoHandMeleeWeapon twoHandMeleeWeapon && twoHandMeleeWeapon.mythicalTwohand || pSlot.getItem().getItem() instanceof RPGBasicMeleeWeapon meleeWeapon && meleeWeapon.mythicalOneHand)) {
-            pPlayer.playSound(SoundEvents.ANVIL_USE,1.0f,0);
+            pPlayer.playSound(SoundEvents.ANVIL_USE, 1.0f, 0);
             pSlot.getItem().hurt(damageValueToRepair * (-1), new Random(), null);
             pStack.hurt(damageValueToRepair, new Random(), null);
-            calcDamage(pStack);
+            calcDamage(pStack, pPlayer);
             return true;
-        } else  {
+        } else {
             return false;
         }
     }
 
-    private void calcDamage(@Nonnull ItemStack tool) {
-        Player player = Minecraft.getInstance().player;
-        int damageValueTool = tool.getDamageValue();
-        int maxDurabilityTool = tool.getMaxDamage();
-        if (damageValueTool >= maxDurabilityTool) {
-            tool.shrink(1);
-            if (player != null) {
-                playBreakSound(player);
-            }
-        }else {
-            if (player != null) {
-                playToolSound(player);
+    private void calcDamage(@Nonnull ItemStack tool, Player player) {
+        if (player != null) {
+            Level level = player.getLevel();
+            int damageValueTool = tool.getDamageValue();
+            int maxDurabilityTool = tool.getMaxDamage();
+            if (damageValueTool >= maxDurabilityTool) {
+                tool.shrink(1);
+                playBreakSound(level,player);
+            } else {
+                playToolSound(level,player);
             }
         }
     }
 
-    private void playToolSound(Entity entity) {
-        entity.playSound(SoundEvents.ANVIL_USE, 0.8F, 1.0f);
+
+
+    private void playToolSound(Level level, Entity entity) {
+        level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), SoundEvents.ANVIL_PLACE, SoundSource.PLAYERS, 1.5F, 1F);
     }
-    private void playBreakSound(Entity entity) {
-        entity.playSound(SoundEvents.ITEM_BREAK, 1.0F, 1.0f );
+    private void playBreakSound(Level level, Entity entity) {
+        level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), SoundEvents.ITEM_BREAK, SoundSource.PLAYERS, 1.5F, 1F);
     }
 
 

@@ -1,0 +1,25 @@
+{
+  "display": {
+    "title": {
+      "text": "Aquila RPG",
+      "bold": true
+    },
+    "description": {
+      "text": "Welcome to the RPG Part of Aquila and Conquest",
+      "italic": true
+    },
+    "icon": {
+      "item": "aquilarpg:tome_of_defense"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false,
+    "background": "aquilarpg:textures/gui/generic_background.png"
+  },
+  "criteria": {
+    "c1": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

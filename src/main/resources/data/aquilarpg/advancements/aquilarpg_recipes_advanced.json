@@ -1,0 +1,25 @@
+{
+  "display": {
+    "title": {
+      "text": "Aquila Advanced Recipes",
+      "bold": true
+    },
+    "description": {
+      "text": "Advanced recipes covers all basic Metal Materials",
+      "italic": true
+    },
+    "icon": {
+      "item": "minecraft:iron_ingot"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "aquilarpg:aquilarpg_recipes",
+  "criteria": {
+    "tick": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

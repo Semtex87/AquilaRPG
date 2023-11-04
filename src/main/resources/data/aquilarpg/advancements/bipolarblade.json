@@ -3,26 +3,19 @@
     "icon": {
       "item": "aquilarpg:bipolarblade"
     },
-    "title": "Artifacts",
-    "description": "There are some very powerful artifacts around...time to get them all!",
-    "frame": "task"
+    "title": "BIPOLAR BLADE",
+    "description": " ",
+    "frame": "challenge"
   },
-  "parent": "aquilarpg:aquilarpg",
+  "parent": "aquilarpg:aquilarpg_artifacts",
   "criteria": {
     "requirement": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {}
-          }
-        ],
         "items": [
           {
             "items": [
-              "minecraft:bipolarblade"
+              "aquilarpg:bipolarblade"
             ]
           }
         ]

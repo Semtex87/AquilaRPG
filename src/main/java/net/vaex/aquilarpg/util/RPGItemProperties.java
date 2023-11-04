@@ -38,6 +38,7 @@ public class RPGItemProperties {
 
         //Magic
         makeBow(RPGItems.FIRESTAFF.get()); //itsa bow lol
+        makeBow(RPGItems.APOSTEL_STAFF.get());
 
 
 

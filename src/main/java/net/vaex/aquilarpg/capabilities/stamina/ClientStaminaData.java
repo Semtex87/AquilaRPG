@@ -6,8 +6,8 @@ public class ClientStaminaData {
     private static int playerStamina;
 
 
-    public static void set(int mana) {
-        ClientStaminaData.playerStamina = mana;
+    public static void set(int stamina) {
+        ClientStaminaData.playerStamina = stamina;
     }
 
     public static int getPlayerStamina(Player entity) {

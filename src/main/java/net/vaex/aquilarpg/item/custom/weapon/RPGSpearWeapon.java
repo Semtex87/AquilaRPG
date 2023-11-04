@@ -2,6 +2,7 @@ package net.vaex.aquilarpg.item.custom.weapon;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
@@ -22,10 +23,14 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
+import net.vaex.aquilarpg.capabilities.mana.ClientManaData;
+import net.vaex.aquilarpg.capabilities.mana.ManaProvider;
 import net.vaex.aquilarpg.effects.RPGEffectManager;
 import net.vaex.aquilarpg.entity.item.SpearEntity;
 import net.vaex.aquilarpg.item.RPGMaterialTiers;
 import net.vaex.aquilarpg.item.custom.RPGBasicMeleeWeapon;
+import net.vaex.aquilarpg.network.ManaSyncS2CPacket;
+import net.vaex.aquilarpg.network.NetworkHandler;
 import net.vaex.aquilarpg.util.RPGSoundEvents;
 import org.jetbrains.annotations.NotNull;
 import org.jline.utils.Log;
@@ -75,10 +80,10 @@ public class RPGSpearWeapon extends RPGBasicMeleeWeapon {
         if (!pPlayer.isShiftKeyDown()) {
             return InteractionResultHolder.fail(itemstack);
         }
-
         if (itemstack.getDamageValue() >= itemstack.getMaxDamage() - 1) {
             return InteractionResultHolder.fail(itemstack);
         } else {
+
             pPlayer.startUsingItem(pHand);
             return InteractionResultHolder.consume(itemstack);
         }
@@ -92,6 +97,12 @@ public class RPGSpearWeapon extends RPGBasicMeleeWeapon {
                 pLevel.playSound((Player)null, player.getX(), player.getY(), player.getZ(),
                         SoundEvents.TRIDENT_THROW, SoundSource.PLAYERS, 1.0F, 1.0F);
                 if (!pLevel.isClientSide) {
+                    if (pEntityLiving instanceof ServerPlayer serverplayer && !serverplayer.isCreative()) {
+                        serverplayer.getCapability(ManaProvider.PLAYER_MANA).ifPresent(mana -> {
+                            mana.subMana(10);
+                            NetworkHandler.sendPacketTo(new ManaSyncS2CPacket(mana.getMana()), serverplayer);
+                        });
+                    }
                     SpearEntity spearEntity = new SpearEntity(pLevel, player, pStack);
                     float throwingValue = 2.5f;
                     spearEntity.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, throwingValue , 0.5F);

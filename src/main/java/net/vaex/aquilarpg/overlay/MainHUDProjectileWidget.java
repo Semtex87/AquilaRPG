@@ -11,6 +11,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraftforge.client.gui.ForgeIngameGui;
 import net.minecraftforge.client.gui.IIngameOverlay;
 import net.vaex.aquilarpg.AquilaRPG;
@@ -48,6 +50,7 @@ public class MainHUDProjectileWidget implements IIngameOverlay {
         projectilesList.add(RPGItems.POISON_DART.get());
         projectilesList.add(Items.FIRE_CHARGE);
     }
+
     private void addmagicProjectile() {
         projectilesList.add(RPGItems.MANA.get());
         projectilesList.add(RPGItems.FIRE_SPELL.get());
@@ -61,6 +64,7 @@ public class MainHUDProjectileWidget implements IIngameOverlay {
     public void render(ForgeIngameGui gui, PoseStack poseStack, float partialTick, int width, int height) {
         addProjectiles();
         addmagicProjectile();
+        MainHUDDeco mainHudDecorations;
         final float scale = 0.5f;
         PoseStack poseStack1 = new PoseStack();
         poseStack1.scale(scale, scale, scale);
@@ -68,10 +72,13 @@ public class MainHUDProjectileWidget implements IIngameOverlay {
         this.y = (height - IMAGE_HEIGHT);
         Player player = (Player) Minecraft.getInstance().cameraEntity;
         if (player == null) return;
+        if (player.isCreative()) return;
+        ItemStack itemStack = player.getItemInHand(InteractionHand.MAIN_HAND);
+        boolean flag = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.INFINITY_ARROWS, itemStack) > 0;
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
         RenderSystem.setShaderColor(1, 1, 1, 1);
-        //CREATIVE
-        if (player.isCreative()) {
+        //INFINITY
+        if (flag) {
             RenderSystem.setShaderTexture(0, ARROW_WIDGET);
             GuiComponent.blit(poseStack, x - 70, y, 0, 0, IMAGE_WIDTH, IMAGE_HEIGHT, IMAGE_WIDTH, IMAGE_HEIGHT);
             infinitySymbol = new String(Character.toString('\u221E').getBytes(StandardCharsets.UTF_8), StandardCharsets.UTF_8);
@@ -141,7 +148,7 @@ public class MainHUDProjectileWidget implements IIngameOverlay {
         }
     }
 
-    private void getArrowProjectile(Player player, PoseStack poseStack1){
+    private void getArrowProjectile(Player player, PoseStack poseStack1) {
         for (int i = 0; i < player.getInventory().getContainerSize(); ++i) {
             ItemStack itemstack = player.getInventory().getItem(i);
             if (itemstack.getItem().equals(projectilesList.get(0))) {

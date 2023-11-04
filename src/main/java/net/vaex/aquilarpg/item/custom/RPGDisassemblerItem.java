@@ -2,9 +2,12 @@ package net.vaex.aquilarpg.item.custom;
 
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.SmallFireball;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -12,7 +15,11 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.vaex.aquilarpg.block.RPGBlocks;
+import net.vaex.aquilarpg.capabilities.mana.ManaProvider;
+import net.vaex.aquilarpg.network.ManaC2SPacket;
+import net.vaex.aquilarpg.network.NetworkHandler;
 
 
 import java.util.ArrayList;
@@ -69,7 +76,21 @@ public class RPGDisassemblerItem extends Item {
 
         return super.onBlockStartBreak(itemstack, pos, player);
     }
-
+    @Override
+    @SubscribeEvent
+    public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
+        double d2 = pPlayer.getX() ;
+        double d3 = pPlayer.getY();
+        double d4 = pPlayer.getZ();
+        SmallFireball smallfireball = new SmallFireball(pLevel, pPlayer, -d2, -d3, -d4);
+        smallfireball.setPos(smallfireball.getX(),0.5D, smallfireball.getZ());
+        pLevel.addFreshEntity(smallfireball);
+        pPlayer.getCapability(ManaProvider.PLAYER_MANA).ifPresent(mana -> {
+            mana.subMana(50);
+            NetworkHandler.sendPacketToServer((new ManaC2SPacket()));
+        });
+        return super.use(pLevel, pPlayer, pUsedHand);
+    }
 
     @Override
     public boolean isCorrectToolForDrops(BlockState pBlock) {

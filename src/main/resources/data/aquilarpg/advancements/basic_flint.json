@@ -1,0 +1,23 @@
+{
+  "display": {
+    "title": {
+      "text": "FLINT RECIPES"
+    },
+    "description": {
+      "text": "Flint Recipes"
+    },
+    "icon": {
+      "item": "minecraft:flint"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "aquilarpg:aquilarpg_recipes_basic",
+  "criteria": {
+    "tick": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

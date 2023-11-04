@@ -1,0 +1,23 @@
+{
+  "display": {
+    "title": {
+      "text": "UPGRADE TIME"
+    },
+    "description": {
+      "text": "You can Upgrade your Tinker Table by placing specific blocks next to it, for getting basic Recipes add a Grindstone near the table (max Range 2)"
+    },
+    "icon": {
+      "item": "aquilarpg:forge_hammer_iron"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "aquilarpg:tinker_table",
+  "criteria": {
+    "tick": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

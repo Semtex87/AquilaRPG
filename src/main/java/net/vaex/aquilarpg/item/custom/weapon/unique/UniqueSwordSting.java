@@ -32,7 +32,9 @@ public class UniqueSwordSting extends RPGSwordWeapon {
             }
         }
     }
-
+    public boolean isStackable() {
+        return false;
+    }
     @Override
     public void appendHoverText(ItemStack itemStack, @org.jetbrains.annotations.Nullable Level level, List<Component> pTooltip, TooltipFlag pFlag) {
         int damageValue = itemStack.getDamageValue();

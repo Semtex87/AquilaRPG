@@ -219,7 +219,7 @@
 
 
 
-
+  "_comment_jewelry": "+++++++++++++++++++++++++++++++ all jewelry  stuff +++++++++++++++++++++++++++++++",
   "item.aquilarpg.pendant_of_blood_sacrifice": "Pendant of Blood Sacrifice",
   "item.aquilarpg.ankh_silver": "Ankh Silver",
   "item.aquilarpg.bone_amulet": "Bone Amulet",
@@ -227,9 +227,9 @@
   "item.aquilarpg.aquamarine_gold_ring": "Aquamarine Gold Ring",
   "item.aquilarpg.ruby_gold_ring": "Ruby Gold Ring",
 
-
-
-
+  "_comment_armor": "+++++++++++++++++++++++++++++++ all Armor  stuff +++++++++++++++++++++++++++++++",
+  "item.aquilarpg.askir_imperial_guard_helmet": "Askir Imperial Guard Helmet",
+  "item.aquilarpg.askir_legionnaire_helmet": "Askir Legionnaire Helmet",
 
   "item.aquilarpg.coal_coke": "Coal Coke",
   "item.aquilarpg.peat_brick": "Peat Brick",
@@ -248,16 +248,13 @@
   "item.aquilarpg.glass_shard": "Glass Shard",
 
   "item.aquilarpg.raw_cobalt": "Raw Cobalt",
-
-  "item.aquilarpg.cobalt_slag": "Cobalt Slag",
-
-  "item.aquilarpg.crucible_molten_cobalt": "Crucible with molten Cobalt",
-
-  "item.aquilarpg.crucible_raw_cobalt": "Crucible with raw Cobalt",
-
   "item.aquilarpg.ruby": "Ruby",
-
   "item.aquilarpg.bandage": "Bandage",
+
+
+
+
+
   "_comment_coins": "+++++++++++++++++++++++++++++++ all coin stuff +++++++++++++++++++++++++++++++",
   "item.aquilarpg.askir_copper_coin": "Askir Copper Coin",
   "item.aquilarpg.askir_silver_coin": "Askir Silver Coin",
@@ -435,7 +432,7 @@
   "rarity.aquila_rare": "RARE",
   "rarity.aquila_common": "COMMON",
 
-  "item_tooltip_shift": "Press §eSHIFT§r for Stats!",
+  "tooltip.aquilairpg.shift": "Press §eSHIFT§r for Info!",
   "item_silver_damageUndead": "Damage against Undead",
   "item_durability": "Durability",
 

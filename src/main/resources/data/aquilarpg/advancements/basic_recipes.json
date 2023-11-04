@@ -1,0 +1,23 @@
+{
+  "display": {
+    "title": {
+      "text": "BASIC RECIPES"
+    },
+    "description": {
+      "text": "Now you have your Tinker Table and unlocked the first basic Recipes for Stone, Bone, Wood and Flint Items. Check the Advancement Tab for Recipe Status"
+    },
+    "icon": {
+      "item": "aquilarpg:forge_hammer_iron"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "aquilarpg:tinker_table",
+  "criteria": {
+    "tick": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

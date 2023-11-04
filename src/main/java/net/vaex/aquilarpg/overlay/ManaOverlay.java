@@ -27,8 +27,9 @@ public class ManaOverlay implements IIngameOverlay {
         this.y = (height - IMAGE_HEIGHT);
         Player player = (Player) Minecraft.getInstance().cameraEntity;
         if (player != null) {
+            if(player.isCreative()) return;
             float maxMana = Mana.getPlayerMaxMana();
-            float currentMana = ClientManaData.getPlayerMana(player);
+            float currentMana = ClientManaData.getPlayerMana();
             float oneUnit = (float) IMAGE_HEIGHT / maxMana;
             float currentHeight = (int) (oneUnit * currentMana);
             RenderSystem.setShader(GameRenderer::getPositionTexShader);

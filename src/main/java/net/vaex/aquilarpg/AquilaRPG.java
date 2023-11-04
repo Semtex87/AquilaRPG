@@ -1,6 +1,8 @@
 package net.vaex.aquilarpg;
 
 import com.mojang.logging.LogUtils;
+import mezz.jei.common.config.KeyBindings;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -19,6 +21,7 @@ import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.vaex.aquilarpg.block.RPGBlocks;
 import net.vaex.aquilarpg.block.entity.RPGBlockEntities;
+import net.vaex.aquilarpg.capabilities.mana.ManaEvents;
 import net.vaex.aquilarpg.effects.RPGEffectManager;
 import net.vaex.aquilarpg.effects.RPGPotionManager;
 import net.vaex.aquilarpg.effects.RPGSimpleBrewingRecipe;
@@ -26,13 +29,14 @@ import net.vaex.aquilarpg.enchantment.RPGEnchantments;
 import net.vaex.aquilarpg.entity.RPGModEntities;
 import net.vaex.aquilarpg.entity.curio.shield.RenderShieldOnBack;
 import net.vaex.aquilarpg.entity.item.renderer.*;
+import net.vaex.aquilarpg.event.PlayerEvents;
 import net.vaex.aquilarpg.item.*;
 import net.vaex.aquilarpg.network.NetworkHandler;
 import net.vaex.aquilarpg.overlay.Overlays;
-import net.vaex.aquilarpg.util.RPGAdvancedAlchemicalRecipe;
-import net.vaex.aquilarpg.util.RPGItemProperties;
-import net.vaex.aquilarpg.util.RPGSimpleAlchemicalRecipe;
-import net.vaex.aquilarpg.util.RPGSoundEvents;
+import net.vaex.aquilarpg.recipe.RPGRecipes;
+import net.vaex.aquilarpg.screen.RPGMenuTypes;
+import net.vaex.aquilarpg.screen.TinkerTableScreen;
+import net.vaex.aquilarpg.util.*;
 import org.slf4j.Logger;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotTypeMessage;
@@ -51,13 +55,14 @@ public class AquilaRPG {
         RPGBlocks.register(modEventBus);
         RPGItems.register(modEventBus);
         RPGBlockEntities.register(modEventBus);
-
-
         RPGModEntities.register(modEventBus);
         RPGEffectManager.register(modEventBus);
         RPGEnchantments.register(modEventBus);
         RPGPotionManager.register(modEventBus);
         RPGSoundEvents.register(modEventBus);
+        RPGAttributes.register(modEventBus);
+        RPGMenuTypes.register(modEventBus);
+        RPGRecipes.register(modEventBus);
         // Register the setup method for modloading
 
         modEventBus.addListener(this::setup);
@@ -72,9 +77,9 @@ public class AquilaRPG {
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    private void setup(final FMLCommonSetupEvent event) {
-        event.enqueueWork(NetworkHandler::register);
+    private void setup(FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
+            NetworkHandler.register();
             BrewingRecipeRegistry.addRecipe(new RPGSimpleBrewingRecipe(Potions.AWKWARD, RPGPotionManager.RANDOM_TP.get(), Items.ENDER_PEARL));
             BrewingRecipeRegistry.addRecipe(new RPGSimpleBrewingRecipe(Potions.AWKWARD, RPGPotionManager.BLEEDING.get(), Items.CACTUS));
             BrewingRecipeRegistry.addRecipe(new RPGSimpleBrewingRecipe(Potions.AWKWARD, RPGPotionManager.INFRAVISION.get(), RPGIngredientItems.BEHOLDERS_EYE.get()));
@@ -103,26 +108,28 @@ public class AquilaRPG {
             BrewingRecipeRegistry.addRecipe(new RPGSimpleAlchemicalRecipe(Potions.WATER, RPGItems.HYDROCHLORIC_ACID.get(),  RPGItems.SALT.get()));
             BrewingRecipeRegistry.addRecipe(new RPGSimpleAlchemicalRecipe(Potions.WATER, RPGItems.CAVE_SPIDER_POISON.get(),  Items.SPIDER_EYE));
 
-
-
             // advanced recipes
             BrewingRecipeRegistry.addRecipe(new RPGAdvancedAlchemicalRecipe(RPGItems.HYDROCHLORIC_ACID.get(), RPGItems.AQUA_REGIA.get(),  RPGItems.NITRIC_ACID.get()));
             BrewingRecipeRegistry.addRecipe(new RPGAdvancedAlchemicalRecipe(RPGItems.AQUA_REGIA.get(), RPGItems.RUNIC_SOLUTION.get(),  RPGItems.RUNE_DUST.get()));
             BrewingRecipeRegistry.addRecipe(new RPGAdvancedAlchemicalRecipe(RPGItems.PURE_WATER.get(), RPGItems.LIQUID_DEATH.get(),  RPGItems.WINESTONE.get()));
             BrewingRecipeRegistry.addRecipe(new RPGAdvancedAlchemicalRecipe(RPGItems.DISTILLED_WATER.get(), RPGItems.HOLY_WATER.get(),  RPGItems.PIXIE_TEARS.get()));
             BrewingRecipeRegistry.addRecipe(new RPGAdvancedAlchemicalRecipe(RPGItems.DISTILLED_WATER.get(), RPGItems.PURE_WATER.get(),  RPGItems.HOLY_WATER.get()));
-
-
         });
 
-        Overlays.registerOverlays();
+
         // some preinit code
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
     }
     private void clientSetup(final FMLClientSetupEvent event) {
+        Overlays.registerOverlays();
+        RPGKeyBindings.register();
         RPGItemProperties.addCustomItemProperties();
+        MenuScreens.register(RPGMenuTypes.TINKER_TABLE_MENU.get(),TinkerTableScreen::new);
         entityRegister();
+        registerCurioRenderItems();
+        blockRenderer();
+
     }
     private void enqueue(final InterModEnqueueEvent evt) {
         InterModComms.sendTo(CuriosApi.MODID, SlotTypeMessage.REGISTER_TYPE,
@@ -143,8 +150,6 @@ public class AquilaRPG {
                 () -> SlotTypePreset.HEAD.getMessageBuilder().build());
         InterModComms.sendTo(CuriosApi.MODID, SlotTypeMessage.REGISTER_TYPE,
                 () -> SlotTypePreset.HANDS.getMessageBuilder().build());
-        registerCurioRenderItems();
-        blockRenderer();
     }
     private void entityRegister() {
         EntityRenderers.register(RPGModEntities.DAGGER.get(), RenderDagger::new);
@@ -215,8 +220,8 @@ public class AquilaRPG {
 
     private void blockRenderer() {
         ItemBlockRenderTypes.setRenderLayer(RPGBlocks.COBALT_BLASTER.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(RPGBlocks.TINKER_TABLE.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(RPGBlocks.COBALT_BLOCK.get(), RenderType.translucent());
-
     }
 
 
@@ -224,7 +229,9 @@ public class AquilaRPG {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            event.enqueueWork(() -> {
+
+            });
         }
     }
-
 }

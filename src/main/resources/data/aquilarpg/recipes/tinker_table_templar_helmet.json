@@ -1,0 +1,16 @@
+{
+  "type": "aquilarpg:tinker_table",
+  "ingredient": [
+    {
+      "item": "aquilarpg:hot_iron_ingot"
+    },
+    {
+      "item": "aquilarpg:chainparts_iron"
+    },
+    {
+      "item": "aquilarpg:leather"
+    }
+  ],
+  "result": "aquilarpg:templar_helmet",
+  "count": 1
+}

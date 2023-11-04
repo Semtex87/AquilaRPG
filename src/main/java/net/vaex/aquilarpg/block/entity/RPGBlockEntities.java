@@ -17,6 +17,16 @@ public class RPGBlockEntities {
             BLOCK_ENTITIES.register("cobalt_blaster", () ->
                     BlockEntityType.Builder.of(CobaltBlasterBlockEntity::new,
                             RPGBlocks.COBALT_BLASTER.get()).build(null));
+    public static final RegistryObject<BlockEntityType<TinkerTableBlockEntity>> TINKER_TABLE =
+            BLOCK_ENTITIES.register("tinker_table", () ->
+                    BlockEntityType.Builder.of(TinkerTableBlockEntity::new,
+                            RPGBlocks.TINKER_TABLE.get()).build(null));
+
+
+
+
+
+
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "item": "aquilarpg:mana"
+    },
+    "title": "TEST",
+    "description": "TEST",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "aquilarpg:functions",
+  "criteria": {
+    "play_jukebox_in_meadows": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "location": {
+          "biome": "minecraft:meadow",
+          "block": {
+            "blocks": [
+              "minecraft:jukebox"
+            ]
+          }
+        },
+        "item": {
+          "tag": "minecraft:music_discs"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "play_jukebox_in_meadows"
+    ]
+  ]
+}

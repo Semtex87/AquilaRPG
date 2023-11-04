@@ -9,6 +9,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
@@ -22,6 +23,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.vaex.aquilarpg.capabilities.mana.ClientManaData;
+import net.vaex.aquilarpg.capabilities.mana.ManaProvider;
 import net.vaex.aquilarpg.effects.RPGEffectManager;
 import net.vaex.aquilarpg.item.RPGMaterialTiers;
 import net.vaex.aquilarpg.item.custom.RPGBookItem;
@@ -29,6 +31,7 @@ import net.vaex.aquilarpg.util.RPGAttributeUUID;
 import net.vaex.aquilarpg.util.RPGAttributes;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jline.utils.Log;
 
 import java.util.List;
 import java.util.Random;
@@ -50,18 +53,21 @@ public class TomeOfManaflow extends RPGBookItem {
     @Override
     public void inventoryTick(@NotNull ItemStack itemstack, @NotNull Level world, @NotNull Entity entity, int slot, boolean selected) {
         final Random random = new Random();
-        if (entity instanceof Player player) {
-            if (player.getItemInHand(InteractionHand.OFF_HAND).is(itemstack.getItem())) {
-                int currentMana = ClientManaData.getPlayerMana(player);
-                if (currentMana > 0) {
-                    player.addEffect(new MobEffectInstance(RPGEffectManager.MANA_SHIELD.get(), 99999999, 0, true, true));
-                    world.addParticle(ParticleTypes.ENCHANT, entity.getRandomX(0.5D), entity.getRandomY() - 0.25D, entity.getRandomZ(0.5D), (random.nextDouble() - 0.5D) * 2.0D, -random.nextDouble(), (random.nextDouble() - 0.5D) * 2.0D);
-
+        if (!world.isClientSide) {
+            if (entity instanceof ServerPlayer serverPlayer) {
+                if (serverPlayer.getItemInHand(InteractionHand.OFF_HAND).equals(itemstack)) {
+                    InteractionHand hand = serverPlayer.getUsedItemHand();
+                    serverPlayer.getCapability(ManaProvider.PLAYER_MANA).ifPresent(mana -> {
+                        if (mana.getMana() > 0) {
+                            serverPlayer.addEffect(new MobEffectInstance(RPGEffectManager.MANA_SHIELD.get(), 999999999, 0, true, true));
+                            world.addParticle(ParticleTypes.ENCHANT, entity.getRandomX(0.5D), entity.getRandomY() - 0.25D, entity.getRandomZ(0.5D), (random.nextDouble() - 0.5D) * 2.0D, -random.nextDouble(), (random.nextDouble() - 0.5D) * 2.0D);
+                        } else {
+                            serverPlayer.removeEffect(RPGEffectManager.MANA_SHIELD.get());
+                        }
+                    });
                 } else {
-                    player.removeEffect(RPGEffectManager.MANA_SHIELD.get());
+                    serverPlayer.removeEffect(RPGEffectManager.MANA_SHIELD.get());
                 }
-            } else {
-                player.removeEffect(RPGEffectManager.MANA_SHIELD.get());
             }
         }
         super.inventoryTick(itemstack, world, entity, slot, selected);

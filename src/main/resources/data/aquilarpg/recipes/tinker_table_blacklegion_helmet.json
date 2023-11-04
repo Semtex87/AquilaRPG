@@ -1,0 +1,16 @@
+{
+  "type": "aquilarpg:tinker_table",
+  "ingredient": [
+    {
+      "item": "aquilarpg:hot_steel_ingot"
+    },
+    {
+      "item": "minecraft:black_dye"
+    },
+    {
+      "item": "aquilarpg:leatherstripes"
+    }
+  ],
+  "result": "aquilarpg:blacklegion_helmet",
+  "count": 1
+}

@@ -1,0 +1,21 @@
+{
+  "display": {
+    "icon": {
+      "item": "aquilarpg:forge_hammer_elementium"
+    },
+    "title": "TINKER TABLE",
+    "description": "Heart of all Crafting",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "aquilarpg:functions",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "block": "aquilarpg:tinker_table"
+      }
+    }
+  }
+}

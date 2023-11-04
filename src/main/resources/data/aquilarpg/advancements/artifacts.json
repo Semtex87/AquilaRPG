@@ -1,31 +1,18 @@
 {
   "display": {
     "icon": {
-      "item": "aquilarpg:bipolarblade"
+      "item": "aquilarpg:dawn_fang"
     },
     "title": "Artifacts",
-    "description": "There are some very powerful artifacts around...time to get them all!",
-    "frame": "task"
+    "description": "There are some very powerful artifacts around, some to find and some to craft. Check the Artifacts Tab for more Information",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
   },
-  "parent": "aquilarpg:aquilarpg",
+  "parent": "aquilarpg:tinker_table",
   "criteria": {
-    "requirement": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "predicate": {}
-          }
-        ],
-        "items": [
-          {
-            "items": [
-              "minecraft:bipolarblade"
-            ]
-          }
-        ]
-      }
+    "tick": {
+      "trigger": "minecraft:tick"
     }
   }
 }

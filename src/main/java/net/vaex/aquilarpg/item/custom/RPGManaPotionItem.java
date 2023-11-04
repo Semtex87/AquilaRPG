@@ -16,6 +16,7 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.vaex.aquilarpg.capabilities.mana.ManaProvider;
 import net.vaex.aquilarpg.network.ManaC2SPacket;
+import net.vaex.aquilarpg.network.ManaSyncS2CPacket;
 import net.vaex.aquilarpg.network.NetworkHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -39,10 +40,12 @@ public class RPGManaPotionItem extends Item {
             CriteriaTriggers.CONSUME_ITEM.trigger(serverplayer, pStack);
             serverplayer.awardStat(Stats.ITEM_USED.get(this));
         }
-        pEntityLiving.getCapability(ManaProvider.PLAYER_MANA).ifPresent(mana -> {
-            mana.addMana(manaAmount);
-            NetworkHandler.sendPacketToServer((new ManaC2SPacket()));
-        });
+        if (pEntityLiving instanceof ServerPlayer serverplayer) {
+            serverplayer.getCapability(ManaProvider.PLAYER_MANA).ifPresent(mana -> {
+                mana.addMana(manaAmount);
+                NetworkHandler.sendPacketTo(new ManaSyncS2CPacket(mana.getMana()), serverplayer);
+            });
+        }
 
         if (pStack.isEmpty()) {
             pStack.shrink(1);
@@ -65,7 +68,7 @@ public class RPGManaPotionItem extends Item {
     }
 
     public int getUseDuration(ItemStack stack) {
-        return 32;
+        return 16;
     }
 
     @Override

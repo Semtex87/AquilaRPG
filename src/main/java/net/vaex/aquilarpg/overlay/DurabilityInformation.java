@@ -27,6 +27,7 @@ public class DurabilityInformation implements IIngameOverlay {
         this.y = (height);
         Player player = (Player) Minecraft.getInstance().cameraEntity;
         if (player == null) return;
+        if(player.isCreative()) return;
         ItemStack itemStackHelmSlot = player.getItemBySlot(EquipmentSlot.HEAD);
         ItemStack itemStackBreastSlot = player.getItemBySlot(EquipmentSlot.CHEST);
         ItemStack itemStackLegsSlot = player.getItemBySlot(EquipmentSlot.LEGS);

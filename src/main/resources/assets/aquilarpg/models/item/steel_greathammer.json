@@ -21,18 +21,18 @@
 			"scale": [1.8, 1.8, 0.5]
 		},
 		"firstperson_lefthand": {
-			"rotation": [136.66, 84.53, 159.7],
+			"rotation": [91.31, 38.55, -150.87],
 			"translation": [-0.25, 5.75, 2],
 			"scale": [1.8, 1.8, 0.5]
 		},
 		"ground": {
 			"translation": [0, 4.5, 0],
-			"scale": [1.8, 1.8, 0.5]
+			"scale": [1, 1, 0.5]
 		},
 		"fixed": {
 			"rotation": [0, 0, 90],
 			"translation": [0, 0.5, -2],
-			"scale": [3, 3, 1]
+			"scale": [2, 2, 1]
 		}
 	}
 }

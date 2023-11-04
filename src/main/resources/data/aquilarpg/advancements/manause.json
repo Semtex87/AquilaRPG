@@ -1,0 +1,33 @@
+{
+  "display": {
+    "title": {
+      "text": "Use Mana"
+    },
+    "description": {
+      "text": "Consume Mana works in two ways active and passive. Active Consuming are Staffs you can cast Spells with. A good example for passive is Mana Shield"
+    },
+    "icon": {
+      "item": "aquilarpg:firestaff"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "aquilarpg:manasystem",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:using_item",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "aquilarpg:teleport_staff",
+              "aquilarpg:firestaff"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

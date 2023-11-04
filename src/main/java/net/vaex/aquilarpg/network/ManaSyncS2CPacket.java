@@ -28,7 +28,6 @@ public class ManaSyncS2CPacket {
         context.enqueueWork(() -> {
             // HERE WE ARE ON THE CLIENT!
             ClientManaData.set(mana);
-
         });
         return true;
     }

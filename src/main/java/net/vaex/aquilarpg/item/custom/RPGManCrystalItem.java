@@ -3,6 +3,7 @@ package net.vaex.aquilarpg.item.custom;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -16,8 +17,11 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.vaex.aquilarpg.capabilities.mana.ManaProvider;
 import net.vaex.aquilarpg.network.ManaC2SPacket;
+import net.vaex.aquilarpg.network.ManaSyncS2CPacket;
 import net.vaex.aquilarpg.network.NetworkHandler;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jline.utils.Log;
 
 import java.util.List;
 
@@ -30,15 +34,24 @@ public class RPGManCrystalItem extends Item {
     }
 
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
-        ItemStack stack = pPlayer.getItemInHand(InteractionHand.MAIN_HAND);
-        pPlayer.getCapability(ManaProvider.PLAYER_MANA).ifPresent(mana -> {
-            mana.addMana(manaAmount);
-            NetworkHandler.sendPacketToServer((new ManaC2SPacket()));
-        });
-        pLevel.playSound(null,pPlayer,SoundEvents.GLASS_BREAK, SoundSource.PLAYERS,3.0f,1.0f);
-        stack.hurtAndBreak(1, pPlayer, (var) -> var.broadcastBreakEvent(EquipmentSlot.MAINHAND));
+        if (pPlayer instanceof ServerPlayer serverplayer) {
+            ItemStack stack = serverplayer.getItemInHand(InteractionHand.MAIN_HAND);
+            serverplayer.getCapability(ManaProvider.PLAYER_MANA).ifPresent(mana -> {
+                if (mana.getMana() < mana.getActualMaxMana()) {
+                    mana.addMana(manaAmount);
+                    NetworkHandler.sendPacketTo(new ManaSyncS2CPacket(mana.getMana()), serverplayer);
+                    serverplayer.getCooldowns().addCooldown(this, 40);
+                    pLevel.playSound(null, serverplayer, SoundEvents.GLASS_BREAK, SoundSource.PLAYERS, 3.0f, 1.0f);
+                    stack.shrink(1);
+                }else {
+                    serverplayer.sendMessage(new TextComponent("you have maximum mana"), serverplayer.getUUID());
+                }
+            });
+        }
         return ItemUtils.startUsingInstantly(pLevel, pPlayer, pHand);
     }
+
+
     @Override
     public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> pTooltip, TooltipFlag pFlag) {
         pTooltip.add(new TextComponent("Mana: " + manaAmount + " ").withStyle(ChatFormatting.BLUE));

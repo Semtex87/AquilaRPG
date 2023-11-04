@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:book"
+    },
+    "title": "Enchantments and Items",
+    "description": "Enchantments in Aquila are different to Minecraft. Items are not enchant able via the Table, only with books. Furthermore enchants have a Pool and needs to be recharged",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "aquilarpg:functions",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "aquilarpg:whetstone"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

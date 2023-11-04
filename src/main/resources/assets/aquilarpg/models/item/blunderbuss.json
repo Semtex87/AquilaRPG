@@ -14,11 +14,11 @@
 	"display": {
 		"thirdperson_righthand": {
 			"rotation": [-90, -90, -60],
-			"translation": [-0.5, 0.1, -4]
+			"translation": [-0.5, 1.6, -4]
 		},
 		"thirdperson_lefthand": {
-			"rotation": [-90, 90, 30],
-			"translation": [-0.25, -1.65, -5],
+			"rotation": [-90, 90, 60],
+			"translation": [-0.25, 1.85, -3],
 			"scale": [1, 1, 0.9]
 		},
 		"firstperson_righthand": {
@@ -35,8 +35,8 @@
 			"translation": [0, 6.25, 0]
 		},
 		"fixed": {
-			"translation": [0, 0, -1.25],
-			"scale": [2, 2, 1]
+			"translation": [0, 0, -0.75],
+			"scale": [1.4, 1.4, 1]
 		}
 	}
 }
