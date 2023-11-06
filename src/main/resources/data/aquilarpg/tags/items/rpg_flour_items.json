@@ -1,0 +1,9 @@
+{
+    "replace": false,
+    "values": [
+        "aquilarpg:oat",
+        "aquilarpg:rye",
+        "aquilarpg:sorghum",
+        "minecraft:wheat"
+    ]
+}

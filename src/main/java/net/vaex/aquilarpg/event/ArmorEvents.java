@@ -27,6 +27,7 @@ import net.minecraftforge.fml.event.IModBusEvent;
 import net.vaex.aquilarpg.AquilaRPG;
 import net.vaex.aquilarpg.item.custom.armor.head.RPGBasicHelmetArmorItem;
 import net.vaex.aquilarpg.util.RPGSoundEvents;
+import net.vaex.aquilarpg.util.RPGTags;
 import org.jline.utils.Log;
 
 import static net.minecraft.world.level.block.Block.pushEntitiesUp;
@@ -54,19 +55,18 @@ public class ArmorEvents implements IModBusEvent {
         }
     }
 
-/*
+
     @SubscribeEvent
     public static void renderPlayerPre(RenderPlayerEvent.Pre event) {
         PlayerRenderer render = event.getRenderer();
         PlayerModel<AbstractClientPlayer> model = render.getModel();
         if (event.getEntity() instanceof Player player) {
-            ItemStack stack = player.getInventory().getArmor(3);
-            if (stack.getItem() instanceof RPGBasicHelmetArmorItem) {
+            if (player.getItemBySlot(EquipmentSlot.HEAD).is(RPGTags.Items.RPG_FULLHELM_HIDE_HAT)) {
                 event.getRenderer().getModel().hat.visible = false;
             }
         }
     }
-*/
+
     @SubscribeEvent
     public static void onEquipHelmet(LivingEvent.LivingUpdateEvent event) {
 

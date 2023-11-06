@@ -30,7 +30,7 @@ public class LifeLeech extends MobEffect {
             if (player.hasEffect(RPGEffectManager.LIFELEECH.get())) {
                 LivingEntity entity = event.getEntityLiving();
                 float damage = event.getAmount();
-                entity.hurt(DamageSource.MAGIC, damage * 1.5f);
+                entity.hurt(DamageSource.MAGIC, damage /* * 1.5f */);
                 player.heal(damage / 2);
             }
         }

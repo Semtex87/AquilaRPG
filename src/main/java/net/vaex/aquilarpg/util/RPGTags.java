@@ -36,7 +36,7 @@ public class RPGTags {
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //tool
         //hammer
-        public static final TagKey<Item> RPG_TOOL_HAMMER = tag("rpg_hammer_tool");//todo fill Tag.json <>
+        public static final TagKey<Item> RPG_TOOL_HAMMER = tag("rpg_hammer_tool");
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //weapon
         //public static final TagKey<Item> TWOHAND_WEAPON = tag("weapon_twohand");//todo fill Tag.json <>
@@ -48,6 +48,7 @@ public class RPGTags {
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //armor
+        public static final TagKey<Item> RPG_FULLHELM_HIDE_HAT = tag("rpg_fullhelm_hide_hat");
         //public static final TagKey<Item> ARMOR_LIGHT = tag("armor_light_list");//todo fill Tag.json <>
         //public static final TagKey<Item> ARMOR_MEDIUM = tag("armor_medium_list");//todo fill Tag.json <>
         //public static final TagKey<Item> ARMOR_HEAVY = tag("armor_heavy_list");//todo fill Tag.json <>
@@ -67,7 +68,6 @@ public class RPGTags {
         //public static final TagKey<Item> ELVEN_STEEL = tag("elven_steel");//todo fill Tag.json <>
         //public static final TagKey<Item> ORICALCUM = tag("oricalcum");//todo fill Tag.json <>
         //public static final TagKey<Item> VOID_STEEL = tag("void_steel");//todo fill Tag.json <>
-
         //public static final TagKey<Item> STEEL = tag("steel");//todo fill Tag.json <>
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //dummy
@@ -77,7 +77,7 @@ public class RPGTags {
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //edibles
-
+        public static final TagKey<Item> RPG_FLOUR_ITEMS = tag("rpg_flour_items");//todo fill Tag.json <>
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //ingredient
         //public static final TagKey<Item> INGREDIENTS = tag("ingredients");//todo fill Tag.json <>

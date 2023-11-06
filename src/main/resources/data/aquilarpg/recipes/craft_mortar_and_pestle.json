@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  T",
+    "GTG",
+    " G "
+  ],
+  "key": {
+    "G": {
+      "item": "minecraft:granite_slab"
+    },
+    "T": {
+      "item": "aquilarpg:tool_stick"
+    }
+  },
+  "result": {
+    "item": "aquilarpg:mortar_and_pestle"
+  }
+}

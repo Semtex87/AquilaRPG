@@ -1,0 +1,9 @@
+{
+    "replace": false,
+    "values": [
+        "aquilarpg:arabian_helmet",
+        "aquilarpg:plague_doctor_helmet",
+        "aquilarpg:askir_imperial_guard_helmet",
+        "aquilarpg:askir_legionnaire_helmet"
+    ]
+}
