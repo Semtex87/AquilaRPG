@@ -180,7 +180,7 @@ public class RPGBasicHelmetArmorItem extends GeoArmorItem implements IAnimatable
                 pTooltip.add(new TextComponent("#Realistic").withStyle(ChatFormatting.WHITE).withStyle(ChatFormatting.ITALIC));
             }
         } else {
-            pTooltip.add(new TranslatableComponent("item_tooltip_shift"));
+            pTooltip.add(new TranslatableComponent("tooltip.aquilarpg.shift"));
         }
         if (!itemStack.isDamaged()) {
             pTooltip.add(new TextComponent(durability + " / " + durability).withStyle(ChatFormatting.GREEN));

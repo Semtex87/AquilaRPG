@@ -30,7 +30,6 @@ public class RPGQuiverItem extends RPGBasicJewelry {
             components.add(new TextComponent("Better Way to store your Arrows").withStyle(ChatFormatting.YELLOW).append(String.valueOf(ChatFormatting.UNDERLINE)));
         } else {
             components.add(new TextComponent("currently WIP").withStyle(ChatFormatting.BLUE).append(String.valueOf(ChatFormatting.UNDERLINE)));
-            components.add(new TranslatableComponent("tooltip.aquilairpg.shift"));
         }
         super.appendHoverText(itemStack, level, components, tooltipFlag);
     }

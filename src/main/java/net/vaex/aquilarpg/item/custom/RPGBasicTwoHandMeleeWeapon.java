@@ -394,7 +394,7 @@ public class RPGBasicTwoHandMeleeWeapon extends SwordItem {
             }
             pTooltip.add(new TextComponent(this.getWeight() + " ").append(new TranslatableComponent("item_weapon_weight")).withStyle(ChatFormatting.BLUE));
         } else {
-            pTooltip.add(new TranslatableComponent("item_tooltip_shift"));
+            pTooltip.add(new TranslatableComponent("tooltip.aquilarpg.shift"));
         }
         if (!itemStack.isDamaged()) {
             pTooltip.add(new TextComponent(currentDamage + " / " + maxDurability).withStyle(ChatFormatting.GREEN));

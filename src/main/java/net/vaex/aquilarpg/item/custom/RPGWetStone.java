@@ -84,7 +84,7 @@ public class RPGWetStone extends RPGToolItem {
             components.add(new TextComponent("This works not on Blunt Weapons!").withStyle(ChatFormatting.DARK_RED).append(String.valueOf(ChatFormatting.UNDERLINE)));
         } else {
             components.add(new TextComponent("A Tool to Sharp Weapons for your next Combat!").withStyle(ChatFormatting.BLUE));
-            components.add(new TranslatableComponent("tooltip.aquilairpg.shift"));
+            components.add(new TranslatableComponent("tooltip.aquilarpg.shift"));
         }
         super.appendHoverText(itemStack, level, components, tooltipFlag);
     }

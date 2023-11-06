@@ -57,7 +57,7 @@ public class TomeOfDefense extends RPGBookItem {
             pTooltip.add(new TextComponent("This magic Book gives you Defense").withStyle(ChatFormatting.ITALIC));
             pTooltip.add(new TextComponent(slot).withStyle(ChatFormatting.WHITE));
         } else {
-            pTooltip.add(new TranslatableComponent("item_tooltip_shift"));
+            pTooltip.add(new TranslatableComponent("tooltip.aquilarpg.shift"));
         }
         pTooltip.add(new TextComponent("Material: " + material + " ").withStyle(ChatFormatting.BLUE));
         super.appendHoverText(itemStack, level, pTooltip, pFlag);

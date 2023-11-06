@@ -249,7 +249,7 @@ public class RPGHeatedItem extends Item {
             pTooltip.add(new TextComponent("Caution! Very hot").withStyle(ChatFormatting.ITALIC));
             pTooltip.add(new TextComponent("Use Tongs(Offhand) to avoid damage").withStyle(ChatFormatting.ITALIC));
         } else {
-            pTooltip.add(new TranslatableComponent("item_tooltip_shift"));
+            pTooltip.add(new TranslatableComponent("tooltip.aquilarpg.shift"));
         }
         pTooltip.add(new TextComponent("heat " + var).withStyle(ChatFormatting.RED));
         super.appendHoverText(itemStack, level, pTooltip, pFlag);

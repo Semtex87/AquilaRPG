@@ -37,7 +37,7 @@ public class RPGMaterialItem extends TieredItem {
         if (Screen.hasShiftDown()) {
             pTooltip.add(new TextComponent("Material: " + this.getMaterialType() + " ").withStyle(ChatFormatting.BLUE));
         } else {
-            pTooltip.add(new TranslatableComponent("item_tooltip_shift"));
+            pTooltip.add(new TranslatableComponent("tooltip.aquilarpg.shift"));
         }
     }
 }

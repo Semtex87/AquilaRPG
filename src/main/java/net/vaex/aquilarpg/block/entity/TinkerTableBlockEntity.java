@@ -104,13 +104,13 @@ public class TinkerTableBlockEntity extends BlockEntity{
     public static void tick(Level pLevel, BlockPos pPos, BlockState pState, TinkerTableBlockEntity pBlockEntity) {
         if (hasAnvilNear(pBlockEntity, pLevel, 2)) {
             anvilRecipes = true;
-            Log.info("Anvil connected");
+            //Log.info("Anvil connected");
         }
         else {
             anvilRecipes = false;
-            Log.info("Anvil not connected");
+            //Log.info("Anvil not connected");
         }
-        Log.info(anvilRecipes);
+        //Log.info(anvilRecipes);
         //anvilRecipes = hasSmithingTableNear(pBlockEntity, pLevel, 2);
         //anvilRecipes = hasFletchingTableNear(pBlockEntity, pLevel, 2);
         //anvilRecipes = hasBlastFurnaceNear(pBlockEntity, pLevel, 2);

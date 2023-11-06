@@ -78,7 +78,7 @@ public class RPGBlockScannerItem extends Item {
 
         } else {
             components.add(new TextComponent("Scans the current target block and position").withStyle(ChatFormatting.BLUE).append(String.valueOf(ChatFormatting.UNDERLINE)));
-            components.add(new TranslatableComponent("tooltip.aquilairpg.shift"));
+            components.add(new TranslatableComponent("tooltip.aquilarpg.shift"));
         }
 
         super.appendHoverText(itemStack, level, components, tooltipFlag);

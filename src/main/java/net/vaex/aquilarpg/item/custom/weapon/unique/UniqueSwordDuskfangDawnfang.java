@@ -162,7 +162,7 @@ public class UniqueSwordDuskfangDawnfang extends RPGSwordWeapon {
                 pTooltip.add(new TextComponent("DUSK FANG").withStyle(ChatFormatting.DARK_RED));
             }
         } else {
-            pTooltip.add(new TranslatableComponent("item_tooltip_shift"));
+            pTooltip.add(new TranslatableComponent("tooltip.aquilarpg.shift"));
         }
         if (!itemStack.isDamaged()) {
             pTooltip.add(new TextComponent(durability + " / " + durability).withStyle(ChatFormatting.GREEN));

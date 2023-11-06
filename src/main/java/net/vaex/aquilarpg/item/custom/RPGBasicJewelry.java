@@ -41,7 +41,7 @@ public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Com
     if (Screen.hasShiftDown()) {
         pTooltip.add(new TextComponent("Someone will be interested on it..").withStyle(ChatFormatting.ITALIC));
     } else {
-        pTooltip.add(new TranslatableComponent("item_tooltip_shift"));
+        pTooltip.add(new TranslatableComponent("tooltip.aquilarpg.shift"));
     }
     if (!itemStack.isDamaged()) {
         pTooltip.add(new TextComponent(durability + " / " + durability).withStyle(ChatFormatting.GREEN));

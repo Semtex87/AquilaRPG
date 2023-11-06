@@ -42,8 +42,21 @@ public enum RPGArmorMaterial implements ArmorMaterial {
             0, 1,20, new int[]{3, 5, 8, 3},0.5f, new int[]{2, 8, 10, 4},() -> Ingredient.of(RPGItems.STEEL_INGOT.get())),
 
 
-
-
+    //ASKIR
+    ASKIR_LEGIONNAIRE_ARMOR("askir_legionnaire_armor", "Heavy Armor", SoundEvents.ARMOR_EQUIP_NETHERITE, 6, 0,
+            0, 1,20, new int[]{3, 5, 8, 3},0.5f, new int[]{2, 8, 10, 4},() -> Ingredient.of(RPGItems.STEEL_INGOT.get())),
+    ASKIR_IMPERIAL_GUARD_ARMOR("askir_imperial_guard_armor", "Heavy Armor", SoundEvents.ARMOR_EQUIP_NETHERITE, 6, 0,
+            0, 1,20, new int[]{3, 5, 8, 3},0.5f, new int[]{2, 8, 10, 4},() -> Ingredient.of(RPGItems.STEEL_INGOT.get())),
+    ASKIR_HORSE_GUARD_ARMOR("askir_horse_guard_armor", "Heavy Armor", SoundEvents.ARMOR_EQUIP_NETHERITE, 6, 0,
+            0, 1,20, new int[]{3, 5, 8, 3},0.5f, new int[]{2, 8, 10, 4},() -> Ingredient.of(RPGItems.STEEL_INGOT.get())),
+    ASKIR_OWL_ARMOR("askir_owl_armor", "Heavy Armor", SoundEvents.ARMOR_EQUIP_NETHERITE, 6, 0,
+            0, 1,20, new int[]{3, 5, 8, 3},0.5f, new int[]{2, 8, 10, 4},() -> Ingredient.of(RPGItems.STEEL_INGOT.get())),
+    ASKIR_OWL_ROBE("askir_owl_robe", "Medium Armor", SoundEvents.ARMOR_EQUIP_NETHERITE, 6, 0,
+            0, 1,20, new int[]{3, 5, 8, 3},0.5f, new int[]{2, 8, 10, 4},() -> Ingredient.of(RPGItems.STEEL_INGOT.get())),
+    ASKIR_MARINE_ARMOR("askir_marine_armor", "Medium Armor", SoundEvents.ARMOR_EQUIP_NETHERITE, 6, 0,
+            0, 1,20, new int[]{3, 5, 8, 3},0.5f, new int[]{2, 8, 10, 4},() -> Ingredient.of(RPGItems.STEEL_INGOT.get())),
+    ASKIR_ORIENTAL_ARMOR("askir_oriental_armor", "Medium Armor", SoundEvents.ARMOR_EQUIP_NETHERITE, 6, 0,
+            0, 1,20, new int[]{3, 5, 8, 3},0.5f, new int[]{2, 8, 10, 4},() -> Ingredient.of(RPGItems.STEEL_INGOT.get())),
 
 
 

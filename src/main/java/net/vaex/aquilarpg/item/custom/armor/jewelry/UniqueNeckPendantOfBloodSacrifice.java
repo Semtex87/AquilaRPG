@@ -68,7 +68,7 @@ public class UniqueNeckPendantOfBloodSacrifice extends Item implements ICurioIte
         if (Screen.hasShiftDown()) {
             pTooltip.add(new TextComponent("This old Necklace pulsates like a Heart as you hold it in your Hand").withStyle(ChatFormatting.ITALIC));
             } else {
-            pTooltip.add(new TranslatableComponent("item_tooltip_shift"));
+            pTooltip.add(new TranslatableComponent("tooltip.aquilarpg.shift"));
         }
         if (!itemStack.isDamaged()) {
             pTooltip.add(new TextComponent(durability + " / " + durability).withStyle(ChatFormatting.GREEN));

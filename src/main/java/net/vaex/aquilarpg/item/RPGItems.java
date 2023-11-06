@@ -380,13 +380,13 @@ public class RPGItems {
     public static final RegistryObject<Item> ELEMENTIUM_INGOT = ITEMS.register("elementium_ingot", () -> new Item(new Item.Properties().stacksTo(64).rarity(RPGRarity.RPG_COMMON).tab(RPGCreativeModeTab.RPG_MISC)));
     public static final RegistryObject<Item> ORICALCUM_INGOT = ITEMS.register("oricalcum_ingot", () -> new Item(new Item.Properties().stacksTo(64).rarity(RPGRarity.RPG_COMMON).tab(RPGCreativeModeTab.RPG_MISC)));
     public static final RegistryObject<Item> STEEL_INGOT = ITEMS.register("steel_ingot", () -> new Item(new Item.Properties().stacksTo(64).rarity(RPGRarity.RPG_COMMON).tab(RPGCreativeModeTab.RPG_MISC)));
-    public static final RegistryObject<Item> VOID_STEEL_INGOT = ITEMS.register("void_steel_ingot", () -> new Item(basicStackableItem.rarity(RPGRarity.RPG_EPIC)));
-    public static final RegistryObject<Item> ASTRALSILVER_INGOT = ITEMS.register("astralsilver_ingot", () -> new Item(basicStackableItem.rarity(RPGRarity.RPG_RARE)));
-    public static final RegistryObject<Item> BRASS_INGOT = ITEMS.register("brass_ingot", () -> new Item(basicStackableItem.rarity(RPGRarity.RPG_COMMON)));
-    public static final RegistryObject<Item> BRONZE_INGOT = ITEMS.register("bronze_ingot", () -> new Item(basicStackableItem.rarity(RPGRarity.RPG_COMMON)));
-    public static final RegistryObject<Item> CRIMSON_STEEL_INGOT = ITEMS.register("crimson_steel_ingot", () -> new Item(basicStackableItem.rarity(RPGRarity.RPG_UNCOMMON)));
-    public static final RegistryObject<Item> DWARVEN_DARKSTEEL_INGOT = ITEMS.register("dwarven_darksteel_ingot", () -> new Item(basicStackableItem.rarity(RPGRarity.RPG_UNCOMMON)));
-    public static final RegistryObject<Item> ELVEN_STEEL_INGOT = ITEMS.register("elven_steel_ingot", () -> new Item(basicStackableItem.rarity(RPGRarity.RPG_UNCOMMON)));
+    public static final RegistryObject<Item> VOID_STEEL_INGOT = ITEMS.register("void_steel_ingot", () -> new Item(new Item.Properties().stacksTo(64).rarity(RPGRarity.RPG_COMMON).tab(RPGCreativeModeTab.RPG_MISC)));
+    public static final RegistryObject<Item> ASTRALSILVER_INGOT = ITEMS.register("astralsilver_ingot", () -> new Item(new Item.Properties().stacksTo(64).rarity(RPGRarity.RPG_COMMON).tab(RPGCreativeModeTab.RPG_MISC)));
+    public static final RegistryObject<Item> BRASS_INGOT = ITEMS.register("brass_ingot", () -> new Item(new Item.Properties().stacksTo(64).rarity(RPGRarity.RPG_COMMON).tab(RPGCreativeModeTab.RPG_MISC)));
+    public static final RegistryObject<Item> BRONZE_INGOT = ITEMS.register("bronze_ingot", () -> new Item(new Item.Properties().stacksTo(64).rarity(RPGRarity.RPG_COMMON).tab(RPGCreativeModeTab.RPG_MISC)));
+    public static final RegistryObject<Item> CRIMSON_STEEL_INGOT = ITEMS.register("crimson_steel_ingot", () -> new Item(new Item.Properties().stacksTo(64).rarity(RPGRarity.RPG_COMMON).tab(RPGCreativeModeTab.RPG_MISC)));
+    public static final RegistryObject<Item> DWARVEN_DARKSTEEL_INGOT = ITEMS.register("dwarven_darksteel_ingot", () -> new Item(new Item.Properties().stacksTo(64).rarity(RPGRarity.RPG_COMMON).tab(RPGCreativeModeTab.RPG_MISC)));
+    public static final RegistryObject<Item> ELVEN_STEEL_INGOT = ITEMS.register("elven_steel_ingot", () -> new Item(new Item.Properties().stacksTo(64).rarity(RPGRarity.RPG_COMMON).tab(RPGCreativeModeTab.RPG_MISC)));
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //heated alloys (no inventory tab)
     public static final RegistryObject<Item> HOT_STEEL_INGOT = ITEMS.register("hot_steel_ingot", () -> new RPGHeatedItem(RPGMaterialTiers.STEEL, basicStackableItem.rarity(RPGRarity.RPG_COMMON).tab(null)));
@@ -1076,24 +1076,62 @@ public class RPGItems {
     public static final RegistryObject<Item> TOWNGUARD_CHAINMAIL_WHITE_HELMET = ITEMS.register("townguard_chainmail_white_helmet",
             () -> new ArmorItem(RPGArmorMaterial.TOWNGUARD_CHAINMAIL_WHITE, EquipmentSlot.HEAD,
                     new Item.Properties().tab(RPGCreativeModeTab.RPG_ARMOR)));
+//ASKIR
+  public static final RegistryObject<Item> ASKIR_LEGIONNAIRE_ARMOR_BOOTS = ITEMS.register("askir_legionnaire_armor_boots",
+          () -> new ArmorItem(RPGArmorMaterial.ASKIR_LEGIONNAIRE_ARMOR, EquipmentSlot.FEET,
+                  new Item.Properties().tab(RPGCreativeModeTab.RPG_ARMOR)));
+  public static final RegistryObject<Item> ASKIR_LEGIONNAIRE_ARMOR_CHESTPLATE = ITEMS.register("askir_legionnaire_armor_chestplate",
+          () -> new ArmorItem(RPGArmorMaterial.ASKIR_LEGIONNAIRE_ARMOR, EquipmentSlot.CHEST,
+                  new Item.Properties().tab(RPGCreativeModeTab.RPG_ARMOR)));
+  public static final RegistryObject<Item>ASKIR_LEGIONNAIRE_ARMOR_LEGGINGS = ITEMS.register("askir_legionnaire_armor_leggings",
+          () -> new ArmorItem(RPGArmorMaterial.ASKIR_LEGIONNAIRE_ARMOR, EquipmentSlot.LEGS,
+                  new Item.Properties().tab(RPGCreativeModeTab.RPG_ARMOR)));
+  public static final RegistryObject<Item> ASKIR_LEGIONNAIRE_HELMET = ITEMS.register("askir_legionnaire_helmet",
+          () -> new AskirLegionnaireHelmetArmorItem(RPGArmorTiers.STEEL_PLATE,new Item.Properties().tab(RPGCreativeModeTab.RPG_ARMOR)));
+
+  public static final RegistryObject<Item> ASKIR_IMPERIAL_GUARD_BOOTS = ITEMS.register("askir_imperial_guard_boots",
+          () -> new ArmorItem(RPGArmorMaterial.ASKIR_IMPERIAL_GUARD_ARMOR, EquipmentSlot.FEET,
+                  new Item.Properties().tab(RPGCreativeModeTab.RPG_ARMOR)));
+  public static final RegistryObject<Item> ASKIR_IMPERIAL_GUARD_CHESTPLATE = ITEMS.register("askir_imperial_guard_chestplate",
+          () -> new ArmorItem(RPGArmorMaterial.ASKIR_IMPERIAL_GUARD_ARMOR, EquipmentSlot.CHEST,
+                  new Item.Properties().tab(RPGCreativeModeTab.RPG_ARMOR)));
+  public static final RegistryObject<Item>ASKIR_IMPERIAL_GUARD_LEGGINGS = ITEMS.register("askir_imperial_guard_leggings",
+          () -> new ArmorItem(RPGArmorMaterial.ASKIR_IMPERIAL_GUARD_ARMOR, EquipmentSlot.LEGS,
+                  new Item.Properties().tab(RPGCreativeModeTab.RPG_ARMOR)));
+  public static final RegistryObject<Item> ASKIR_IMPERIAL_GUARD_HELMET = ITEMS.register("askir_imperial_guard_helmet",
+          () -> new AskirImperialGuardHelmetArmorItem(RPGArmorTiers.STEEL_PLATE, new Item.Properties().tab(RPGCreativeModeTab.RPG_ARMOR).rarity(RPGRarity.RPG_UNCOMMON)));
+
+  public static final RegistryObject<Item> ASKIR_HORSE_GUARD_BOOTS = ITEMS.register("askir_horse_guard_boots",
+          () -> new ArmorItem(RPGArmorMaterial.ASKIR_HORSE_GUARD_ARMOR, EquipmentSlot.FEET,
+                  new Item.Properties().tab(RPGCreativeModeTab.RPG_ARMOR)));
+  public static final RegistryObject<Item> ASKIR_HORSE_GUARD_CHESTPLATE = ITEMS.register("askir_horse_guard_chestplate",
+          () -> new ArmorItem(RPGArmorMaterial.ASKIR_HORSE_GUARD_ARMOR, EquipmentSlot.CHEST,
+                  new Item.Properties().tab(RPGCreativeModeTab.RPG_ARMOR)));
+  public static final RegistryObject<Item>ASKIR_HORSE_GUARD_LEGGINGS = ITEMS.register("askir_horse_guard_leggings",
+          () -> new ArmorItem(RPGArmorMaterial.ASKIR_HORSE_GUARD_ARMOR, EquipmentSlot.LEGS,
+                  new Item.Properties().tab(RPGCreativeModeTab.RPG_ARMOR)));
+  public static final RegistryObject<Item> ASKIR_HORSE_GUARD_HELMET = ITEMS.register("askir_horse_guard_helmet",
+          () -> new ArmorItem(RPGArmorMaterial.ASKIR_HORSE_GUARD_ARMOR, EquipmentSlot.HEAD,
+                  new Item.Properties().tab(RPGCreativeModeTab.RPG_ARMOR)));
 
 
 
 
-    //ASKIR
 
 
 
-    //non sets
+
+
+
+
+
+  //non sets
     //HEAD
     public static final RegistryObject<Item> ARABIAN_HELMET = ITEMS.register("arabian_helmet",
             () -> new ArabianHelmetArmorItem(RPGArmorTiers.CLOTH, new Item.Properties().tab(RPGCreativeModeTab.RPG_ARMOR)));
     public static final RegistryObject<Item> STRAWHAT_HELMET = ITEMS.register("strawhat_helmet",
             () -> new StrawhatHelmetArmorItem(RPGArmorTiers.THATCH,new Item.Properties()));
-    public static final RegistryObject<Item> ASKIR_IMPERIAL_GUARD_HELMET = ITEMS.register("askir_imperial_guard_helmet",
-            () -> new AskirImperialGuardHelmetArmorItem(RPGArmorTiers.STEEL_PLATE, new Item.Properties().tab(RPGCreativeModeTab.RPG_ARMOR).rarity(RPGRarity.RPG_UNCOMMON)));
-    public static final RegistryObject<Item> ASKIR_LEGIONNAIRE_HELMET = ITEMS.register("askir_legionnaire_helmet",
-            () -> new AskirLegionnaireHelmetArmorItem(RPGArmorTiers.STEEL_PLATE,new Item.Properties().tab(RPGCreativeModeTab.RPG_ARMOR)));
+
     public static final RegistryObject<Item> CENTURION_HELMET = ITEMS.register("centurion_helmet",
             () -> new CenturionHelmetArmorItem(RPGArmorTiers.STEEL_PLATE, new Item.Properties().tab(RPGCreativeModeTab.RPG_ARMOR)));
     public static final RegistryObject<Item> LEGIONNAIRE_HELMET = ITEMS.register("legionnaire_helmet",

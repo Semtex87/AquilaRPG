@@ -98,7 +98,7 @@ public class RPGPeelingIron extends RPGToolItem {
             components.add(new TextComponent("Strip Wood: Drag this Item and right click on the Item u want to strip").withStyle(ChatFormatting.YELLOW).append(String.valueOf(ChatFormatting.UNDERLINE)));
         } else {
             components.add(new TextComponent("A Tool to Strip Wood or some Crafting Actions").withStyle(ChatFormatting.BLUE).append(String.valueOf(ChatFormatting.UNDERLINE)));
-            components.add(new TranslatableComponent("tooltip.aquilairpg.shift"));
+            components.add(new TranslatableComponent("tooltip.aquilarpg.shift"));
         }
         super.appendHoverText(itemStack, level, components, tooltipFlag);
     }

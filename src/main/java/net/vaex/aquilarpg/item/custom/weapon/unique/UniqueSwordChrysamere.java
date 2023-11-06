@@ -107,7 +107,7 @@ public class UniqueSwordChrysamere extends RPGTwoHandSwordWeapon {
             pTooltip.add(new TextComponent("" + this.getWeight() + " ").append(new TranslatableComponent("item_weapon_weight")).withStyle(ChatFormatting.BLUE));
             pTooltip.add(new TextComponent("Block Damage" + getMaxBlockDamage() + " ").withStyle(ChatFormatting.BLUE));
         } else {
-            pTooltip.add(new TranslatableComponent("item_tooltip_shift"));
+            pTooltip.add(new TranslatableComponent("tooltip.aquilarpg.shift"));
         }
         if (!itemStack.isDamaged()) {
             pTooltip.add(new TextComponent(durability + " / " + durability).withStyle(ChatFormatting.GREEN));

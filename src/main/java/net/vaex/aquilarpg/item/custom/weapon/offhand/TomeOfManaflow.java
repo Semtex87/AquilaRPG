@@ -88,7 +88,7 @@ public class TomeOfManaflow extends RPGBookItem {
             pTooltip.add(new TextComponent("This magic Book restores Mana while holding").withStyle(ChatFormatting.ITALIC));
             pTooltip.add(new TextComponent(slot).withStyle(ChatFormatting.WHITE));
         } else {
-            pTooltip.add(new TranslatableComponent("item_tooltip_shift"));
+            pTooltip.add(new TranslatableComponent("tooltip.aquilarpg.shift"));
         }
         pTooltip.add(new TextComponent("Material: " + material + " ").withStyle(ChatFormatting.BLUE));
         pTooltip.add(new TextComponent("Offhand: " + "Mana Regeneration ").withStyle(ChatFormatting.BLUE));

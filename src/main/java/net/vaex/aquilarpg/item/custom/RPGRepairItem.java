@@ -38,26 +38,22 @@ public class RPGRepairItem extends RPGToolItem {
 
     @Override
     public ItemStack getContainerItem(@Nonnull ItemStack itemStack) {
-        Player player = Minecraft.getInstance().player;
-        Level level = player.getLevel();
         final ItemStack copy = itemStack.copy();
         if (copy.hurt(1, new Random(), null)) {
-            playBreakSound(level,player);
             return ItemStack.EMPTY;
         } else {
-            playToolSound(level,player);
             return copy;
         }
     }
 
     public boolean overrideStackedOnOther(ItemStack pStack, Slot pSlot, ClickAction pAction, Player pPlayer) {
         int damageValueToRepair = pSlot.getItem().getDamageValue();
-        if (!pPlayer.getLevel().isClientSide && pAction == ClickAction.SECONDARY && pSlot.allowModification(pPlayer) && pSlot.getItem().isDamaged() && !(pSlot.getItem().getItem() instanceof RPGRepairItem) &&
+        if (!pPlayer.getLevel().isClientSide() && pAction == ClickAction.SECONDARY && pSlot.allowModification(pPlayer) && pSlot.getItem().isDamaged() && !(pSlot.getItem().getItem() instanceof RPGRepairItem) &&
                 !(pSlot.getItem().getItem() instanceof RPGBasicTwoHandMeleeWeapon twoHandMeleeWeapon && twoHandMeleeWeapon.mythicalTwohand || pSlot.getItem().getItem() instanceof RPGBasicMeleeWeapon meleeWeapon && meleeWeapon.mythicalOneHand)) {
             pPlayer.playSound(SoundEvents.ANVIL_USE, 1.0f, 0);
             pSlot.getItem().hurt(damageValueToRepair * (-1), new Random(), null);
             pStack.hurt(damageValueToRepair, new Random(), null);
-            calcDamage(pStack, pPlayer);
+           calcDamage(pStack, pPlayer);
             return true;
         } else {
             return false;
@@ -81,10 +77,14 @@ public class RPGRepairItem extends RPGToolItem {
 
 
     private void playToolSound(Level level, Entity entity) {
-        level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), SoundEvents.ANVIL_PLACE, SoundSource.PLAYERS, 1.5F, 1F);
+        if (!level.isClientSide()) {
+            level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), SoundEvents.ANVIL_PLACE, SoundSource.PLAYERS, 1.5F, 1F);
+        }
     }
     private void playBreakSound(Level level, Entity entity) {
+        if (!level.isClientSide()) {
         level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), SoundEvents.ITEM_BREAK, SoundSource.PLAYERS, 1.5F, 1F);
+        }
     }
 
 
@@ -94,7 +94,7 @@ public class RPGRepairItem extends RPGToolItem {
             components.add(new TextComponent("Repair: Drag this Item and right click on the Item u want to repair").withStyle(ChatFormatting.YELLOW).append(String.valueOf(ChatFormatting.UNDERLINE)));
         } else {
             components.add(new TextComponent("A Tool to Repair Items or some Crafting Actions").withStyle(ChatFormatting.BLUE).append(String.valueOf(ChatFormatting.UNDERLINE)));
-            components.add(new TranslatableComponent("tooltip.aquilairpg.shift"));
+            components.add(new TranslatableComponent("tooltip.aquilarpg.shift"));
         }
         super.appendHoverText(itemStack, level, components, tooltipFlag);
     }

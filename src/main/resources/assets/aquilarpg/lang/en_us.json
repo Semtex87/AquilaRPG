@@ -1,13 +1,20 @@
 {
   "itemGroup.aquilarpg_weapon": "Aquila RPG Weapon",
+  "itemGroup.aquilarpg_armor": "Aquila RPG Armor",
+  "itemGroup.aquilarpg_blocks": "Aquila RPG Blocks",
+  "itemGroup.aquilarpg_tools": "Aquila RPG Tools",
+  "itemGroup.aquilarpg_misc": "Aquila RPG Misc",
+
   "item.aquilarpg.teleport_staff": "Staff of Teleport",
   "item.aquilarpg.scepter_of_life": "Scepter of Nature",
   "item.aquilarpg.firestaff": "Fire Staff",
+  "item.aquilarpg.apostel_staff": "Apostle Staff",
 
 
   "item.aquilarpg.book_of_doom": "Book of Doom",
   "item.aquilarpg.tome_of_mana": "Tome of Mana",
   "item.aquilarpg.tome_of_defense": "Tome of Defense",
+  "item.aquilarpg.dark_ritual": "Dark Ritual",
 
   "item.aquilarpg.blowgun": "Blowgun",
   "item.aquilarpg.blunderbuss": "Blunderbuss",
@@ -44,7 +51,8 @@
   "item.aquilarpg.doombringer": "Doombringer",
   "item.aquilarpg.dusk_fang": "Dusk Fang",
   "item.aquilarpg.dawn_fang": "Ruby Sword",
-  "item.aquilarpg.oblivion": "Oblivion",
+  "item.aquilarpg.assassins_poisonblade": "Assassins poisoned Sword",
+
 
 
 
@@ -63,6 +71,7 @@
   "item.aquilarpg.daedric_dagger": "Daedric Dagger",
   "item.aquilarpg.bone_dagger": "Bone Dagger",
   "item.aquilarpg.old_dagger": "Old Dagger",
+  "item.aquilarpg.oblivion": "Oblivion",
 
   "item.aquilarpg.assassin_poisonblade": "Assassins poisoned Sword",
   "item.aquilarpg.battlestaff": "Battle Staff",
@@ -70,7 +79,7 @@
   "item.aquilarpg.blade_sword": "Blade Sword",
   "item.aquilarpg.bone_axe": "Bone Axe",
   "item.aquilarpg.bone_pickaxe": "Bone Pickaxe",
-  "item.aquilarpg.boromirs_sword": "Boromirs Sword",
+  "item.aquilarpg.boromirs_sword": "Boromir's Sword",
   "item.aquilarpg.broadaxe": "Broad Axe",
   "item.aquilarpg.broken_bottle": "Broken Bottle",
   "item.aquilarpg.bronze_pickaxe": "Bronze Pickaxe",
@@ -90,10 +99,10 @@
   "item.aquilarpg.glass_greatsword": "Glass Greatsword",
   "item.aquilarpg.glass_longsword": "Glass Longsword",
   "item.aquilarpg.glass_sword": "Glass Sword",
-  "item.aquilarpg.hamburger_richtschwert": "Hamburger Richtschwert",
+  "item.aquilarpg.hamburger_richtschwert": "Hamburger Judgment Sword",
   "item.aquilarpg.hand_and_a_half": "Hand and a Half",
-  "item.aquilarpg.hunting_knive": "Hunting Knive",
-  "item.aquilarpg.ich_richte_richtschwert": "Ich richte Richtschwert",
+  "item.aquilarpg.hunting_knive": "Hunting Knife",
+  "item.aquilarpg.ich_richte_richtschwert": "I judge Judgment Sword",
   "item.aquilarpg.iron_axe": "Iron Axe",
   "item.aquilarpg.iron_greataxe": "Iron Greataxe",
   "item.aquilarpg.iron_greathammer": "Iron Greathammer",
@@ -162,7 +171,7 @@
   "item.aquilarpg.steel_pickaxe": "Steel Pickaxe",
   "item.aquilarpg.steel_spear": "Steel Spear",
   "item.aquilarpg.steel_sword": "Steel Sword",
-  "item.aquilarpg.streichers_sword": "Streichers Sword",
+  "item.aquilarpg.streichers_sword": "Strider's Sword",
   "item.aquilarpg.twohand_mace": "Twohand Mace",
   "item.aquilarpg.uruk_hai_headhunter": "Uruk Hai Headhunter",
   "item.aquilarpg.uruk_hai_sword": "Uruk Hai Sword",
@@ -172,13 +181,19 @@
   "item.aquilarpg.wooden_club": "Wooden Club",
   "item.aquilarpg.bronze_claymore": "Bronze Claymore",
   "item.aquilarpg.blackguard_claymore": "Blackguard Claymore",
+  "item.aquilarpg.decorated_spear": "Decorated Spear",
+  "item.aquilarpg.dwarven_greataxe": "Dwarven Greataxe",
+  "item.aquilarpg.haladle_knife": "Haladle Knife",
+  "item.aquilarpg.old_cleaver": "Old Cleaver",
+  "item.aquilarpg.shotel": "Shotel",
+  "item.aquilarpg.steel_crescent_large": "Steel Crescent large",
+  "item.aquilarpg.twohand_wooden_mace": "Twohand wooden Mace",
 
 
 
 
 
   "item.aquilarpg.large_knight_shield": "Large Knight Shield",
-
   "item.aquilarpg.askir_scutum": "Askir Scutum",
   "item.aquilarpg.big_round_whirl_green_white_shield": "Big Round Whirl Green White Shield",
   "item.aquilarpg.black_guard_tower_shield": "Black Guard Shield",
@@ -223,36 +238,141 @@
   "item.aquilarpg.pendant_of_blood_sacrifice": "Pendant of Blood Sacrifice",
   "item.aquilarpg.ankh_silver": "Ankh Silver",
   "item.aquilarpg.bone_amulet": "Bone Amulet",
-
+  "item.aquilarpg.expensive_amulet": "Expensive Amulet",
+  "item.aquilarpg.pendant_of_manaflow": "Pendant of Mana Flow",
+  "item.aquilarpg.amulet_of_clarity": "Amulet of Clarity",
+  "item.aquilarpg.band_of_thorns": "Band of Thorns",
+  "item.aquilarpg.copper_ring": "Copper Ring",
+  "item.aquilarpg.bronze_bracelet": "Bronze Bracelet",
   "item.aquilarpg.aquamarine_gold_ring": "Aquamarine Gold Ring",
   "item.aquilarpg.ruby_gold_ring": "Ruby Gold Ring",
+  "_comment_custom_armor_stuff": "+++++++++++++++++++++++++++++++ all Custom Armor  stuff +++++++++++++++++++++++++++++++",
+  "item.aquilarpg.bronze_quiver": "Bronze Quiver",
+  "item.aquilarpg.mage_cape": "Mage Cape",
 
   "_comment_armor": "+++++++++++++++++++++++++++++++ all Armor  stuff +++++++++++++++++++++++++++++++",
   "item.aquilarpg.askir_imperial_guard_helmet": "Askir Imperial Guard Helmet",
   "item.aquilarpg.askir_legionnaire_helmet": "Askir Legionnaire Helmet",
+  "item.aquilarpg.strawhat_helmet": "Strawhat Helmet",
+  "item.aquilarpg.arabian_helmet": "Arabian Helmet",
+  "item.aquilarpg.centurion_helmet": "Centurion Helmet",
+  "item.aquilarpg.legionnaire_helmet": "Legionnaire Helmet",
+  "item.aquilarpg.plague_doctor_helmet": "Plague Doctor Helmet",
+  "item.aquilarpg.flower_crown_helmet": "Flower Crown Helmet",
+  "item.aquilarpg.askir_horse_guard_helmet": "Askir Horse Guard Helmet",
+  "item.aquilarpg.dwarven_fieldplate_helmet": "Dwarven Field Plate Helmet",
+  "item.aquilarpg.marauder_fullhelm": "Marauder Fullhelm",
+  "item.aquilarpg.brotherhood_helmet": "Brotherhood Helmet",
+  "item.aquilarpg.templar_helmet": "Templar Helmet",
+  "item.aquilarpg.kingstone_helmet_02": "Kingstone Helmet",
+  "item.aquilarpg.blacklegion_helmet": "Blacklegion Helmet",
+  "item.aquilarpg.townguard_chainmail_blue_white_01_helmet": "Townguard Chainmail Helmet (Blue-White)",
+  "item.aquilarpg.townguard_chainmail_black_white_01_helmet": "Townguard Chainmail Helmet (Black-White)",
+  "item.aquilarpg.townguard_chainmail_red_white_01_helmet": "Townguard Chainmail Helmet (Red-White)",
+  "item.aquilarpg.townguard_chainmail_yellow_white_01_helmet": "Townguard Chainmail Helmet (Yellow-White)",
+  "item.aquilarpg.townguard_chainmail_white_helmet": "Townguard Chainmail Helmet (White)",
+
+  "item.aquilarpg.townguard_chainmail_blue_white_01_boots": "Townguard Chainmail Boots (Blue-White)",
+  "item.aquilarpg.townguard_chainmail_black_white_01_boots": "Townguard Chainmail Boots (Black-White)",
+  "item.aquilarpg.townguard_chainmail_red_white_01_boots": "Townguard Chainmail Boots (Red-White)",
+  "item.aquilarpg.townguard_chainmail_yellow_white_01_boots": "Townguard Chainmail Boots (Yellow-White)",
+  "item.aquilarpg.townguard_chainmail_white_boots": "Townguard Chainmail Boots (White)",
+  "item.aquilarpg.dwarven_fieldplate_boots": "Dwarven Fieldplate Boots",
+  "item.aquilarpg.marauder_boots": "Marauder Boots",
+  "item.aquilarpg.brotherhood_boots": "Brotherhood Boots",
+  "item.aquilarpg.kingstone_boots": "Kingstone Boots",
+  "item.aquilarpg.blacklegion_boots": "Blacklegion Boots",
+  "item.aquilarpg.askir_legionnaire_armor_boots": "Legionnaire Boots",
+  "item.aquilarpg.templar_boots": "Templar Boots",
+  "item.aquilarpg.askir_imperial_guard_boots": "Imperial Guard Boots",
+  "item.aquilarpg.askir_horse_guard_boots": "Horse Guard Boots",
+
+
+
+
+
+  "item.aquilarpg.townguard_chainmail_blue_white_01_leggings": "Townguard Chainmail Leggings (Blue-White)",
+  "item.aquilarpg.townguard_chainmail_black_white_01_leggings": "Townguard Chainmail Leggings (Black-White)",
+  "item.aquilarpg.townguard_chainmail_red_white_01_leggings": "Townguard Chainmail Leggings (Red-White)",
+  "item.aquilarpg.townguard_chainmail_yellow_white_01_leggings": "Townguard Chainmail Leggings (Yellow-White)",
+  "item.aquilarpg.townguard_chainmail_white_leggings": "Townguard Chainmail Leggings (White)",
+  "item.aquilarpg.dwarven_fieldplate_leggings": "Dwarven Fieldplate Leggings",
+  "item.aquilarpg.marauder_legplates": "Marauder Legplates",
+  "item.aquilarpg.brotherhood_leggings": "Brotherhood Leggings",
+  "item.aquilarpg.kingstone_leggings": "Kingstone Leggings",
+  "item.aquilarpg.blacklegion_leggings": "Blacklegion Leggings",
+  "item.aquilarpg.askir_legionnaire_armor_leggings": "Legionnaire Leggings",
+  "item.aquilarpg.templar_leggings": "Templar Leggings",
+  "item.aquilarpg.askir_imperial_guard_leggings": "Imperial Guard Leggings",
+  "item.aquilarpg.askir_horse_guard_leggings": "Horse Guard Leggings",
+
+
+
+  "item.aquilarpg.townguard_chainmail_blue_white_01_chestplate": "Townguard Chainmail Chestplate (Blue-White)",
+  "item.aquilarpg.townguard_chainmail_black_white_01_chestplate": "Townguard Chainmail Chestplate (Black-White)",
+  "item.aquilarpg.townguard_chainmail_red_white_01_chestplate": "Townguard Chainmail Chestplate (Red-White)",
+  "item.aquilarpg.townguard_chainmail_yellow_white_01_chestplate": "Townguard Chainmail Chestplate (Yellow-White)",
+  "item.aquilarpg.townguard_chainmail_white_chestplate": "Townguard Chainmail Chestplate (White)",
+  "item.aquilarpg.dwarven_fieldplate_chestplate": "Dwarven Fieldplate Chestplate",
+  "item.aquilarpg.marauder_breastplate": "Marauder Breastplate",
+  "item.aquilarpg.brotherhood_chestplate": "Brotherhood Chestplate",
+  "item.aquilarpg.kingstone_chestplate": "Kingstone Chestplate",
+  "item.aquilarpg.blacklegion_chestplate": "Blacklegion Chestplate",
+  "item.aquilarpg.askir_legionnaire_armor_chestplate": "Legionnaire Chestplate",
+  "item.aquilarpg.templar_breastplate": "Templar Breastplate",
+  "item.aquilarpg.askir_imperial_guard_chestplate": "Imperial Guard Chestplate",
+  "item.aquilarpg.askir_horse_guard_chestplate": "Horse Guard Chestplate",
+
+
 
   "item.aquilarpg.coal_coke": "Coal Coke",
   "item.aquilarpg.peat_brick": "Peat Brick",
 
   "item.aquilarpg.cobalt_ingot": "Cobalt Ingot",
+  "item.aquilarpg.adamant_ingot": "Adamant Ingot",
+  "item.aquilarpg.darkiron_ingot": "Darkiron Ingot",
+  "item.aquilarpg.ebony_ingot": "Ebony Ingot",
+  "item.aquilarpg.helstone_ingot": "Helstone Ingot",
+  "item.aquilarpg.hexxin_ingot": "Hexxin Ingot",
+  "item.aquilarpg.lead_ingot": "Lead Ingot",
+  "item.aquilarpg.silver_ingot": "Silver Ingot",
+  "item.aquilarpg.tin_ingot": "Tin Ingot",
+  "item.aquilarpg.stahlrim_ingot": "Stahlrim Ingot",
+  "item.aquilarpg.copper_ingot": "Copper Ingot",
+  "item.aquilarpg.oricalcum_ingot": "Oricalcum Ingot",
+  "item.aquilarpg.zinc_ingot": "Zinc Ingot",
   "item.aquilarpg.steel_ingot": "Steel Ingot",
   "item.aquilarpg.glass_ingot": "Glass Ingot",
   "item.aquilarpg.mithril_ingot": "Mithril Ingot",
   "item.aquilarpg.elementium_ingot": "Elementium Ingot",
+  "item.aquilarpg.void_steel_ingot": "Void Steel Ingot",
 
 
   "item.aquilarpg.hot_cobalt_ingot": "Hot Cobalt Ingot",
+  "item.aquilarpg.hot_adamant_ingot": "Hot Adamant Ingot",
+  "item.aquilarpg.hot_darkiron_ingot": "Hot Darkiron Ingot",
+  "item.aquilarpg.hot_ebony_ingot": "Hot Ebony Ingot",
+  "item.aquilarpg.hot_helstone_ingot": "Hot Helstone Ingot",
+  "item.aquilarpg.hot_hexxin_ingot": "Hot Hexxin Ingot",
+  "item.aquilarpg.hot_lead_ingot": "Hot Lead Ingot",
+  "item.aquilarpg.hot_silver_ingot": "Hot Silver Ingot",
+  "item.aquilarpg.hot_tin_ingot": "Hot Tin Ingot",
+  "item.aquilarpg.hot_stahlrim_ingot": "Hot Stahlrim Ingot",
+  "item.aquilarpg.hot_copper_ingot": "Hot Copper Ingot",
+  "item.aquilarpg.hot_oricalcum_ingot": "Hot Oricalcum Ingot",
+  "item.aquilarpg.hot_zinc_ingot": "Hot Zinc Ingot",
+  "item.aquilarpg.hot_steel_ingot": "Hot Steel Ingot",
+  "item.aquilarpg.hot_glass_ingot": "Hot Glass Ingot",
+  "item.aquilarpg.hot_mithril_ingot": "Hot Mithril Ingot",
+  "item.aquilarpg.hot_elementium_ingot": "Hot Elementium Ingot",
+  "item.aquilarpg.hot_void_ingot": "Hot Void Ingot",
 
   "item.aquilarpg.cobalt_nugget": "Cobalt Nugget",
   "item.aquilarpg.steel_nugget": "Steel Nugget",
   "item.aquilarpg.glass_shard": "Glass Shard",
 
-  "item.aquilarpg.raw_cobalt": "Raw Cobalt",
+
   "item.aquilarpg.ruby": "Ruby",
-  "item.aquilarpg.bandage": "Bandage",
-
-
-
 
 
   "_comment_coins": "+++++++++++++++++++++++++++++++ all coin stuff +++++++++++++++++++++++++++++++",
@@ -273,6 +393,22 @@
   "item.aquilarpg.fire_arrow": "Fire Arrow",
   "item.aquilarpg.poison_dart": "Poison Dart",
   "item.aquilarpg.bullet": "Bullet",
+  "_comment_basic material": "+++++++++++++++++++++++++++++++ all basic material +++++++++++++++++++++++++++++++",
+  "item.aquilarpg.raw_cobalt": "Raw Cobalt",
+  "item.aquilarpg.raw_adamant": "Raw Cobalt",
+  "item.aquilarpg.raw_darkiron": "Raw Cobalt",
+  "item.aquilarpg.raw_ebony": "Raw Cobalt",
+  "item.aquilarpg.raw_hexxin": "Raw Cobalt",
+  "item.aquilarpg.raw_lead": "Raw Cobalt",
+  "item.aquilarpg.raw_silver": "Raw Cobalt",
+  "item.aquilarpg.raw_stahlrim": "Raw Cobalt",
+  "item.aquilarpg.raw_tin": "Raw Cobalt",
+  "item.aquilarpg.raw_zinc": "Raw Cobalt",
+  "item.aquilarpg.raw_copper": "Raw Cobalt",
+  "item.aquilarpg.raw_iron": "Raw Cobalt",
+  "item.aquilarpg.raw_gold": "Raw Cobalt",
+  "item.aquilarpg.raw_helstone": "Raw Cobalt",
+  "item.aquilarpg.raw_mithril": "Raw Cobalt",
 
   "_comment_advanced material": "+++++++++++++++++++++++++++++++ all advanced material +++++++++++++++++++++++++++++++",
   "item.aquilarpg.skull": "Skull",
@@ -306,6 +442,14 @@
   "item.aquilarpg.iron_plate": "Metal Plate",
   "item.aquilarpg.iron_rivets": "Rivets",
   "item.aquilarpg.runic_solution": "Runic Solution",
+  "item.aquilarpg.indigo": "Indigo",
+  "item.aquilarpg.silver_key": "Silver Key",
+  "item.aquilarpg.steel_key": "Steel Key",
+  "item.aquilarpg.iron_key": "Iron Key",
+  "item.aquilarpg.gold_key": "Gold Key",
+  "item.aquilarpg.scroll": "Scroll",
+  "item.aquilarpg.bowlimbs": "Bow Limbs",
+  "item.aquilarpg.bowstring": "Bow String",
 
   "_comment_tools": "+++++++++++++++++++++++++++++++ all tools +++++++++++++++++++++++++++++++",
   "item.aquilarpg.forge_hammer_iron": "Forge Hammer",
@@ -329,6 +473,8 @@
   "item.aquilarpg.ingot_mold": "Ingot Mold",
   "item.aquilarpg.whetstone": "Whetstone",
   "item.aquilarpg.cotton": "Cotton",
+  "item.aquilarpg.wood_plank": "Wood Plank",
+  "item.aquilarpg.iron_scrap": "Iron Scrap",
 
   "item.aquilarpg.clay_crucible": "Clay Crucible",
   "item.aquilarpg.raw_clay_crucible": "Raw Clay Crucible",
@@ -336,6 +482,13 @@
   "item.aquilarpg.clay_crucible_hot": "Hot Clay Crucible",
   "item.aquilarpg.clay_crucible_light_damaged": "Clay Crucible (Light Damaged)",
   "item.aquilarpg.clay_crucible_heavy_damaged": "Clay Crucible (Heavy Damaged)",
+
+  "item.aquilarpg.blueprint_axe": "Blueprint Axe",
+  "item.aquilarpg.blueprint_sword": "Blueprint Sword",
+  "item.aquilarpg.blueprint_bow": "Blueprint Bow",
+  "item.aquilarpg.blueprint_dagger": "Blueprint Dagger",
+
+  "item.aquilarpg.bandage": "Bandage",
 
   "_comment_mana": "+++++++++++++++++++++++++++++++ all mana stuff +++++++++++++++++++++++++++++++",
   "item.aquilarpg.mana_flask": "Mana Flask",
@@ -349,6 +502,13 @@
 
   "_comment_food": "+++++++++++++++++++++++++++++++ all basic food  stuff +++++++++++++++++++++++++++++++",
   "item.aquilarpg.yast": "Yeast",
+  "item.aquilarpg.flour": "Flour",
+  "item.aquilarpg.spice": "Spice",
+  "item.aquilarpg.salt": "Salt",
+  "item.aquilarpg.fresh_water": "Fresh Water",
+  "item.aquilarpg.milk": "Milk",
+  "item.aquilarpg.cup_clean_water": "Cup of clean water",
+  "item.aquilarpg.coconut_milk": "Coconut Milk",
   "item.aquilarpg.hop": "Hop",
   "item.aquilarpg.grapes": "Grapes",
   "item.aquilarpg.spinach": "Spinach",
@@ -364,12 +524,15 @@
   "item.aquilarpg.rye": "Rye",
   "item.aquilarpg.sorghum": "Sorghum",
   "item.aquilarpg.sweet_potato": "Sweet Potato",
+  "item.aquilarpg.avocado": "Avocado",
+  "item.aquilarpg.coconut": "Coconut",
 
   "_comment_advanced_food": "+++++++++++++++++++++++++++++++ all advanced food  stuff +++++++++++++++++++++++++++++++",
   "item.aquilarpg.water_bottle": "Water Bottle",
-  "item.aquilarpg.beer_bottle": "Beer Bottle",
+  "item.aquilarpg.beerbottle": "Beer Bottle",
   "item.aquilarpg.winebottle": "Wine Bottle",
   "item.aquilarpg.rumbottle": "Rum Bottle",
+  "item.aquilarpg.absynth": "Absynth",
 
   "item.aquilarpg.beefstew": "Beefstew",
   "item.aquilarpg.endersoup": "Endersoup",
@@ -386,21 +549,45 @@
   "item.aquilarpg.strawberries": "Strawberries",
   "item.aquilarpg.chili": "Chili",
   "item.aquilarpg.fishsoup": "Fish Soup",
+  "item.aquilarpg.onionsoup": "Onion Soup",
   "item.aquilarpg.fondue": "Fondue",
   "item.aquilarpg.onion_soup": "Onion Soup",
   "item.aquilarpg.rice": "Rice",
   "item.aquilarpg.slimesoup": "Slime Soup",
   "item.aquilarpg.spidereyesoup": "Spider Eye Soup",
+  "item.aquilarpg.coconut_half": "Half Coconut",
+  "item.aquilarpg.ham": "Ham",
+  "item.aquilarpg.baguette": "Baguette",
+  "item.aquilarpg.sliced_tomatoes": "Sliced Tomatoes",
 
   "_comment_ingredient": "+++++++++++++++++++++++++++++++ all ingredient stuff +++++++++++++++++++++++++++++++",
   "item.aquilarpg.ash_from_a_forest_fire": "Ash From A Forest Fire",
   "item.aquilarpg.cave_spider_poison": "Cave Spider Poison",
-  "item.aquilarpg.beholders_eye": "Beholders Eye",
-
-
-
-
-
+  "item.aquilarpg.distilled_water": "Distilled Water",
+  "item.aquilarpg.aqua_regia": "Aqua Regia",
+  "item.aquilarpg.askir_cave_catfish": "Askir Cave Catfish",
+  "item.aquilarpg.beast_tongue": "Beast Tongue",
+  "item.aquilarpg.beast_tooth": "Beast Tooth",
+  "item.aquilarpg.black_pearl": "Black Pearl",
+  "item.aquilarpg.creeper_blood": "Creeper Blood",
+  "item.aquilarpg.dragon_spine": "Dragon Spine",
+  "item.aquilarpg.fish_bone": "Fish Bone",
+  "item.aquilarpg.frost_salt": "Frost Salt",
+  "item.aquilarpg.holy_water": "Holy Water",
+  "item.aquilarpg.human_blood": "Human Blood",
+  "item.aquilarpg.human_eye": "Human Eye",
+  "item.aquilarpg.hydrochloric_acid": "Hydrochloric Acid",
+  "item.aquilarpg.liquid_death": "Liquid Death",
+  "item.aquilarpg.pixie_tears": "Pixie Tears",
+  "item.aquilarpg.maple_root": "Maple Root",
+  "item.aquilarpg.mistletoe": "Mistletoe",
+  "item.aquilarpg.nitric_acid": "Nitric Acid",
+  "item.aquilarpg.pure_water": "Pure Water",
+  "item.aquilarpg.saltpeter": "Saltpeter",
+  "item.aquilarpg.sulfur_dust": "Sulfur Dust",
+  "item.aquilarpg.sulfuric_acid": "Sulfuric Acid",
+  "item.aquilarpg.winestone": "Winestone",
+  "item.aquilarpg.beholder_eye": "Beholders Eye",
 
   "_comment_test": "+++++++++++++++++++++++++++++++ all test stuff +++++++++++++++++++++++++++++++",
   "item.aquilarpg.ruby_axe": "Ruby Axe",
@@ -414,6 +601,8 @@
   "block.aquilarpg.cobalt_ore": "Cobalt Ore",
   "block.aquilarpg.peat_block": "Peat Block",
   "block.aquilarpg.smeltery": "Smeltery",
+  "block.aquilarpg.cobalt_lamp": "Cobalt Lamp",
+  "block.aquilarpg.tinker_table": "Tinker Table",
 
 
 
@@ -423,16 +612,13 @@
   "key.category.tutorialmod.tutorial": "Tutorial Mod",
   "key.tutorialmod.drink_water": "Drink Water",
 
-  "message.aquilarpg.no_water": "No Water nearby",
-  "message.aquilarpg.drink_water": "Drinking Water...",
-
 
 
 
   "rarity.aquila_rare": "RARE",
   "rarity.aquila_common": "COMMON",
 
-  "tooltip.aquilairpg.shift": "Press §eSHIFT§r for Info!",
+  "tooltip.aquilarpg.shift": "Press §eSHIFT§r for Info!",
   "item_silver_damageUndead": "Damage against Undead",
   "item_durability": "Durability",
 

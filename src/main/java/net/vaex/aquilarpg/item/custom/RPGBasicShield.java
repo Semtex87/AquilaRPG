@@ -170,7 +170,7 @@ public class RPGBasicShield extends ShieldItem {
             pTooltip.add(new TextComponent("" + getShieldToughness() + " ").append(new TranslatableComponent("item_shield_toughness")).withStyle(ChatFormatting.BLUE));
             pTooltip.add(new TextComponent("" + getMaxBlockDamage() + " ").append(new TranslatableComponent("item_maxBlockDamage")).withStyle(ChatFormatting.BLUE));
         } else {
-            pTooltip.add(new TranslatableComponent("item_tooltip_shift"));
+            pTooltip.add(new TranslatableComponent("tooltip.aquilarpg.shift"));
         }
         if (!itemStack.isDamaged()) {
             pTooltip.add(new TextComponent( durability + " / " + durability).withStyle(ChatFormatting.GREEN));
