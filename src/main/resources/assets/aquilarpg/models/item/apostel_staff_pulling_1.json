@@ -1,0 +1,6 @@
+{
+  "parent": "aquilarpg:item/apostel_staff",
+  "textures": {
+    "layer0": "aquilarpg:item/weapon/magic/apostel_staff_pulling_1"
+  }
+}
