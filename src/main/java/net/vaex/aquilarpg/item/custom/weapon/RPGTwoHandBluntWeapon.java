@@ -3,6 +3,7 @@ package net.vaex.aquilarpg.item.custom.weapon;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.client.Minecraft;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.CombatRules;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -92,45 +93,47 @@ public class RPGTwoHandBluntWeapon extends RPGBasicTwoHandMeleeWeapon {
         ItemStack chest = pTarget.getItemBySlot(EquipmentSlot.CHEST);
         ItemStack legs = pTarget.getItemBySlot(EquipmentSlot.LEGS);
         ItemStack feet = pTarget.getItemBySlot(EquipmentSlot.FEET);
-        if (pTarget.getArmorValue() > 17.0F) { //heavy armor
-            if (pTarget.getAttributeValue(Attributes.ARMOR_TOUGHNESS) > 0.0f && new Random().nextInt(100) == 1) {
-                Log.info(pAttacker + " hit " + pTarget + "through armor with pierced damage: " + armorPiercing);
-                pTarget.playSound(RPGSoundEvents.SWORD_IMPACT.get(), 1.5F, 1.0F);
-                pTarget.hurt(DamageSource.GENERIC, armorPiercing);
-                if (new Random().nextInt(3) == 1 && (!pTarget.hasEffect(RPGEffectManager.BLEEDING.get()))) {
-                    pTarget.addEffect(new MobEffectInstance(RPGEffectManager.BLEEDING.get(), 100, 0, true, true, false));
-                    pTarget.playSound(RPGSoundEvents.BLEEDING_EFFECT.get(), 1.5F, 1.0F);
-                    Log.info(pTarget + " is bleeding");
+        if (pTarget instanceof Player) {
+            if (pTarget.getArmorValue() > 17.0F) { //heavy armor
+                if (pTarget.getAttributeValue(Attributes.ARMOR_TOUGHNESS) > 0.0f && new Random().nextInt(100) == 1) {
+                    Log.info(pAttacker + " hit " + pTarget + "through armor with pierced damage: " + armorPiercing);
+                    pTarget.playSound(RPGSoundEvents.SWORD_IMPACT.get(), 1.5F, 1.0F);
+                    pTarget.hurt(DamageSource.GENERIC, armorPiercing);
+                    if (new Random().nextInt(3) == 1 && (!pTarget.hasEffect(RPGEffectManager.BLEEDING.get()))) {
+                        pTarget.addEffect(new MobEffectInstance(RPGEffectManager.BLEEDING.get(), 100, 0, true, true, false));
+                        pTarget.playSound(RPGSoundEvents.BLEEDING_EFFECT.get(), 1.5F, 1.0F);
+                        Log.info(pTarget + " is bleeding");
+                    }
+                } else {
+                    if (new Random().nextInt(75) == 1 && (!pTarget.hasEffect(RPGEffectManager.BLEEDING.get()))) {
+                        pTarget.addEffect(new MobEffectInstance(RPGEffectManager.BLEEDING.get(), 100, 0, true, true, false));
+                        pTarget.playSound(RPGSoundEvents.BLEEDING_EFFECT.get(), 1.5F, 1.0F);
+                        Log.info(pTarget + " is bleeding");
+                    }
                 }
-            } else {
-                if (new Random().nextInt(75) == 1 && (!pTarget.hasEffect(RPGEffectManager.BLEEDING.get()))) {
-                    pTarget.addEffect(new MobEffectInstance(RPGEffectManager.BLEEDING.get(), 100, 0, true, true, false));
-                    pTarget.playSound(RPGSoundEvents.BLEEDING_EFFECT.get(), 1.5F, 1.0F);
-                    Log.info(pTarget + " is bleeding");
-                }
+                float finalDamage = CombatRules.getDamageAfterAbsorb(actualAttackDamage, (float) pTarget.getArmorValue(), toughness);
+                mainHand.hurtAndBreak(2, pAttacker, (var) -> var.broadcastBreakEvent(EquipmentSlot.MAINHAND));
+
+                head.hurtAndBreak((int) armorPiercing, pTarget, (var) -> var.broadcastBreakEvent(EquipmentSlot.HEAD));
+                chest.hurtAndBreak((int) armorPiercing, pTarget, (var) -> var.broadcastBreakEvent(EquipmentSlot.CHEST));
+                legs.hurtAndBreak((int) armorPiercing, pTarget, (var) -> var.broadcastBreakEvent(EquipmentSlot.LEGS));
+                feet.hurtAndBreak((int) armorPiercing, pTarget, (var) -> var.broadcastBreakEvent(EquipmentSlot.FEET));
+
+                pTarget.hurt(DamageSource.GENERIC, finalDamage);
+                Log.info(pAttacker + " hit " + pTarget + "with" + finalDamage);
+                Log.info(pTarget + " has " + pTarget.getArmorValue() + " armor " + "and " + toughness + " toughness ");
             }
-            float finalDamage = CombatRules.getDamageAfterAbsorb(actualAttackDamage, (float) pTarget.getArmorValue(), toughness);
-            mainHand.hurtAndBreak(2, pAttacker, (var) -> var.broadcastBreakEvent(EquipmentSlot.MAINHAND));
-
-            head.hurtAndBreak((int) armorPiercing, pTarget, (var) -> var.broadcastBreakEvent(EquipmentSlot.HEAD));
-            chest.hurtAndBreak((int) armorPiercing, pTarget, (var) -> var.broadcastBreakEvent(EquipmentSlot.CHEST));
-            legs.hurtAndBreak((int) armorPiercing, pTarget, (var) -> var.broadcastBreakEvent(EquipmentSlot.LEGS));
-            feet.hurtAndBreak((int) armorPiercing, pTarget, (var) -> var.broadcastBreakEvent(EquipmentSlot.FEET));
-
-            pTarget.hurt(DamageSource.GENERIC, finalDamage);
-            Log.info(pAttacker + " hit " + pTarget + "with" + finalDamage);
-            Log.info(pTarget + " has " + pTarget.getArmorValue() + " armor " + "and " + toughness + " toughness ");
         }
     }
-    private void calcDamageMediumArmor(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
-        Player player = Minecraft.getInstance().player;
-    }
-    private void calcDamageLightArmor(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
-        Player player = Minecraft.getInstance().player;
-    }
-    private void calcDamageNoArmor(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
-        Player player = Minecraft.getInstance().player;
-    }
+        private void calcDamageMediumArmor (ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker){
+            Player player = Minecraft.getInstance().player;
+        }
+        private void calcDamageLightArmor (ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker){
+            Player player = Minecraft.getInstance().player;
+        }
+        private void calcDamageNoArmor (ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker){
+            Player player = Minecraft.getInstance().player;
+        }
 
 
 

@@ -78,7 +78,7 @@ public class RPGMaterialTiers implements Tier, RPGTierInterface {
     public static RPGMaterialTiers ORC;
     public static RPGMaterialTiers CRIMSON;
     public static RPGMaterialTiers ADAMANTIUM;
-    public static RPGMaterialTiers HEXXIN;
+    public static RPGMaterialTiers XENTHIUM;
     //EQ NETHERITE
     public static RPGMaterialTiers EBONY;
     public static RPGMaterialTiers DRAGONBONE;
@@ -157,7 +157,7 @@ public class RPGMaterialTiers implements Tier, RPGTierInterface {
         ORC = new RPGMaterialTiers("Orcish",  3, 500, 0.0F, 1.7F, 0, 0, 70, 2.5f, () -> Ingredient.of(Items.IRON_INGOT));
         ASTRALSILVER = new RPGMaterialTiers("Astralsilver",  2, 400, 0.0F, 1.1F, 0, 0, 80, 1.7f, () -> Ingredient.of(Items.STICK));
         DARKIRON = new RPGMaterialTiers("Darkiron",  4, 550, 0.0F, 1.3F, 0, 0, 60, 2.2f, () -> Ingredient.of(Items.STICK));
-        HEXXIN = new RPGMaterialTiers("Hexxin", 3, 350, 0.0F, 0.9F, 0, 0, 50, 1.4f, () -> Ingredient.of(Items.STICK));
+        XENTHIUM = new RPGMaterialTiers("xenthium", 3, 350, 0.0F, 0.9F, 0, 0, 50, 1.4f, () -> Ingredient.of(Items.STICK));
         RUBY_TIER = new RPGMaterialTiers("Ruby", 3, 50, 0.0F, 0.6F, 0, 0, 10, 1.2f,Ingredient::of);
         GLASS = new RPGMaterialTiers("Glass", 4, 600, 0.0F, 2.0F, 1300, 950, 90, 1.0f, Ingredient::of);
         //EQ NETHERITE

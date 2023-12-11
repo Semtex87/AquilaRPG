@@ -34,6 +34,13 @@
       "aquilarpg:full_charge"
     ]
   },
+  "heal_spell": {
+    "category": "effect",
+    "subtitle": "aquilarpg.heal_spell",
+    "sounds": [
+      "aquilarpg:heal_spell"
+    ]
+  },
   "force_field": {
     "category": "effect",
     "subtitle": "aquilarpg.force_field",

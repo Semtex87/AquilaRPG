@@ -50,7 +50,8 @@ public class RPGSoundEvents {
             registerSoundEvent("ench_weapon_hit");
     public static final RegistryObject<SoundEvent> FORCE_FIELD_HIT =
             registerSoundEvent("force_field_hit");
-
+    public static final RegistryObject<SoundEvent> HEAL_SPELL =
+            registerSoundEvent("heal_spell");
     public static final RegistryObject<SoundEvent> CHAINMAIL_MOVING =
             registerSoundEvent("chainmail_moving");
     public static final RegistryObject<SoundEvent> CLOTH_MOVING =

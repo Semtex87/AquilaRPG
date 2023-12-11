@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "aquilarpg:item/material/metal/raw/raw_hexxin"
-  }
-}

@@ -164,17 +164,9 @@ public class RPGSwordWeapon extends RPGBasicMeleeWeapon {
                 Log.info(pAttacker + " hit " + pTarget + "with" + finalDamage);
                 Log.info(pTarget + " has " + pTarget.getArmorValue() + " armor " +  "and " + toughness + " toughness ");
             }
-
-            if (offHandTarget.getItem() instanceof ShieldItem) {
-                int damageAmount = 20;
-                offHandTarget.hurtAndBreak(damageAmount, pAttacker, (var) -> var.broadcastBreakEvent(EquipmentSlot.OFFHAND));
-                Log.info(pAttacker + " damaged shield of " + pTarget + "with " + damageAmount);
-                pTarget.spawnAtLocation(offHandTarget.getItem());
-                pTarget.getOffhandItem().shrink(1);
-            }
         }
-        Log.info( pTarget + "Maxlife: " + pTarget.getMaxHealth());
-        Log.info( pTarget + "current Life: " + pTarget.getHealth());
+        //Log.info( pTarget + "Maxlife: " + pTarget.getMaxHealth());
+        //Log.info( pTarget + "current Life: " + pTarget.getHealth());
         return super.hurtEnemy(pStack, pTarget, pAttacker);
     }
 }

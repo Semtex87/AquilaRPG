@@ -15,7 +15,6 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ShieldItem;
 import net.minecraft.world.level.Level;
@@ -34,7 +33,7 @@ import javax.annotation.Nonnull;
 import java.util.Random;
 
 
-public class RPGTFlailWeapon extends RPGBasicMeleeWeapon implements IForgeItem {
+public class RPGFlailWeapon extends RPGBasicMeleeWeapon implements IForgeItem {
     float actualAttackDamage;
     float actualAttackSpeed;
     float decreasedAttackSpeed = 0.0f;
@@ -43,7 +42,7 @@ public class RPGTFlailWeapon extends RPGBasicMeleeWeapon implements IForgeItem {
     public InteractionHand swingingArm;
     private LivingEntity entityLiving;
 
-    public RPGTFlailWeapon(RPGMaterialTiers pTier, Properties pProperties) {
+    public RPGFlailWeapon(RPGMaterialTiers pTier, Properties pProperties) {
         super(pTier, pProperties);
         this.armorPiercing = pTier.getMaterialHardness();
         //this.rangeByType = 3.0d; //FLAIL
@@ -175,7 +174,7 @@ public class RPGTFlailWeapon extends RPGBasicMeleeWeapon implements IForgeItem {
                 }
                 float finalDamage = CombatRules.getDamageAfterAbsorb(actualAttackDamage, (float) pTarget.getArmorValue(), thoughness);
                 mainHand.hurtAndBreak(1, pAttacker, (var) -> var.broadcastBreakEvent(EquipmentSlot.MAINHAND));
-                if (pAttacker.getOffhandItem().getItem() instanceof RPGTFlailWeapon) {
+                if (pAttacker.getOffhandItem().getItem() instanceof RPGFlailWeapon) {
                     offHand.hurtAndBreak(1, pAttacker, (var) -> var.broadcastBreakEvent(EquipmentSlot.OFFHAND));
                 }
                 pTarget.hurt(DamageSource.GENERIC, finalDamage);
@@ -202,7 +201,7 @@ public class RPGTFlailWeapon extends RPGBasicMeleeWeapon implements IForgeItem {
                 }
                 float finalDamage = CombatRules.getDamageAfterAbsorb(actualAttackDamage, (float) pTarget.getArmorValue(), thoughness);
                 mainHand.hurtAndBreak(2, pAttacker, (var) -> var.broadcastBreakEvent(EquipmentSlot.MAINHAND));
-                if (pAttacker.getOffhandItem().getItem() instanceof RPGTFlailWeapon) {
+                if (pAttacker.getOffhandItem().getItem() instanceof RPGFlailWeapon) {
                     offHand.hurtAndBreak(2, pAttacker, (var) -> var.broadcastBreakEvent(EquipmentSlot.OFFHAND));
                 }
                 pTarget.hurt(DamageSource.GENERIC, finalDamage);

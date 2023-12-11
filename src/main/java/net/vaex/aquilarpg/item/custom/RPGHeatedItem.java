@@ -97,8 +97,8 @@ public class RPGHeatedItem extends Item {
             player.addItem(new ItemStack(RPGItems.ELVEN_STEEL_INGOT.get()));
         if (stack.is(RPGItems.HOT_HELSTONE_INGOT.get()))
             player.addItem(new ItemStack(RPGItems.HELSTONE_INGOT.get()));
-        if (stack.is(RPGItems.HOT_HEXXIN_INGOT.get()))
-            player.addItem(new ItemStack(RPGItems.HEXXIN_INGOT.get()));
+        if (stack.is(RPGItems.HOT_XENTHIUM_INGOT.get()))
+            player.addItem(new ItemStack(RPGItems.XENTHIUM_INGOT.get()));
         if (stack.is(RPGItems.HOT_MITHRIL_INGOT.get()))
             player.addItem(new ItemStack(RPGItems.MITHRIL_INGOT.get()));
         if (stack.is(RPGItems.HOT_ORICALCUM_INGOT.get()))
@@ -180,8 +180,8 @@ public class RPGHeatedItem extends Item {
                     if (pContext.getPlayer().getMainHandItem().is(RPGItems.HOT_ORICALCUM_INGOT.get())) {
                         pContext.getPlayer().addItem(new ItemStack(RPGItems.ORICALCUM_INGOT.get()));
                     }
-                    if (pContext.getPlayer().getMainHandItem().is(RPGItems.HOT_HEXXIN_INGOT.get())) {
-                        pContext.getPlayer().addItem(new ItemStack(RPGItems.HEXXIN_INGOT.get()));
+                    if (pContext.getPlayer().getMainHandItem().is(RPGItems.HOT_XENTHIUM_INGOT.get())) {
+                        pContext.getPlayer().addItem(new ItemStack(RPGItems.XENTHIUM_INGOT.get()));
                     }
                     if (pContext.getPlayer().getMainHandItem().is(RPGItems.HOT_MITHRIL_INGOT.get())) {
                         pContext.getPlayer().addItem(new ItemStack(RPGItems.MITHRIL_INGOT.get()));

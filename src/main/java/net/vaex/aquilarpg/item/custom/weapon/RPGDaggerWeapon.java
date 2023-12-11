@@ -267,13 +267,6 @@ public class RPGDaggerWeapon extends RPGBasicMeleeWeapon {
                 Log.info(pAttacker + " hit " + pTarget + "with" + finalDamage);
                 Log.info(pTarget + " has " + pTarget.getArmorValue() + " armor " +  "and " + thoughness + " toughness ");
             }
-
-            //TODO DISARM TESTING
-            if (offHandTarget.getItem() instanceof ShieldItem) {
-                Log.info(pAttacker + " disarmed " + pTarget + "dropped: " + offHandTarget);
-                pTarget.spawnAtLocation(offHandTarget.getItem());
-                pTarget.getOffhandItem().shrink(1);
-            }
         }
         return super.hurtEnemy(pStack, pTarget, pAttacker);
     }

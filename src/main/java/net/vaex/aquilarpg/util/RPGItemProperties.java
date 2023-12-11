@@ -9,7 +9,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.vaex.aquilarpg.item.RPGItems;
 import net.vaex.aquilarpg.item.custom.weapon.RPGLanceWeapon;
-import net.vaex.aquilarpg.item.custom.weapon.RPGTFlailWeapon;
+import net.vaex.aquilarpg.item.custom.weapon.RPGFlailWeapon;
 import net.vaex.aquilarpg.item.custom.weapon.unique.UniqueSwordBipolarblade;
 import net.vaex.aquilarpg.item.custom.weapon.unique.UniqueSwordDuskfangDawnfang;
 
@@ -153,7 +153,7 @@ public class RPGItemProperties {
             if (living == null) {
                 return 0.0F;
             } else {
-                return RPGTFlailWeapon.isSwinging(stack) ? 1.0F : 0.0F;
+                return RPGFlailWeapon.isSwinging(stack) ? 1.0F : 0.0F;
 
             }
         });

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "aquilarpg:item/food/refined/rice"
+    "layer0": "aquilarpg:item/food/basic/rice"
   }
 }

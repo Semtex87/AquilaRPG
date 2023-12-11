@@ -8,6 +8,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.CombatRules;
 import net.minecraft.world.damagesource.DamageSource;
@@ -115,94 +116,102 @@ public class RPGBluntWeapon extends RPGBasicMeleeWeapon {
                     pStack.getTag().remove("sharpened_effect");
                     pStack.getEnchantmentTags().clear();
                 }
-
-
                 if (!pTarget.level.isClientSide() && !pTarget.isBlocking()) {
-                    //here we check if player has few armor pieces with overall less than 5.0f Def-Rating
-                    if (pTarget.getArmorValue() <= 5.0F) { //no armor or only some pieces
-                        if (new Random().nextInt(10) == 1 && (!pTarget.hasEffect(RPGEffectManager.LACERATION.get()))) {
-                            pTarget.addEffect(new MobEffectInstance(RPGEffectManager.LACERATION.get(), 36000, 0, true, true, false));
-                            pTarget.playSound(RPGSoundEvents.BLEEDING_EFFECT.get(), 1.5F, 1.0F);
-                            Log.info(pTarget + " has laceration");
-                        }
-                        if (new Random().nextInt(15) == 1 && (!pTarget.hasEffect(RPGEffectManager.PARALYSIS.get()))) {
-                            pTarget.addEffect(new MobEffectInstance(RPGEffectManager.PARALYSIS.get(), 200, 0, true, true, false));
-                            pTarget.playSound(RPGSoundEvents.BLEEDING_EFFECT.get(), 1.5F, 1.0F);
-                            Log.info(pTarget + " is stunned");
-                        }
-                        if (new Random().nextInt(20) == 1 && (!pTarget.hasEffect(MobEffects.BLINDNESS))) {
-                            pTarget.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 100, 0, true, true, false));
-                            pTarget.playSound(RPGSoundEvents.BLEEDING_EFFECT.get(), 1.5F, 1.0F);
-                            Log.info(pTarget + " is blind");
-                        }
-                        float finalDamage = CombatRules.getDamageAfterAbsorb(actualAttackDamage, (float) pTarget.getArmorValue(), toughness);
-                        pTarget.hurt(DamageSource.GENERIC, finalDamage);
-                        Log.info(pAttacker + " hit " + pTarget + "with" + finalDamage);
-                        Log.info(pTarget + " has " + pTarget.getArmorValue() + " armor " + "and " + toughness + " toughness ");
-                    }
-                    //here we check if player has light armor-rating (5-9)
-                    if (pTarget.getArmorValue() <= 9.0F && pTarget.getArmorValue() > 5.0F) { //light armor
-                        if (new Random().nextInt(20) == 1 && (!pTarget.hasEffect(RPGEffectManager.LACERATION.get()))) {
-                            pTarget.addEffect(new MobEffectInstance(RPGEffectManager.LACERATION.get(), 36000, 0, true, true, false));
-                            pTarget.playSound(RPGSoundEvents.BLEEDING_EFFECT.get(), 1.5F, 1.0F);
-                            Log.info(pTarget + " has laceration");
-                        }
-                        if (new Random().nextInt(25) == 1 && (!pTarget.hasEffect(RPGEffectManager.PARALYSIS.get()))) {
-                            pTarget.addEffect(new MobEffectInstance(RPGEffectManager.PARALYSIS.get(), 200, 0, true, true, false));
-                            pTarget.playSound(RPGSoundEvents.BLEEDING_EFFECT.get(), 1.5F, 1.0F);
-                            Log.info(pTarget + " is stunned");
-                        }
-                        if (new Random().nextInt(30) == 1 && (!pTarget.hasEffect(MobEffects.BLINDNESS))) {
-                            pTarget.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 100, 0, true, true, false));
-                            pTarget.playSound(RPGSoundEvents.BLEEDING_EFFECT.get(), 1.5F, 1.0F);
-                            Log.info(pTarget + " is blind");
-                        }
-                        float finalDamage = CombatRules.getDamageAfterAbsorb(actualAttackDamage, (float) pTarget.getArmorValue(), toughness);
-                        pTarget.hurt(DamageSource.GENERIC, finalDamage);
-                        Log.info(pAttacker + " hit " + pTarget + "with" + finalDamage);
-                        Log.info(pTarget + " has " + pTarget.getArmorValue() + " armor " + "and " + toughness + " toughness ");
-                    }
-                    //here we check if player has medium armor-rating (9-17)
-                    if (pTarget.getArmorValue() <= 17.0F && pTarget.getArmorValue() > 9.0F) { //medium armor
-                        if (pTarget.getAttributeValue(Attributes.ARMOR_TOUGHNESS) > 0.0f && new Random().nextInt(75) == 1) { //here calc some damage if player has toughness rating
-                            head.hurtAndBreak((int) getArmorPenetration(), pTarget, (var) -> var.broadcastBreakEvent(EquipmentSlot.HEAD));
-                            chest.hurtAndBreak((int) getArmorPenetration(), pTarget, (var) -> var.broadcastBreakEvent(EquipmentSlot.CHEST));
-                            legs.hurtAndBreak((int) getArmorPenetration(), pTarget, (var) -> var.broadcastBreakEvent(EquipmentSlot.LEGS));
-                            feet.hurtAndBreak((int) getArmorPenetration(), pTarget, (var) -> var.broadcastBreakEvent(EquipmentSlot.FEET));
-                            float finalDamage = CombatRules.getDamageAfterAbsorb(actualAttackDamage, (float) pTarget.getArmorValue(), toughness);
-                            pTarget.hurt(DamageSource.GENERIC, finalDamage);
-                            Log.info(pAttacker + " hit armor" + pTarget + "with damage: " + armorPenetration);
-                        } else {
-                            if (new Random().nextInt(50) == 1) {//here calc some damage if player has no toughness
-                                if (new Random().nextInt(40) == 1 && (!pTarget.hasEffect(RPGEffectManager.LACERATION.get()))) {
-                                    pTarget.addEffect(new MobEffectInstance(RPGEffectManager.LACERATION.get(), 36000, 0, true, true, false));
-                                    pTarget.playSound(RPGSoundEvents.BLEEDING_EFFECT.get(), 1.5F, 1.0F);
-                                    Log.info(pTarget + " has laceration");
-                                }
-                                if (new Random().nextInt(50) == 1 && (!pTarget.hasEffect(RPGEffectManager.PARALYSIS.get()))) {
-                                    pTarget.addEffect(new MobEffectInstance(RPGEffectManager.PARALYSIS.get(), 200, 0, true, true, false));
-                                    pTarget.playSound(RPGSoundEvents.BLEEDING_EFFECT.get(), 1.5F, 1.0F);
-                                    Log.info(pTarget + " is stunned");
-                                }
-                                if (new Random().nextInt(60) == 1 && (!pTarget.hasEffect(MobEffects.BLINDNESS))) {
-                                    pTarget.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 100, 0, true, true, false));
-                                    pTarget.playSound(RPGSoundEvents.BLEEDING_EFFECT.get(), 1.5F, 1.0F);
-                                    Log.info(pTarget + " is blind");
-                                }
+                    if (pTarget instanceof Player) {
+                        //here we check if player has few armor pieces with overall less than 5.0f Def-Rating
+                        if (pTarget.getArmorValue() <= 5.0F) { //no armor or only some pieces
+                            if (new Random().nextInt(10) == 1 && (!pTarget.hasEffect(RPGEffectManager.LACERATION.get()))) {
+                                pTarget.addEffect(new MobEffectInstance(RPGEffectManager.LACERATION.get(), 36000, 0, true, true, false));
+                                pTarget.playSound(RPGSoundEvents.BLEEDING_EFFECT.get(), 1.5F, 1.0F);
+                                Log.info(pTarget + " has laceration");
+                            }
+                            if (new Random().nextInt(15) == 1 && (!pTarget.hasEffect(RPGEffectManager.PARALYSIS.get()))) {
+                                pTarget.addEffect(new MobEffectInstance(RPGEffectManager.PARALYSIS.get(), 200, 0, true, true, false));
+                                pTarget.playSound(RPGSoundEvents.BLEEDING_EFFECT.get(), 1.5F, 1.0F);
+                                Log.info(pTarget + " is stunned");
+                            }
+                            if (new Random().nextInt(20) == 1 && (!pTarget.hasEffect(MobEffects.BLINDNESS))) {
+                                pTarget.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 100, 0, true, true, false));
+                                pTarget.playSound(RPGSoundEvents.BLEEDING_EFFECT.get(), 1.5F, 1.0F);
+                                Log.info(pTarget + " is blind");
                             }
                             float finalDamage = CombatRules.getDamageAfterAbsorb(actualAttackDamage, (float) pTarget.getArmorValue(), toughness);
                             pTarget.hurt(DamageSource.GENERIC, finalDamage);
                             Log.info(pAttacker + " hit " + pTarget + "with" + finalDamage);
                             Log.info(pTarget + " has " + pTarget.getArmorValue() + " armor " + "and " + toughness + " toughness ");
                         }
-                        mainHand.hurtAndBreak(1, pAttacker, (var) -> var.broadcastBreakEvent(EquipmentSlot.MAINHAND));
-                        if (pAttacker.getOffhandItem().getItem() instanceof RPGBluntWeapon) {
-                            offHand.hurtAndBreak(1, pAttacker, (var) -> var.broadcastBreakEvent(EquipmentSlot.OFFHAND));
+                        //here we check if player has light armor-rating (5-9)
+                        if (pTarget.getArmorValue() <= 9.0F && pTarget.getArmorValue() > 5.0F) { //light armor
+                            if (new Random().nextInt(20) == 1 && (!pTarget.hasEffect(RPGEffectManager.LACERATION.get()))) {
+                                pTarget.addEffect(new MobEffectInstance(RPGEffectManager.LACERATION.get(), 36000, 0, true, true, false));
+                                pTarget.playSound(RPGSoundEvents.BLEEDING_EFFECT.get(), 1.5F, 1.0F);
+                                Log.info(pTarget + " has laceration");
+                            }
+                            if (new Random().nextInt(25) == 1 && (!pTarget.hasEffect(RPGEffectManager.PARALYSIS.get()))) {
+                                pTarget.addEffect(new MobEffectInstance(RPGEffectManager.PARALYSIS.get(), 200, 0, true, true, false));
+                                pTarget.playSound(RPGSoundEvents.BLEEDING_EFFECT.get(), 1.5F, 1.0F);
+                                Log.info(pTarget + " is stunned");
+                            }
+                            if (new Random().nextInt(30) == 1 && (!pTarget.hasEffect(MobEffects.BLINDNESS))) {
+                                pTarget.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 100, 0, true, true, false));
+                                pTarget.playSound(RPGSoundEvents.BLEEDING_EFFECT.get(), 1.5F, 1.0F);
+                                Log.info(pTarget + " is blind");
+                            }
+                            float finalDamage = CombatRules.getDamageAfterAbsorb(actualAttackDamage, (float) pTarget.getArmorValue(), toughness);
+                            pTarget.hurt(DamageSource.GENERIC, finalDamage);
+                            Log.info(pAttacker + " hit " + pTarget + "with" + finalDamage);
+                            Log.info(pTarget + " has " + pTarget.getArmorValue() + " armor " + "and " + toughness + " toughness ");
                         }
-                    }
-                    //here we check if player has heavy armor-rating (20+)
-                    if (pTarget.getArmorValue() > 17.0F) { //heavy armor
-                        if (pTarget.getAttributeValue(Attributes.ARMOR_TOUGHNESS) > 0.0f && new Random().nextInt(100) == 1) {
+                        //here we check if player has medium armor-rating (9-17)
+                        if (pTarget.getArmorValue() <= 17.0F && pTarget.getArmorValue() > 9.0F) { //medium armor
+                            if (pTarget.getAttributeValue(Attributes.ARMOR_TOUGHNESS) > 0.0f && new Random().nextInt(75) == 1) { //here calc some damage if player has toughness rating
+                                head.hurtAndBreak((int) getArmorPenetration(), pTarget, (var) -> var.broadcastBreakEvent(EquipmentSlot.HEAD));
+                                chest.hurtAndBreak((int) getArmorPenetration(), pTarget, (var) -> var.broadcastBreakEvent(EquipmentSlot.CHEST));
+                                legs.hurtAndBreak((int) getArmorPenetration(), pTarget, (var) -> var.broadcastBreakEvent(EquipmentSlot.LEGS));
+                                feet.hurtAndBreak((int) getArmorPenetration(), pTarget, (var) -> var.broadcastBreakEvent(EquipmentSlot.FEET));
+                                float finalDamage = CombatRules.getDamageAfterAbsorb(actualAttackDamage, (float) pTarget.getArmorValue(), toughness);
+                                pTarget.hurt(DamageSource.GENERIC, finalDamage);
+                                Log.info(pAttacker + " hit armor" + pTarget + "with damage: " + armorPenetration);
+                            } else {
+                                if (new Random().nextInt(50) == 1) {//here calc some damage if player has no toughness
+                                    if (new Random().nextInt(40) == 1 && (!pTarget.hasEffect(RPGEffectManager.LACERATION.get()))) {
+                                        pTarget.addEffect(new MobEffectInstance(RPGEffectManager.LACERATION.get(), 36000, 0, true, true, false));
+                                        pTarget.playSound(RPGSoundEvents.BLEEDING_EFFECT.get(), 1.5F, 1.0F);
+                                        Log.info(pTarget + " has laceration");
+                                    }
+                                    if (new Random().nextInt(50) == 1 && (!pTarget.hasEffect(RPGEffectManager.PARALYSIS.get()))) {
+                                        pTarget.addEffect(new MobEffectInstance(RPGEffectManager.PARALYSIS.get(), 200, 0, true, true, false));
+                                        pTarget.playSound(RPGSoundEvents.BLEEDING_EFFECT.get(), 1.5F, 1.0F);
+                                        Log.info(pTarget + " is stunned");
+                                    }
+                                    if (new Random().nextInt(60) == 1 && (!pTarget.hasEffect(MobEffects.BLINDNESS))) {
+                                        pTarget.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 100, 0, true, true, false));
+                                        pTarget.playSound(RPGSoundEvents.BLEEDING_EFFECT.get(), 1.5F, 1.0F);
+                                        Log.info(pTarget + " is blind");
+                                    }
+                                }
+                                float finalDamage = CombatRules.getDamageAfterAbsorb(actualAttackDamage, (float) pTarget.getArmorValue(), toughness);
+                                pTarget.hurt(DamageSource.GENERIC, finalDamage);
+                                Log.info(pAttacker + " hit " + pTarget + "with" + finalDamage);
+                                Log.info(pTarget + " has " + pTarget.getArmorValue() + " armor " + "and " + toughness + " toughness ");
+                            }
+                            mainHand.hurtAndBreak(1, pAttacker, (var) -> var.broadcastBreakEvent(EquipmentSlot.MAINHAND));
+                            if (pAttacker.getOffhandItem().getItem() instanceof RPGBluntWeapon) {
+                                offHand.hurtAndBreak(1, pAttacker, (var) -> var.broadcastBreakEvent(EquipmentSlot.OFFHAND));
+                            }
+                        }
+                        //here we check if player has heavy armor-rating (20+)
+                        if (pTarget.getArmorValue() > 17.0F) { //heavy armor
+                            if (pTarget.getAttributeValue(Attributes.ARMOR_TOUGHNESS) > 0.0f && new Random().nextInt(100) == 1) {
+                                head.hurtAndBreak((int) getArmorPenetration(), pTarget, (var) -> var.broadcastBreakEvent(EquipmentSlot.HEAD));
+                                chest.hurtAndBreak((int) getArmorPenetration(), pTarget, (var) -> var.broadcastBreakEvent(EquipmentSlot.CHEST));
+                                legs.hurtAndBreak((int) getArmorPenetration(), pTarget, (var) -> var.broadcastBreakEvent(EquipmentSlot.LEGS));
+                                feet.hurtAndBreak((int) getArmorPenetration(), pTarget, (var) -> var.broadcastBreakEvent(EquipmentSlot.FEET));
+                                float finalDamage = CombatRules.getDamageAfterAbsorb(actualAttackDamage, (float) pTarget.getArmorValue(), toughness);
+                                pTarget.hurt(DamageSource.GENERIC, finalDamage);
+                                Log.info(pAttacker + " hit armor" + pTarget + "with damage: " + armorPenetration);
+                            }
+                        } else {
                             head.hurtAndBreak((int) getArmorPenetration(), pTarget, (var) -> var.broadcastBreakEvent(EquipmentSlot.HEAD));
                             chest.hurtAndBreak((int) getArmorPenetration(), pTarget, (var) -> var.broadcastBreakEvent(EquipmentSlot.CHEST));
                             legs.hurtAndBreak((int) getArmorPenetration(), pTarget, (var) -> var.broadcastBreakEvent(EquipmentSlot.LEGS));
@@ -210,51 +219,44 @@ public class RPGBluntWeapon extends RPGBasicMeleeWeapon {
                             float finalDamage = CombatRules.getDamageAfterAbsorb(actualAttackDamage, (float) pTarget.getArmorValue(), toughness);
                             pTarget.hurt(DamageSource.GENERIC, finalDamage);
                             Log.info(pAttacker + " hit armor" + pTarget + "with damage: " + armorPenetration);
+                            if (new Random().nextInt(75) == 1 && (!pTarget.hasEffect(RPGEffectManager.PARALYSIS.get()))) {
+                                pTarget.addEffect(new MobEffectInstance(RPGEffectManager.PARALYSIS.get(), 200, 0, true, true, false));
+                                pTarget.playSound(RPGSoundEvents.BLEEDING_EFFECT.get(), 1.5F, 1.0F);
+                                Log.info(pTarget + " is stunned");
+                            }
+                            if (new Random().nextInt(90) == 1 && (!pTarget.hasEffect(MobEffects.BLINDNESS))) {
+                                pTarget.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 100, 0, true, true, false));
+                                pTarget.playSound(RPGSoundEvents.BLEEDING_EFFECT.get(), 1.5F, 1.0F);
+                                Log.info(pTarget + " is blind");
+                            }
                         }
-                    } else {
-                        head.hurtAndBreak((int) getArmorPenetration(), pTarget, (var) -> var.broadcastBreakEvent(EquipmentSlot.HEAD));
-                        chest.hurtAndBreak((int) getArmorPenetration(), pTarget, (var) -> var.broadcastBreakEvent(EquipmentSlot.CHEST));
-                        legs.hurtAndBreak((int) getArmorPenetration(), pTarget, (var) -> var.broadcastBreakEvent(EquipmentSlot.LEGS));
-                        feet.hurtAndBreak((int) getArmorPenetration(), pTarget, (var) -> var.broadcastBreakEvent(EquipmentSlot.FEET));
                         float finalDamage = CombatRules.getDamageAfterAbsorb(actualAttackDamage, (float) pTarget.getArmorValue(), toughness);
+                        mainHand.hurtAndBreak(2, pAttacker, (var) -> var.broadcastBreakEvent(EquipmentSlot.MAINHAND));
+                        if (pAttacker.getOffhandItem().getItem() instanceof RPGBluntWeapon) {
+                            offHand.hurtAndBreak(2, pAttacker, (var) -> var.broadcastBreakEvent(EquipmentSlot.OFFHAND));
+                        }
                         pTarget.hurt(DamageSource.GENERIC, finalDamage);
-                        Log.info(pAttacker + " hit armor" + pTarget + "with damage: " + armorPenetration);
-                        if (new Random().nextInt(75) == 1 && (!pTarget.hasEffect(RPGEffectManager.PARALYSIS.get()))) {
-                            pTarget.addEffect(new MobEffectInstance(RPGEffectManager.PARALYSIS.get(), 200, 0, true, true, false));
-                            pTarget.playSound(RPGSoundEvents.BLEEDING_EFFECT.get(), 1.5F, 1.0F);
-                            Log.info(pTarget + " is stunned");
-                        }
-                        if (new Random().nextInt(90) == 1 && (!pTarget.hasEffect(MobEffects.BLINDNESS))) {
-                            pTarget.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 100, 0, true, true, false));
-                            pTarget.playSound(RPGSoundEvents.BLEEDING_EFFECT.get(), 1.5F, 1.0F);
-                            Log.info(pTarget + " is blind");
-                        }
-                    }
-                    float finalDamage = CombatRules.getDamageAfterAbsorb(actualAttackDamage, (float) pTarget.getArmorValue(), toughness);
-                    mainHand.hurtAndBreak(2, pAttacker, (var) -> var.broadcastBreakEvent(EquipmentSlot.MAINHAND));
-                    if (pAttacker.getOffhandItem().getItem() instanceof RPGBluntWeapon) {
-                        offHand.hurtAndBreak(2, pAttacker, (var) -> var.broadcastBreakEvent(EquipmentSlot.OFFHAND));
-                    }
-                    pTarget.hurt(DamageSource.GENERIC, finalDamage);
-                    Log.info(pAttacker + " hit " + pTarget + "with" + finalDamage);
-                    Log.info(pTarget + " has " + pTarget.getArmorValue() + " armor " + "and " + toughness + " toughness ");
-                }
+                        Log.info(pAttacker + " hit " + pTarget + "with" + finalDamage);
+                        Log.info(pTarget + " has " + pTarget.getArmorValue() + " armor " + "and " + toughness + " toughness ");
 
-                if (pTarget.getOffhandItem().getItem() instanceof ShieldItem && pTarget.isBlocking()) {
-                    ItemStack blockingStack = pTarget.getOffhandItem();
-                    blockingStack.hurtAndBreak((int) getArmorPenetration(), pTarget, (var) -> var.broadcastBreakEvent(EquipmentSlot.OFFHAND));
-                }
-                if (pTarget.getMainHandItem().getItem() instanceof RPGBasicTwoHandMeleeWeapon && pTarget.isBlocking()) {
-                    ItemStack blockingStack = pTarget.getMainHandItem();
-                    blockingStack.hurtAndBreak((int) getArmorPenetration(), pTarget, (var) -> var.broadcastBreakEvent(EquipmentSlot.OFFHAND));
-                }
 
-                if (offHandTarget.getItem() instanceof ShieldItem) {
-                    int damageAmount = 20;
-                    offHandTarget.hurtAndBreak(damageAmount, pAttacker, (var) -> var.broadcastBreakEvent(EquipmentSlot.OFFHAND));
-                    Log.info(pAttacker + " damaged shield of " + pTarget + "with " + damageAmount);
-                    pTarget.spawnAtLocation(offHandTarget.getItem());
-                    pTarget.getOffhandItem().shrink(1);
+                    if (pTarget.getOffhandItem().getItem() instanceof ShieldItem && pTarget.isBlocking()) {
+                        ItemStack blockingStack = pTarget.getOffhandItem();
+                        blockingStack.hurtAndBreak((int) getArmorPenetration(), pTarget, (var) -> var.broadcastBreakEvent(EquipmentSlot.OFFHAND));
+                    }
+                    if (pTarget.getMainHandItem().getItem() instanceof RPGBasicTwoHandMeleeWeapon && pTarget.isBlocking()) {
+                        ItemStack blockingStack = pTarget.getMainHandItem();
+                        blockingStack.hurtAndBreak((int) getArmorPenetration(), pTarget, (var) -> var.broadcastBreakEvent(EquipmentSlot.OFFHAND));
+                    }
+                    }
+                    /*
+                    if (offHandTarget.getItem() instanceof ShieldItem) {
+                        int damageAmount = 20;
+                        offHandTarget.hurtAndBreak(damageAmount, pAttacker, (var) -> var.broadcastBreakEvent(EquipmentSlot.OFFHAND));
+                        Log.info(pAttacker + " damaged shield of " + pTarget + "with " + damageAmount);
+                        pTarget.spawnAtLocation(offHandTarget.getItem());
+                        pTarget.getOffhandItem().shrink(1);
+                    }*/
                 }
             }
         }

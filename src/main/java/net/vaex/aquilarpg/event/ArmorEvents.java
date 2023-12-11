@@ -55,7 +55,7 @@ public class ArmorEvents implements IModBusEvent {
         }
     }
 
-
+/*
     @SubscribeEvent
     public static void renderPlayerPre(RenderPlayerEvent.Pre event) {
         PlayerRenderer render = event.getRenderer();
@@ -66,10 +66,10 @@ public class ArmorEvents implements IModBusEvent {
             }
         }
     }
+*/
 
     @SubscribeEvent
     public static void onEquipHelmet(LivingEvent.LivingUpdateEvent event) {
-
         LivingEntity entity = event.getEntityLiving();
         Level level = entity.getLevel();
         if (!entity.level.isClientSide()) {

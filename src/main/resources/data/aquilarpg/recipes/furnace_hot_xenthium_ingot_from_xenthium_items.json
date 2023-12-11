@@ -1,0 +1,15 @@
+{
+"type": "minecraft:smelting",
+"group": "xenthium_ingot",
+"ingredient": [
+{
+"item": "aquilarpg:raw_xenthium"
+},
+{
+"item": "aquilarpg:xenthium_ingot"
+}
+],
+"result": "aquilarpg:hot_xenthium_ingot",
+"experience": 1.0,
+"cookingtime": 800
+}
